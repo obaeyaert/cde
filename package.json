@@ -5,6 +5,11 @@
   "private": true,
   "scripts": {
     "dev": "astro dev",
+    "dev:stop": "astro dev stop",
+    "dev:status": "astro dev status",
+    "dev:logs": "astro dev logs",
+    "dev:restart": "astro dev stop; astro dev",
+    "dev:mail": "node scripts/dev-mail.mjs",
     "build": "astro build",
     "preview": "astro preview",
     "check": "astro check",
@@ -12,7 +17,9 @@
     "verify:links": "node _source/check-links.mjs",
     "verify:parity": "node _source/parity.mjs",
     "verify:contact": "node _source/test-contact.mjs",
-    "verify": "npm run build && npm run verify:links && npm run verify:parity"
+    "verify": "npm run build && npm run verify:links && npm run verify:parity && npm run verify:content && npm run verify:seo",
+    "verify:seo": "node _source/seo-audit.mjs",
+    "verify:content": "node _source/content-diff.mjs"
   },
   "dependencies": {
     "@astrojs/markdown-remark": "^7.3.0",
@@ -27,6 +34,7 @@
     "@astrojs/check": "^0.9.10",
     "@types/nodemailer": "^8.0.1",
     "cheerio": "^1.2.0",
+    "mailparser": "^3.9.20",
     "smtp-server": "^3.19.7",
     "turndown": "^7.2.4",
     "typescript": "^6.0.3",

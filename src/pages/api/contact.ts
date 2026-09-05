@@ -1,5 +1,6 @@
 import type { APIRoute } from 'astro';
 import nodemailer from 'nodemailer';
+import type Mail from 'nodemailer/lib/mailer';
 import { site } from '../../data/site';
 
 /* Endpoint dynamique : Vercel Function en runtime Node (le SMTP a besoin d'un socket TCP,
@@ -95,28 +96,63 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
 
   const user = import.meta.env.SMTP_USER;
   const pass = import.meta.env.SMTP_PASS;
-  if (!user || !pass) {
+
+  // En développement sans identifiants, on écrit les mails dans la console plutôt que
+  // d'échouer : on peut travailler sur le formulaire sans compte SMTP sous la main.
+  // En production, l'absence d'identifiants reste une erreur.
+  const useConsole = !user || !pass;
+  if (useConsole && !import.meta.env.DEV) {
     console.error('[contact] SMTP_USER / SMTP_PASS absents de l’environnement');
     return json(500, 'Une erreur s’est produite lors de l’envoi de votre message. Veuillez essayer à nouveau plus tard.');
   }
 
   const port = Number(import.meta.env.SMTP_PORT ?? 465);
-  const transporter = nodemailer.createTransport({
-    host: import.meta.env.SMTP_HOST ?? 'ssl0.ovh.net',
-    port,
-    secure: port === 465, // SSL implicite sur le 465, STARTTLS sinon
-    auth: { user, pass },
-    connectionTimeout: 10_000,
-    greetingTimeout: 10_000,
-    socketTimeout: 10_000,
-  });
+  const transporter = useConsole
+    ? nodemailer.createTransport({ jsonTransport: true })
+    : nodemailer.createTransport({
+        host: import.meta.env.SMTP_HOST ?? 'ssl0.ovh.net',
+        port,
+        secure: port === 465, // SSL implicite sur le 465, STARTTLS sinon
+        auth: { user: user!, pass: pass! },
+        connectionTimeout: 10_000,
+        greetingTimeout: 10_000,
+        socketTimeout: 10_000,
+      });
+
+  /** Envoie, ou affiche le mail en clair quand aucun SMTP n'est configuré. */
+  const deliver = async (label: string, mail: Mail.Options) => {
+    const info = await transporter.sendMail(mail);
+    if (!useConsole) return;
+    console.info(
+      [
+        '',
+        `┌─ ${label}`,
+        `│  De      : ${mail.from}`,
+        `│  À       : ${mail.to}`,
+        mail.replyTo ? `│  Reply-To: ${mail.replyTo}` : null,
+        `│  Objet   : ${mail.subject}`,
+        '│',
+        ...String(mail.text ?? '').split('\n').map((l) => `│  ${l}`),
+        '└─',
+      ].filter(Boolean).join('\n'),
+    );
+    return info;
+  };
+
+  if (useConsole) {
+    console.warn(
+      '[contact] SMTP non configuré : les mails sont affichés ici et ne partent nulle part.\n' +
+        '          Renseigner SMTP_USER / SMTP_PASS dans .env pour un envoi réel,\n' +
+        '          ou lancer `npm run dev:mail` puis pointer SMTP_HOST=127.0.0.1 SMTP_PORT=2525.',
+    );
+  }
 
   const displaySubject = subject || 'Message depuis le site';
   const signature = `Cet e-mail a été envoyé via le formulaire de contact de CDE (${site.url})`;
 
   try {
     // 1. Notification interne — reprend le gabarit de Contact Form 7
-    await transporter.sendMail({
+    await deliver('notification interne', {
       from: `"CDE" <${site.email}>`,
       to: site.email,
       replyTo: `"${name}" <${email}>`,
@@ -131,7 +167,7 @@ export const POST: APIRoute = async ({ request, clientAddress }) => {
     // 2. Accusé de réception à l'expéditeur. Un échec ici ne doit pas faire échouer la demande :
     //    le message est déjà arrivé chez CDE.
     try {
-      await transporter.sendMail({
+      await deliver('accusé de réception', {
         from: `"CDE" <${site.email}>`,
         to: email,
         subject: `CDE "${displaySubject}"`,

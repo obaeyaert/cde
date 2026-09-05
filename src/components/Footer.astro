@@ -1,0 +1,60 @@
+---
+import { site } from '../data/site';
+const year = new Date().getFullYear();
+---
+
+<div class="site-footer">
+  <div class="container widgets">
+    <div class="widget">
+      <img src={site.logo} alt={site.name} width="200" height="58" loading="lazy" />
+      <p class="tagline">{site.tagline}</p>
+    </div>
+
+    <div class="widget">
+      <h2>{site.legalName}</h2>
+      <address>
+        {site.address.street}<br />
+        {site.address.postalCode} {site.address.city}
+      </address>
+      <p>
+        Téléphone : <a href={`tel:${site.phoneHref}`}>{site.phone}</a><br />
+        Web : <a href="/contact/">Contactez-nous</a>
+      </p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <div class="container copy-row">
+      <p>
+        CDE © Copyright {site.since} – {year} | Réalisé par W4W |
+        <a href="/mentions-legales/">Mentions légales</a>
+      </p>
+      <p class="contact-inline">
+        <a href={`tel:${site.phoneHref}`}>{site.phone}</a>
+        <a href={`mailto:${site.email}`}>Nous envoyer un mail</a>
+      </p>
+    </div>
+  </div>
+</div>
+
+<style>
+  .site-footer { background: var(--color-footer-bg); color: #b7bac0; margin-top: 4rem; }
+  .widgets {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2.5rem; padding-block: 3.25rem;
+  }
+  .widget h2 { color: #fff; font-size: 1.05rem; letter-spacing: .04em; text-transform: uppercase; margin: 0 0 1rem; }
+  .widget img { width: 200px; height: auto; margin-bottom: 1.25rem; }
+  .tagline { font-size: 14px; line-height: 1.75; margin: 0; }
+  address { font-style: normal; margin-bottom: 1rem; }
+  .site-footer a { color: var(--color-primary); }
+  .site-footer a:hover { color: #fff; }
+
+  .copyright { background: var(--color-copyright-bg); font-size: 13px; }
+  .copy-row {
+    display: flex; flex-wrap: wrap; gap: .75rem 2rem;
+    align-items: center; justify-content: space-between; padding-block: 1.15rem;
+  }
+  .copy-row p { margin: 0; }
+  .contact-inline { display: flex; gap: 1.5rem; }
+</style>

@@ -1,0 +1,105 @@
+---
+import { nav, site } from '../data/site';
+const { pathname } = Astro.url;
+const isActive = (href: string) => pathname === href;
+const inBranch = (item: (typeof nav)[number]) =>
+  isActive(item.href) || (item.children?.some((c) => isActive(c.href)) ?? false);
+---
+
+<header class="site-header">
+  <div class="container bar">
+    <a href="/" class="logo" aria-label={`${site.name} — accueil`}>
+      <img src={site.logo} alt={site.name} width="180" height="52" fetchpriority="high" />
+    </a>
+
+    <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
+    <label for="nav-toggle" class="burger" aria-label="Ouvrir le menu">
+      <span></span><span></span><span></span>
+    </label>
+
+    <nav class="main-nav" aria-label="Navigation principale">
+      <ul class="level-1">
+        {nav.map((item) => (
+          <li class={item.children ? 'has-children' : ''}>
+            <a href={item.href} aria-current={inBranch(item) ? 'page' : undefined}>{item.label}</a>
+            {item.children && (
+              <ul class="level-2">
+                {item.children.map((child) => (
+                  <li>
+                    <a href={child.href} aria-current={isActive(child.href) ? 'page' : undefined}>{child.label}</a>
+                  </li>
+                ))}
+              </ul>
+            )}
+          </li>
+        ))}
+      </ul>
+    </nav>
+
+    <a class="header-phone" href={`tel:${site.phoneHref}`}>{site.phone}</a>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    background: var(--color-header-bg);
+    position: sticky; top: 0; z-index: 100;
+    box-shadow: 0 1px 0 rgb(255 255 255 / 8%);
+  }
+  .bar { display: flex; align-items: center; gap: 1.5rem; min-height: var(--header-h); }
+  .logo { flex: 0 0 auto; }
+  .logo img { width: 180px; height: auto; }
+
+  .main-nav { margin-left: auto; }
+  .level-1 { display: flex; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+  .level-1 > li { position: relative; }
+  .level-1 > li > a {
+    color: #fff; font-size: 16px; display: block; padding: 1.6rem 0;
+    border-bottom: 2px solid transparent;
+  }
+  .level-1 > li > a:hover,
+  .level-1 > li > a[aria-current] { color: var(--color-primary); border-bottom-color: var(--color-primary); text-decoration: none; }
+
+  .level-2 {
+    position: absolute; top: 100%; left: -1rem; min-width: 265px;
+    background: var(--color-header-bg); list-style: none; margin: 0; padding: .5rem 0;
+    opacity: 0; visibility: hidden; transform: translateY(6px);
+    transition: opacity .18s ease, transform .18s ease, visibility .18s;
+    box-shadow: 0 12px 28px rgb(0 0 0 / 28%);
+  }
+  .has-children:hover > .level-2,
+  .has-children:focus-within > .level-2 { opacity: 1; visibility: visible; transform: none; }
+  .level-2 a {
+    color: #d6d8dc; display: block; padding: .6rem 1rem; font-size: 15px;
+    border-left: 2px solid transparent;
+  }
+  .level-2 a:hover, .level-2 a[aria-current] {
+    color: #fff; background: rgb(255 255 255 / 6%); border-left-color: var(--color-primary); text-decoration: none;
+  }
+
+  .header-phone { color: #fff; font-size: 15px; white-space: nowrap; }
+  .header-phone:hover { color: var(--color-primary); text-decoration: none; }
+
+  .nav-toggle, .burger { display: none; }
+
+  @media (max-width: 1100px) {
+    .bar { flex-wrap: wrap; }
+    .burger {
+      display: flex; flex-direction: column; gap: 5px; margin-left: auto;
+      cursor: pointer; padding: .6rem;
+    }
+    .burger span { display: block; width: 26px; height: 2px; background: #fff; }
+    .header-phone { order: 3; }
+    .main-nav {
+      flex-basis: 100%; margin-left: 0;
+      max-height: 0; overflow: hidden; transition: max-height .28s ease;
+    }
+    .nav-toggle:checked ~ .main-nav { max-height: 85vh; overflow-y: auto; }
+    .level-1 { flex-direction: column; gap: 0; padding-bottom: 1rem; }
+    .level-1 > li > a { padding: .85rem 0; border-bottom: 1px solid rgb(255 255 255 / 10%); }
+    .level-2 {
+      position: static; opacity: 1; visibility: visible; transform: none;
+      box-shadow: none; padding: 0 0 .5rem 1rem; min-width: 0;
+    }
+  }
+</style>

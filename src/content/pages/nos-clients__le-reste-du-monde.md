@@ -7,7 +7,7 @@ SÉNÉGAL"
 slug: "nos-clients/le-reste-du-monde"
 canonical: "https://www.cdegroupe.com/nos-clients/le-reste-du-monde/"
 heading: "LE RESTE DU MONDE"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2019/05/Hôtel-Lagon-2-chambre.png"
 wpId: 1126
 ---
 
@@ -62,9 +62,9 @@ Bien que spécialisé dans les équipements hôteliers en tout genre dans les DO
 
 ### _Amérique du sud_
 
--   ![Hotel_Atlantis_-_piscine](/media/2019/06/Hotel_Atlantis_-_piscine.jpg)
+-   ![Hotel Atlantis piscine](/media/2019/06/Hotel_Atlantis_-_piscine.jpg)
     
--   ![Hotel_Atlantis_-_restaurant](/media/2019/06/Hotel_Atlantis_-_restaurant.jpg)
+-   ![Hotel Atlantis restaurant](/media/2019/06/Hotel_Atlantis_-_restaurant.jpg)
     
 -   ![](/media/2023/10/Hotel_Atlantis-03-1.jpg)
     
@@ -102,9 +102,9 @@ Bien que spécialisé dans les équipements hôteliers en tout genre dans les DO
 -   Chambre
 -   Terrasse
 
--   ![Les_amis_de_Diane_-_chambre](/media/2019/06/Les_amis_de_Diane_-_chambre.jpg)
+-   ![Les amis de Diane chambre](/media/2019/06/Les_amis_de_Diane_-_chambre.jpg)
     
--   ![Les_amis_de_Diane_-_restaurant](/media/2019/06/Les_amis_de_Diane_-_restaurant.jpg)
+-   ![Les amis de Diane restaurant](/media/2019/06/Les_amis_de_Diane_-_restaurant.jpg)
     
 
 #### Les amis de Diane

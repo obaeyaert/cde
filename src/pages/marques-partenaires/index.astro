@@ -12,6 +12,7 @@ const d = entry!.data;
 const [header, ...sections] = brands as {
   heading: string;
   intro: string | null;
+  lead: string | null;
   brands: { name: string; url: string | null; logo: string; group: string | null }[];
 }[];
 
@@ -56,6 +57,7 @@ const breadcrumbs = [
   <div class="container intro">
     <h1>{header.heading}</h1>
     {header.intro && <p class="lead">{header.intro}</p>}
+    {header.lead && <p class="lead">{header.lead}</p>}
   </div>
 
   {sections.map((section) => (
@@ -63,6 +65,7 @@ const breadcrumbs = [
       <div class="container">
         <h2>{section.heading}</h2>
         {section.intro && <p class="lead">{section.intro}</p>}
+        {section.lead && section.lead !== section.intro && <p class="lead">{section.lead}</p>}
 
         {grouped(section.brands).map(({ group, items }) => (
           <div class="group">

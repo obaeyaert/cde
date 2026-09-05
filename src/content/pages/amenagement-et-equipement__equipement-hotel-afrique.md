@@ -5,7 +5,7 @@ description: "CDE Groupe équipe les hôtels en Afrique depuis 30 ans. Livraison
 slug: "amenagement-et-equipement/equipement-hotel-afrique"
 canonical: "https://www.cdegroupe.com/amenagement-et-equipement/equipement-hotel-afrique/"
 heading: "CDE Groupe, fournisseur d’équipement hôtelier en Afrique"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2020/04/CDE-Groupe_afrique.jpg"
 wpId: 1232
 ---
 

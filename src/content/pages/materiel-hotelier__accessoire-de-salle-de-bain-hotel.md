@@ -5,7 +5,7 @@ description: "CDE fourni depuis plus de 30 ans des accessoires de salle de bain�
 slug: "materiel-hotelier/accessoire-de-salle-de-bain-hotel"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/accessoire-de-salle-de-bain-hotel/"
 heading: "Des accessoires de salle de bain adaptés aux professionnels de l’hôtellerie"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2020/04/CDE-Groupe_accessoiressdb.jpg"
 wpId: 1255
 ---
 

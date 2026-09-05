@@ -5,7 +5,7 @@ description: "Linge de lit, linge de bain éponge ou nid d’abeille pour les pr
 slug: "materiel-hotelier/linge-hotel"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/linge-hotel/"
 heading: "Tout le linge hôtelier (chambre, salle de bain, piscine, spa…)"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2020/04/CDE-Groupe_linge.jpg"
 wpId: 1246
 ---
 

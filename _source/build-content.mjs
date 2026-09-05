@@ -8,6 +8,13 @@ const BROKEN_LINKS = {
   '/mobilier-interieur-hotellerie/': '/materiel-hotelier/mobilier-interieur-hotel/',
 };
 
+// Caracteres de remplacement (U+FFFD double-encode) presents dans la source WordPress :
+// une corruption d'encodage, pas un choix redactionnel. On restitue la lettre attendue.
+const MOJIBAKE = [
+  [/Contact \u00ef\u00bf\u00bd partir/g, 'Contact \u00e0 partir'],
+  [/mentions l\u00ef\u00bf\u00bdgales/g, 'mentions l\u00e9gales'],
+];
+
 const dest = '../src/content/pages';
 fs.mkdirSync(dest, {recursive:true});
 const y = s => `"${String(s ?? '').replace(/\\/g,'\\\\').replace(/"/g,'\\"')}"`;
@@ -18,6 +25,7 @@ for (const m of idx) {
   // thumbnails -> originaux, et on retire les dimensions du fragment
   md = md.replace(/\(\/media\/([^)#]+)(#\d+x\d+)?\)/g, (_,p) => `(/media/${map[p] ?? p})`);
   for (const [from, to] of Object.entries(BROKEN_LINKS)) md = md.split(`](${from})`).join(`](${to})`);
+  for (const [from, to] of MOJIBAKE) md = md.replace(from, to);
   // Le titre principal vient du frontmatter : on le retire du corps pour eviter le doublon.
   // 7 pages WordPress n'avaient aucun H1 : on promeut leur premier H2, le texte affiche
   // est inchange, seul le niveau de titre l'est.
@@ -53,7 +61,17 @@ for (const m of idx) {
     `slug: ${y(slugPath)}`,
     `canonical: ${y(m.canonical)}`,
     h1 ? `heading: ${y(h1)}` : null,
-    m.ogImage ? `ogImage: ${y(m.ogImage.replace('https://www.cdegroupe.com/wp-content/uploads/','/media/'))}` : null,
+    (() => {
+      // Cas particuliers : la home partage l'image de son bandeau, et la page marques
+      // le logo CDE plutot que le logo de la premiere marque venue.
+      const OVERRIDES = {
+        index: '/media/2015/02/slideshow-accueil.jpg',
+        'marques-partenaires': '/media/2026/07/cde-logo2-white.png',
+      };
+      const firstImage = OVERRIDES[slugPath] ?? md.match(/!\[[^\]]*\]\((\/media\/[^)\s]+)\)/)?.[1];
+      const og = firstImage ?? m.ogImage?.replace('https://www.cdegroupe.com/wp-content/uploads/', '/media/');
+      return og ? `ogImage: ${y(og)}` : null;
+    })(),
     `wpId: ${m.bodyId ?? 'null'}`,
     '---'
   ].filter(Boolean).join('\n');

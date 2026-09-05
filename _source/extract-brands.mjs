@@ -19,6 +19,8 @@ $('#content .fusion-builder-row.fusion-row').each((_, row) => {
   if (!heading) return;
 
   const intro = clean($row.find('h3').first().text());
+  // Le chapeau de rubrique est un simple paragraphe : sans cela il disparait de la page.
+  const lead = clean($row.find('.fusion-text p').first().text());
   const brands = [];
   let group = '';
 
@@ -64,14 +66,14 @@ $('#content .fusion-builder-row.fusion-row').each((_, row) => {
     if (sub && sub !== intro && sub.length < 40) group = sub;
   });
 
-  categories.push({ heading, intro: intro || null, brands });
+  categories.push({ heading, intro: intro || null, lead: lead || null, brands });
 });
 
 fs.writeFileSync('../src/generated/brands.json', JSON.stringify(categories, null, 2));
 let total = 0;
 for (const c of categories) {
   total += c.brands.length;
-  console.log(`${c.heading} — ${c.brands.length} marques`);
+  console.log(`${c.heading} — ${c.brands.length} marques${c.lead ? ' (chapeau)' : ''}`);
   console.log('   ', c.brands.slice(0, 4).map((b) => b.name).join(' | '));
 }
 console.log('\ntotal :', total, 'marques');

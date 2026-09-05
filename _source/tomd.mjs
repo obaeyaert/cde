@@ -7,7 +7,18 @@ td.keep(['iframe']);
 // Les images passent en shortcode {img} pour être remappées ensuite
 td.addRule('img', { filter:'img', replacement:(c,n)=>{
   const src=(n.getAttribute('data-orig-src')||n.getAttribute('data-src')||n.getAttribute('src')||'').replace(/^https:\/\/www\.cdegroupe\.com\/wp-content\/uploads\//,'');
-  const alt=(n.getAttribute('alt')||'').replace(/"/g,"'");
+  // Les alt WordPress sont des noms de fichiers ("Karibea-Beach-Resort-Gosier-bar").
+  // On les rend lisibles sans rien inventer : les mots sont deja la, seuls les tirets
+  // et le prefixe technique disparaissent.
+  const rawAlt=(n.getAttribute('alt')||'').replace(/"/g,"'");
+  const alt = /\s/.test(rawAlt) || rawAlt === ''
+    ? rawAlt
+    : rawAlt
+        .replace(/^cde-comptoir-distribution-exportation-/i, '')
+        .replace(/[-_]+/g, ' ')
+        .replace(/\s+/g, ' ')
+        .trim()
+        .replace(/^./, (c) => c.toUpperCase());
   const w=n.getAttribute('width')||'', h=n.getAttribute('height')||'';
   return src.startsWith('data:')?'':`\n\n![${alt}](/media/${src}${w?`#${w}x${h}`:''})\n\n`;
 }});
@@ -34,7 +45,10 @@ for (const meta of idx) {
     // sinon le markdown n'est pas interprete et s'affiche en texte brut.
     .replace(/\[\s*\n+\s*(!\[[^\]]*\]\([^)]*\))\s*\n+\s*\]\(([^)]+)\)/g, '[$1]($2)')
     .replace(/\n{3,}/g,'\n\n')
-    .replace(/https:\/\/www\.cdegroupe\.com\//g,'/')   // liens internes en relatif
+    // Un H5 isole apres des H3 casse la hierarchie des titres (accessibilite et SEO).
+    // On le ramene au niveau immediatement suivant : le texte affiche ne change pas.
+    .replace(/^##### /gm, '#### ')
+    .replace(/https:\/\/www\.cdegroupe\.com\/?/g,'/')  // liens internes en relatif
     // Les medias pointaient encore sur l'arborescence WordPress.
     .replace(/\]\(\/wp-content\/uploads\//g, '](/media/')
     // Le site sert des URL avec slash final (trailingSlash: always) : les liens internes

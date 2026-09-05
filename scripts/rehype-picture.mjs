@@ -21,7 +21,10 @@ export default function rehypePicture() {
       const src = node.properties?.src;
       if (typeof src !== 'string' || !src.startsWith('/media/')) return;
 
-      const entry = sizes[src];
+      // Le Markdown fournit des URL percent-encodées ; le manifeste est indexé sur les
+      // chemins littéraux. Sans décodage, les images accentuées perdent leurs dimensions.
+      const key = decodeURIComponent(src);
+      const entry = sizes[key] ?? sizes[src];
       if (entry) {
         node.properties.width = entry.width;
         node.properties.height = entry.height;

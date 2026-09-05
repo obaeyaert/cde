@@ -2,11 +2,13 @@
   {
     "heading": "NOS MARQUES PARTENAIRES",
     "intro": null,
+    "lead": "Retrouvez ci-dessous quelques-unes des marques partenaires avec lesquelles nous travaillons.",
     "brands": []
   },
   {
     "heading": "ARTS DE LA TABLE",
     "intro": "Vaste choix de produits modernes et design. Service vaisselle, couverts, verrerie et matériel de buffet",
+    "lead": "Degrenne Paris",
     "brands": [
       {
         "name": "Degrenne Paris",
@@ -211,6 +213,7 @@
   {
     "heading": "LINGE, TISSUS D’AMEUBLEMENT & LITERIE",
     "intro": "Retrouvez un large éventail de références dans notre gamme de produit pour hôtel, bar et restaurant.",
+    "lead": "Hilden",
     "brands": [
       {
         "name": "Hilden",
@@ -235,6 +238,7 @@
   {
     "heading": "LUMINAIRES",
     "intro": "Parcourez notre collection complète de luminaires, idéale pour éclairer et embellir les espaces d’hôtels, bars et restaurants.",
+    "lead": "Brossier Saderne",
     "brands": [
       {
         "name": "Brossier Saderne",
@@ -265,6 +269,7 @@
   {
     "heading": "ACCESSOIRES SALLES DE BAIN",
     "intro": "Un panel représentatif des marques partenaires avec lesquelles nous travaillons pour équiper les salles d’eau et salles de bain des hôtels.",
+    "lead": "JVD",
     "brands": [
       {
         "name": "JVD",
@@ -295,6 +300,7 @@
   {
     "heading": "PRODUITS D’ACCUEIL",
     "intro": "Une liste non-exhaustive des fournisseurs de produits d’accueil, d’hygiène, soins du corps pour professionnels de l’hôtellerie.",
+    "lead": "ADA International",
     "brands": [
       {
         "name": "ADA International",
@@ -337,6 +343,7 @@
   {
     "heading": "LE MOBILIER",
     "intro": "Moderne, design, rustique, notre gamme de produits mobilier conviendra à votre aménagement intérieur et extérieur.",
+    "lead": "Kartell",
     "brands": [
       {
         "name": "Kartell",

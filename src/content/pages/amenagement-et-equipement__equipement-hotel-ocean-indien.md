@@ -5,7 +5,7 @@ description: "CDE Groupe équipe les hôtels de l’ile de La Réunion, l’île
 slug: "amenagement-et-equipement/equipement-hotel-ocean-indien"
 canonical: "https://www.cdegroupe.com/amenagement-et-equipement/equipement-hotel-ocean-indien/"
 heading: "CDE Groupe, fournisseur d’équipement hôtelier dans l’Océan Indien"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2020/04/CDE-Groupe_oceanindien.jpg"
 wpId: 1235
 ---
 

@@ -5,7 +5,7 @@ description: "Mobilier pour les chambres d’hôtel, salons, les halls d’entr�
 slug: "materiel-hotelier/mobilier-interieur-hotel"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/mobilier-interieur-hotel/"
 heading: "Les plus grandes marques du mobilier d’intérieur design"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2020/04/CDE-Groupe_mobilierinterieur.jpg"
 wpId: 1260
 ---
 

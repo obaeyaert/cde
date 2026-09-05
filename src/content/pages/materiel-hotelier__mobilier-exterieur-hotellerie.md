@@ -5,7 +5,7 @@ description: "Salons d’extérieurs design, terrasses, bar de la piscine ou res
 slug: "materiel-hotelier/mobilier-exterieur-hotellerie"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/mobilier-exterieur-hotellerie/"
 heading: "Les plus grandes marques du mobilier d’extérieur design pour les hôtels"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2020/04/CDE-Groupe_mobilierexterieur.jpg"
 wpId: 1262
 ---
 

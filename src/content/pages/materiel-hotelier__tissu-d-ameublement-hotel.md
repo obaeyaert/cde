@@ -5,7 +5,7 @@ description: "Rideaux occultant, voilage, chemin de lit (…) CDE Groupe propose
 slug: "materiel-hotelier/tissu-d-ameublement-hotel"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/tissu-d-ameublement-hotel/"
 heading: "CDE Groupe, fournisseur de tissus d’ameublement"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2020/04/CDE-Groupe_tissuameublement.jpg"
 wpId: 1248
 ---
 

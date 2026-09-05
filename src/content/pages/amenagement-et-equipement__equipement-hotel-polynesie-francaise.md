@@ -5,7 +5,7 @@ description: "CDE Groupe équipe les hôtels de Tahiti, Bora Bora et Moorea depu
 slug: "amenagement-et-equipement/equipement-hotel-polynesie-francaise"
 canonical: "https://www.cdegroupe.com/amenagement-et-equipement/equipement-hotel-polynesie-francaise/"
 heading: "CDE Groupe, fournisseur d’équipement hôtelier en Polynésie française"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2020/04/CDE-Groupe_polynesie.jpg"
 wpId: 1239
 ---
 

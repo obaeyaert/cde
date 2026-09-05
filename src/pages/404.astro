@@ -1,0 +1,70 @@
+---
+import Base from '../layouts/Base.astro';
+import { nav, site } from '../data/site';
+
+/* Une 404 utile : elle renvoie vers les rubriques plutôt que de laisser le visiteur
+   dans une impasse. Hors index (noindex), mais les liens restent suivis. */
+const sections = nav.filter((item) => item.label !== 'Contact');
+---
+
+<Base
+  metaTitle={`Page introuvable - ${site.name}`}
+  description="La page demandée n’existe pas ou a été déplacée. Retrouvez nos gammes d’équipement hôtelier et nos zones de livraison."
+  canonical={`${site.url}/404/`}
+  noindex
+>
+  <div class="container not-found">
+    <p class="code">404</p>
+    <h1>Cette page n’existe pas</h1>
+    <p class="lead">
+      Elle a peut-être été déplacée, ou l’adresse comporte une erreur.
+      Voici par où reprendre.
+    </p>
+
+    <ul class="sections">
+      {sections.map((section) => (
+        <li>
+          <a href={section.href}>{section.label}</a>
+          {section.children && (
+            <ul>
+              {section.children.map((child) => (
+                <li><a href={child.href}>{child.label}</a></li>
+              ))}
+            </ul>
+          )}
+        </li>
+      ))}
+    </ul>
+
+    <p class="help">
+      Vous cherchez quelque chose de précis ? Appelez le
+      <a href={`tel:${site.phoneHref}`}>{site.phone}</a> ou
+      <a href="/contact/">écrivez-nous</a>.
+    </p>
+  </div>
+</Base>
+
+<style>
+  .not-found { padding-block: 4rem 2rem; max-width: 900px; }
+  .code {
+    margin: 0; font-size: clamp(3.5rem, 9vw, 6rem); line-height: 1;
+    color: var(--color-primary); opacity: .22;
+  }
+  h1 { margin-top: -.25em; }
+  .lead { max-width: 60ch; }
+
+  .sections {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+    gap: 2rem; list-style: none; padding: 0; margin: 2.5rem 0 0;
+  }
+  .sections > li > a {
+    display: block; font-size: 1.05rem; color: var(--color-heading);
+    padding-bottom: .5rem; margin-bottom: .5rem;
+    border-bottom: 2px solid var(--color-primary);
+  }
+  .sections ul { list-style: none; padding: 0; margin: 0; }
+  .sections ul li { margin-bottom: .3rem; }
+  .sections ul a { font-size: 14px; }
+
+  .help { margin-top: 3rem; padding-top: 1.5rem; border-top: 1px solid var(--color-border); }
+</style>

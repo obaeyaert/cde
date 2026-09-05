@@ -5,7 +5,7 @@ description: "Une gamme complète de produits d'accueil eco label et cosmétiqu
 slug: "materiel-hotelier/produit-d-accueil-hotel"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/produit-d-accueil-hotel/"
 heading: "Une gamme complète de produits d’accueil et cosmétiques pour les hôtels"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2020/04/CDE-Groupe_produitsdaccueil.jpg"
 wpId: 1258
 ---
 

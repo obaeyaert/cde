@@ -5,7 +5,7 @@ description: "Equipement pour les professionnels de l'Hôtellerie à des prix 
 slug: "index"
 canonical: "https://www.cdegroupe.com/"
 heading: "CDE Groupe, matériel et équipements pour les professionnels de l’hôtellerie"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2015/02/slideshow-accueil.jpg"
 wpId: 661
 ---
 
@@ -23,7 +23,7 @@ CDE Groupe vous ouvre son réseau et vous propose son expérience pour toute ins
 
 [![](/media/2019/05/encart-block-terrasse.jpg)](/media/2019/05/encart-block-terrasse.jpg "CDE – 25 années de savoir-faire")
 
-![hotel-beach-creole](/media/2020/06/beach-creole.jpg)
+![Hotel beach creole](/media/2020/06/beach-creole.jpg)
 
 > « Nous faisons confiance à CDE Groupe depuis plus de 30 ans pour l’aménagement de notre établissement et le réassort de tous nos produits. Nous profitons de prix très compétitifs négociés directement auprès des fabricants !  »
 
@@ -57,11 +57,11 @@ CDE Groupe vous ouvre son réseau et vous propose son expérience pour toute ins
 
 ### [_Tissus d’ameublement_](/materiel-hotelier/tissu-d-ameublement-hotel/)
 
-[![cde-comptoir-distribution-exportation-arts-de-la-table-vaisselle-villeroy-et-boch](/media/2019/05/cde-comptoir-distribution-exportation-arts-de-la-table-vaisselle-villeroy-et-boch.jpg)](https://www.villeroy-boch.fr/)
+[![Arts de la table vaisselle villeroy et boch](/media/2019/05/cde-comptoir-distribution-exportation-arts-de-la-table-vaisselle-villeroy-et-boch.jpg)](https://www.villeroy-boch.fr/)
 
 [Villeroy & Boch](https://www.villeroy-boch.fr/)
 
-[![cde-comptoir-distribution-exportation-arts-de-la-table-couverts-degrenne-paris](/media/2019/05/cde-comptoir-distribution-exportation-arts-de-la-table-couverts-degrenne-paris.jpg)](https://www.pro.degrenne.fr/)
+[![Arts de la table couverts degrenne paris](/media/2019/05/cde-comptoir-distribution-exportation-arts-de-la-table-couverts-degrenne-paris.jpg)](https://www.pro.degrenne.fr/)
 
 [Degrenne Paris](https://www.pro.degrenne.fr/)
 
@@ -73,7 +73,7 @@ CDE Groupe vous ouvre son réseau et vous propose son expérience pour toute ins
 
 [Balmain Paris](https://fr.balmain.com/fr)
 
-##### [TOUTES **LES MARQUES**](/marques-partenaires/)
+#### [TOUTES **LES MARQUES**](/marques-partenaires/)
 
 ## CDE GROUPE **LIVRE PARTOUT DANS LE MONDE**
 

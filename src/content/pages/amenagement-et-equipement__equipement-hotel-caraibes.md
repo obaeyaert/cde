@@ -5,7 +5,7 @@ description: "CDE Groupe équipe les hôtels dans les Caraïbes depuis 30 ans. L
 slug: "amenagement-et-equipement/equipement-hotel-caraibes"
 canonical: "https://www.cdegroupe.com/amenagement-et-equipement/equipement-hotel-caraibes/"
 heading: "CDE Groupe, fournisseur d’équipement hôtelier dans les Caraïbes"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2020/04/CDE-Groupe_caraibes.jpg"
 wpId: 1229
 ---
 

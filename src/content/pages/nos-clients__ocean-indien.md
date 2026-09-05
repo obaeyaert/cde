@@ -7,7 +7,7 @@ Auparavant nommé océan Oriental ou mer des Indes, l’océan Indien s’étend
 slug: "nos-clients/ocean-indien"
 canonical: "https://www.cdegroupe.com/nos-clients/ocean-indien/"
 heading: "L’Océan Indien"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2019/05/LUX__Saint_Gilles_-_bar.jpg"
 wpId: 1065
 ---
 
@@ -17,11 +17,11 @@ Auparavant nommé océan Oriental ou mer des Indes, l’océan Indien s’étend
 
 ### _Ouest de l’océan Indien_
 
--   ![LUX__Saint_Gilles_-_bar](/media/2019/05/LUX__Saint_Gilles_-_bar.jpg)
+-   ![LUX Saint Gilles bar](/media/2019/05/LUX__Saint_Gilles_-_bar.jpg)
     
--   ![LUX__Saint_Gilles_-_chambre](/media/2019/05/LUX__Saint_Gilles_-_chambre.jpg)
+-   ![LUX Saint Gilles chambre](/media/2019/05/LUX__Saint_Gilles_-_chambre.jpg)
     
--   ![LUX__Saint_Gilles_-_restaurant](/media/2019/05/LUX__Saint_Gilles_-_restaurant.jpg)
+-   ![LUX Saint Gilles restaurant](/media/2019/05/LUX__Saint_Gilles_-_restaurant.jpg)
     
 
 #### [LUX\* Saint Gilles](https://www.luxresorts.com/fr/reunion/hotel/luxsaintgilles "LUX* Saint Gilles")
@@ -34,11 +34,11 @@ Auparavant nommé océan Oriental ou mer des Indes, l’océan Indien s’étend
 -   Bar
 -   Terrasse
 
--   ![Hotel_le_Recif_-_chambre](/media/2019/05/Hotel_le_Recif_-_chambre.jpg)
+-   ![Hotel le Recif chambre](/media/2019/05/Hotel_le_Recif_-_chambre.jpg)
     
--   ![Hotel_le_Recif_-_restaurant_2](/media/2019/05/Hotel_le_Recif_-_restaurant_2.jpg)
+-   ![Hotel le Recif restaurant 2](/media/2019/05/Hotel_le_Recif_-_restaurant_2.jpg)
     
--   ![Hotel_le_Recif_-_piscine](/media/2019/06/Hotel_le_Recif_-_piscine.jpg)
+-   ![Hotel le Recif piscine](/media/2019/06/Hotel_le_Recif_-_piscine.jpg)
     
 
 #### [Hôtel le Recif](https://www.hotellerecif.com/ "Hôtel le Recif")
@@ -49,13 +49,13 @@ Auparavant nommé océan Oriental ou mer des Indes, l’océan Indien s’étend
 -   Chambre
 -   Terrasse
 
--   ![Diana_Dea_Lodge__-_chambre_1](/media/2019/05/Diana_Dea_Lodge__-_chambre_1.jpg)
+-   ![Diana Dea Lodge chambre 1](/media/2019/05/Diana_Dea_Lodge__-_chambre_1.jpg)
     
--   ![Diana_Dea_Lodge_-_chambre_2](/media/2019/05/Diana_Dea_Lodge_-_chambre_2.jpg)
+-   ![Diana Dea Lodge chambre 2](/media/2019/05/Diana_Dea_Lodge_-_chambre_2.jpg)
     
--   ![Diana_Dea_Lodge_-_piscine_-_terrasse](/media/2019/05/Diana_Dea_Lodge_-_piscine_-_terrasse.jpg)
+-   ![Diana Dea Lodge piscine terrasse](/media/2019/05/Diana_Dea_Lodge_-_piscine_-_terrasse.jpg)
     
--   ![Diana_Dea_Lodge_-_restaurant](/media/2019/05/Diana_Dea_Lodge_-_restaurant.jpg)
+-   ![Diana Dea Lodge restaurant](/media/2019/05/Diana_Dea_Lodge_-_restaurant.jpg)
     
 
 #### [Diana Dea Lodge](https://www.diana-dea-lodge.re/ "Diana Dea Lodge")
@@ -65,9 +65,9 @@ Auparavant nommé océan Oriental ou mer des Indes, l’océan Indien s’étend
 -   Restaurant
 -   Chambre
 
--   ![Hotel_Les_Creoles_-_chambre](/media/2019/05/Hotel_Les_Creoles_-_chambre.jpg)
+-   ![Hotel Les Creoles chambre](/media/2019/05/Hotel_Les_Creoles_-_chambre.jpg)
     
--   ![Hotel_Les_Creoles_-_piscine](/media/2019/05/Hotel_Les_Creoles_-_piscine.jpg)
+-   ![Hotel Les Creoles piscine](/media/2019/05/Hotel_Les_Creoles_-_piscine.jpg)
     
 
 #### [Tropic Appart’Hotel](https://tropicapparthotel.com/ "Hôtel Les Créoles")

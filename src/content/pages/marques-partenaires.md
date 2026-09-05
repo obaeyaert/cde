@@ -20,21 +20,21 @@ Retrouvez ci-dessous quelques-unes des marques partenaires avec lesquelles nous 
 
 ### _Couverts_
 
-[![cde-comptoir-distribution-exportation-arts-de-la-table-couverts-degrenne-paris](/media/2019/05/cde-comptoir-distribution-exportation-arts-de-la-table-couverts-degrenne-paris.jpg)](https://www.pro.degrenne.fr/)
+[![Arts de la table couverts degrenne paris](/media/2019/05/cde-comptoir-distribution-exportation-arts-de-la-table-couverts-degrenne-paris.jpg)](https://www.pro.degrenne.fr/)
 
 [Degrenne Paris](https://www.pro.degrenne.fr/)
 
-[![cde-comptoir-distribution-exportation-arts-de-la-table-couverts-eternum](/media/2019/05/cde-comptoir-distribution-exportation-arts-de-la-table-couverts-eternum.jpg)](http://www.eternum.com/fr)
+[![Arts de la table couverts eternum](/media/2019/05/cde-comptoir-distribution-exportation-arts-de-la-table-couverts-eternum.jpg)](http://www.eternum.com/fr)
 
 [Eternum](http://www.eternum.com/fr)
 
-[![cde-comptoir-distribution-exportation-arts-de-la-table-couverts-couzon-amefa](/media/2024/03/logo-amefa.jpg)](https://www.amefa.fr/891-couzon)
+[![Arts de la table couverts couzon amefa](/media/2024/03/logo-amefa.jpg)](https://www.amefa.fr/891-couzon)
 
 [Couzon](https://www.amefa.fr/891-couzon)
 
 ### _Vaisselle_
 
-[![cde-comptoir-distribution-exportation-arts-de-la-table-vaisselle-villeroy-et-boch](/media/2019/05/cde-comptoir-distribution-exportation-arts-de-la-table-vaisselle-villeroy-et-boch.jpg)](https://www.villeroy-boch.fr/)
+[![Arts de la table vaisselle villeroy et boch](/media/2019/05/cde-comptoir-distribution-exportation-arts-de-la-table-vaisselle-villeroy-et-boch.jpg)](https://www.villeroy-boch.fr/)
 
 [Villeroy & Boch](https://www.villeroy-boch.fr/)
 
@@ -174,7 +174,7 @@ Retrouvez ci-dessous quelques-unes des marques partenaires avec lesquelles nous 
 
 [Thiriez](https://thiriez-literie.fr/fr/)
 
-[![linge-tissus-ameublement-norlinge](/media/2019/06/linge-tissus-ameublement-norlinge.jpg)](https://www.norlinge.fr/)
+[![Linge tissus ameublement norlinge](/media/2019/06/linge-tissus-ameublement-norlinge.jpg)](https://www.norlinge.fr/)
 
 [NorLinge](https://www.norlinge.fr/)
 
@@ -226,7 +226,7 @@ Retrouvez ci-dessous quelques-unes des marques partenaires avec lesquelles nous 
 
 [ADA International](https://ada-cosmetics.com/)
 
-[![produits-accueil-penhaligons](/media/2023/01/produits-accueil-penhaligons.jpg)](https://www.penhaligons.com/uk/fr)
+[![Produits accueil penhaligons](/media/2023/01/produits-accueil-penhaligons.jpg)](https://www.penhaligons.com/uk/fr)
 
 [Penhaligon’s](https://www.penhaligons.com/uk/fr)
 

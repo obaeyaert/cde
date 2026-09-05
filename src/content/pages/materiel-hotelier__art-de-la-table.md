@@ -5,7 +5,7 @@ description: "CDE Groupe équipe vos hôtels et tables de restaurant avec le mei
 slug: "materiel-hotelier/art-de-la-table"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/art-de-la-table/"
 heading: "CDE Groupe équipe les restaurants et bars des complexes hôteliers"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2020/04/CDE-Groupe_artdelatable.jpg"
 wpId: 1243
 ---
 

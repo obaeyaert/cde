@@ -5,7 +5,7 @@ description: "Découvrez toute l'offre de literie proposée par nos partenaire
 slug: "materiel-hotelier/literie-hotel"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/literie-hotel/"
 heading: "Une offre complète de literie spéciale hôtellerie"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2020/04/CDE-Groupe_literie.jpg"
 wpId: 1253
 ---
 

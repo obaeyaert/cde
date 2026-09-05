@@ -5,7 +5,7 @@ description: "CDE Groupe équipe les hôtels en France métropolitaine depuis pl
 slug: "amenagement-et-equipement/equipement-hotel-france"
 canonical: "https://www.cdegroupe.com/amenagement-et-equipement/equipement-hotel-france/"
 heading: "CDE Groupe, fournisseur d’équipement hôtelier en France métropolitaine"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2020/04/CDE-Groupe_france.jpg"
 wpId: 1241
 ---
 

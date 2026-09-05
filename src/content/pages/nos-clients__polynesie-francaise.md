@@ -7,7 +7,7 @@ BORA BORA"
 slug: "nos-clients/polynesie-francaise"
 canonical: "https://www.cdegroupe.com/nos-clients/polynesie-francaise/"
 heading: "LA POLYNÉSIE FRANÇAISE"
-ogImage: "/media/2026/07/cde-logo2-white.png"
+ogImage: "/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-chambre-1.png"
 wpId: 1090
 ---
 

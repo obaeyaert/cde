@@ -24,6 +24,9 @@ for (const meta of idx) {
   // purge du bruit Avada / WP
   $('.rich-snippet-hidden, .fusion-meta-info, script, style, noscript, .awb-hide, .screen-reader-text').remove();
   $('[class*="fusion-separator"], .fusion-sep-clear').remove();
+  // Le formulaire Contact Form 7 est reconstruit par un composant Astro : ses libelles
+  // ne doivent pas rester dans le contenu, sinon ils apparaissent en double.
+  $('form, .wpcf7, .wpcf7-form, .screen-reader-response').remove();
   const body = $('.post-content').length ? $('.post-content') : $('#root');
   let html = body.html() ?? '';
   let md = td.turndown(html)

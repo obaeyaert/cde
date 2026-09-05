@@ -17,16 +17,6 @@ Devis, demandes d’informations, des précisions sur nos fournisseurs ou nos zo
 
 N’hésitez pas à faire appel à nous pour toutes demandes de renseignements, devis, catalogue produit, etc.
 
-Votre nom (obligatoire)  
-
-Votre adresse de messagerie (obligatoire)  
-
-Objet  
-
-Votre message  
-
-×
-
 CDE  
 COMPTOIR DISTRIBUTION EXPORTATION  
 6 rue Eugène Genet  
@@ -34,4 +24,4 @@ Place de la Passerelle
 69420 CONDRIEU  
 Téléphone: [+33 4 74 58 18 05](tel:+33474581805)  
 Email: [contact@cdegroupe.com](mailto:contact@cdegroupe.com)  
-Web: [cdegroupe.com](https://www.cdegroupe.com)
+Web: [cdegroupe.com](/)

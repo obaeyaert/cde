@@ -1,0 +1,94 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import ContactForm from '../components/ContactForm.astro';
+import Hero from '../components/Hero.astro';
+import { nav } from '../data/site';
+
+export async function getStaticPaths() {
+  // /marques-partenaires/ a sa propre page : la grille de logos ne se rend pas depuis du Markdown.
+  const pages = await getCollection('pages', ({ data }) => data.slug !== 'marques-partenaires');
+  return pages.map((page) => ({
+    params: { slug: page.data.slug === 'index' ? undefined : page.data.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+const d = page.data;
+
+/* Fil d'ariane déduit du menu : le libellé de la rubrique parente vient de la nav, pas du slug. */
+const segments = d.slug === 'index' ? [] : d.slug.split('/');
+const breadcrumbs = [{ name: 'Accueil', url: '/' }];
+if (segments.length > 1) {
+  const parent = nav.find((item) => item.children?.some((c) => c.href === `/${d.slug}/`));
+  if (parent) breadcrumbs.push({ name: parent.label, url: parent.href });
+}
+if (segments.length > 0) breadcrumbs.push({ name: d.title, url: `/${d.slug}/` });
+---
+
+<Base
+  metaTitle={d.metaTitle}
+  description={d.description}
+  canonical={d.canonical}
+  ogImage={d.ogImage}
+  breadcrumbs={breadcrumbs}
+>
+  {d.slug === 'index' && (
+    <Hero
+      image="/media/2015/02/slideshow-accueil.jpg"
+      title="C.D.E."
+      subtitle="Du concept à la réalisation"
+    />
+  )}
+
+  {breadcrumbs.length > 1 && (
+    <nav class="breadcrumb" aria-label="Fil d'ariane">
+      <div class="container">
+        <ol>
+          {breadcrumbs.map((b, i) => (
+            <li>
+              {i === breadcrumbs.length - 1
+                ? <span aria-current="page">{b.name}</span>
+                : <a href={b.url}>{b.name}</a>}
+            </li>
+          ))}
+        </ol>
+      </div>
+    </nav>
+  )}
+
+  <article class="container prose">
+    {d.heading && <h1>{d.heading}</h1>}
+    <Content />
+    {d.slug === 'contact' && <ContactForm />}
+  </article>
+</Base>
+
+<style>
+  .breadcrumb { background: var(--color-surface); border-bottom: 1px solid var(--color-border); font-size: 13px; }
+  .breadcrumb ol { display: flex; flex-wrap: wrap; gap: .5rem; list-style: none; margin: 0; padding: .85rem 0; }
+  .breadcrumb li + li::before { content: '\203A'; margin-right: .5rem; color: #9aa0a6; }
+  .breadcrumb [aria-current] { color: var(--color-heading); }
+
+  .prose { padding-block: 3rem 1rem; }
+</style>
+
+<style is:global>
+  /* Rendu du contenu Markdown issu des pages WordPress */
+  .prose > :first-child { margin-top: 0; }
+  .prose img { margin: 0 auto 2rem; border-radius: 2px; }
+  .prose h2 { margin-top: 2.2em; }
+  .prose h2:first-of-type { margin-top: 1.2em; }
+  .prose h3 em, .prose h3 i { font-style: italic; color: var(--color-text); font-weight: 400; }
+  .prose ul { list-style: none; padding-left: 0; }
+  .prose ul li { position: relative; padding-left: 1.5rem; }
+  .prose ul li::before {
+    content: ''; position: absolute; left: 0; top: .62em;
+    width: 7px; height: 7px; border-radius: 50%; background: var(--color-primary);
+  }
+  .prose strong { color: var(--color-heading); font-weight: 700; }
+  .prose table { width: 100%; border-collapse: collapse; margin-bottom: 2rem; }
+  .prose td, .prose th { border: 1px solid var(--color-border); padding: .6rem .8rem; }
+</style>

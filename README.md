@@ -24,23 +24,65 @@ formulaire. Rien ne justifiait un WordPress.
 
 ```sh
 npm install
-cp .env.example .env     # renseigner SMTP_PASS pour tester le formulaire
-npm run dev
+npm run dev          # http://localhost:4321 — aucune configuration nécessaire
 ```
+
+Pas besoin de `.env` pour travailler : sans SMTP configuré, le formulaire **affiche les
+mails dans les logs du serveur** au lieu d'échouer.
+
+### Le serveur de dev tourne en arrière-plan
+
+Astro 7 détache le serveur : `npm run dev` rend la main et **les logs ne s'affichent pas
+dans ton terminal**. D'où :
+
+| Commande | Rôle |
+|---|---|
+| `npm run dev` | démarre sur le port **4321**, fixe (il échoue plutôt que de glisser sur 4322) |
+| `npm run dev:logs` | **les logs du serveur** — c'est là que sortent les erreurs et les mails |
+| `npm run dev:status` | serveur en cours ? sur quel port ? |
+| `npm run dev:stop` | l'arrête |
+| `npm run dev:restart` | stop + start |
+
+Le port est volontairement strict : sinon Astro se rabat silencieusement sur le port
+suivant quand un serveur d'une session précédente traîne, et on débugge sans le savoir
+une version périmée. Si le démarrage échoue sur « port in use » : `npm run dev:stop`.
+
+Le rechargement à chaud fonctionne sur tout, y compris le Markdown de `src/content/pages/`.
+
+### Tester le formulaire
+
+Trois niveaux, du plus simple au plus proche du réel :
+
+```sh
+# 1. Rien à configurer — les deux mails s'affichent dans npm run dev:logs
+npm run dev
+
+# 2. Vraie boîte SMTP locale : teste nodemailer, l'authentification et l'encodage
+npm run dev:mail          # dans un autre terminal, écoute sur 127.0.0.1:2525
+#    puis .env : SMTP_HOST=127.0.0.1  SMTP_PORT=2525  SMTP_USER=dev  SMTP_PASS=dev
+
+# 3. Suite complète (validation, honeypot, 2 mails, injection d'en-tête)
+npm run verify:contact    # nécessite npm run dev et le .env du point 2
+```
+
+Aucun mail ne part vers l'extérieur dans ces trois modes.
+
+> `npm run preview` ne fonctionne pas avec l'adapter Vercel : utiliser `npm run dev`,
+> ou `vercel dev` pour approcher l'environnement de production.
 
 ## Scripts
 
 | Commande | Rôle |
 |---|---|
-| `npm run dev` | serveur de développement |
 | `npm run build` | build de production (sortie `.vercel/output/`) |
-| `npm run check` | vérification des types Astro/TypeScript |
+| `npm run check` | types Astro/TypeScript |
 | `npm run optimize:images` | réencode `public/media`, génère les variantes WebP et le manifeste des dimensions |
-| `npm run verify` | build + liens + parité avec l'ancien site |
-| `npm run verify:contact` | test du formulaire de bout en bout (SMTP factice, aucun mail réel) |
-
-`verify:contact` a besoin d'un `npm run dev` en cours et d'un `.env` pointant sur
-`127.0.0.1:2525`.
+| `npm run verify` | build + liens + parité + contenu + SEO |
+| `npm run verify:links` | aucun lien ni ressource en 404, aucune redirection morte |
+| `npm run verify:parity` | métadonnées identiques à l'ancien site |
+| `npm run verify:content` | **aucun mot du contenu perdu** face au WordPress |
+| `npm run verify:seo` | métadonnées, titres, images, données structurées, maillage |
+| `npm run verify:contact` | formulaire de bout en bout |
 
 ## Architecture
 
@@ -105,6 +147,23 @@ neutralisation des CRLF pour empêcher l'injection d'en-têtes.
 - 6 pages n'avaient aucun H1 : leur premier H2 a été promu. Le texte affiché est inchangé.
 - Deux liens internes étaient déjà morts côté WordPress (`/mobilier-interieur`,
   `/mobilier-interieur-hotellerie`) : réparés, et couverts par une redirection.
+- `og:image` est propre à chaque page (WordPress servait le logo partout), avec dimensions
+  et `og:image:alt` ; les balises Twitter sont complètes.
+- Une page 404 utile, en `noindex, follow`, qui renvoie vers les rubriques.
+- Les `alt` étaient des noms de fichiers (`Karibea-Beach-Resort-Gosier-bar`) : rendus
+  lisibles mécaniquement, sans rien inventer.
+- Hiérarchie des titres continue (un H5 isolé créait un saut H3 → H5).
+
+### Ce qui n'a volontairement pas été touché
+
+Le contenu rédactionnel reste celui du client. `npm run verify:seo` signale donc encore :
+
+- **18 meta descriptions de plus de 160 caractères** — elles seront tronquées dans les
+  résultats de recherche. Ce sont les descriptions Yoast d'origine : les raccourcir est une
+  décision éditoriale, pas technique.
+- **2 titles courts** (`Contact`, `Marques` — 20 caractères) : même raison.
+
+`npm run verify:content` garantit qu'aucun mot du contenu n'a bougé : 21/21 pages.
 
 ## Déploiement
 

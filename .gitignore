@@ -1,0 +1,14 @@
+node_modules/
+dist/
+.astro/
+.vercel/
+.env
+.env.*
+!.env.example
+
+# Données brutes extraites du WordPress : volumineuses et reproductibles.
+# Les scripts de migration, eux, sont versionnés.
+_source/*
+!_source/*.mjs
+!_source/urls.txt
+!_source/README.md

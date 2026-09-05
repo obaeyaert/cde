@@ -1,0 +1,126 @@
+---
+import { site } from '../data/site';
+const turnstileKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+---
+
+<section class="contact-form" aria-labelledby="form-title">
+  <h2 id="form-title">Nous écrire</h2>
+
+  <form id="contact" method="post" action="/api/contact/" novalidate>
+    <div class="field">
+      <label for="your-name">Votre nom <span aria-hidden="true">*</span></label>
+      <input type="text" id="your-name" name="your-name" required autocomplete="name" maxlength="120" />
+    </div>
+
+    <div class="field">
+      <label for="your-email">Votre adresse de messagerie <span aria-hidden="true">*</span></label>
+      <input type="email" id="your-email" name="your-email" required autocomplete="email" maxlength="180" />
+    </div>
+
+    <div class="field">
+      <label for="your-subject">Objet</label>
+      <input type="text" id="your-subject" name="your-subject" autocomplete="off" maxlength="180" />
+    </div>
+
+    <div class="field">
+      <label for="your-message">Votre message <span aria-hidden="true">*</span></label>
+      <textarea id="your-message" name="your-message" rows="8" required maxlength="5000"></textarea>
+    </div>
+
+    {/* Piège à robots : invisible et hors du flux de tabulation, doit rester vide */}
+    <div class="hp" aria-hidden="true">
+      <label for="company-website">Ne pas remplir</label>
+      <input type="text" id="company-website" name="company-website" tabindex="-1" autocomplete="off" />
+    </div>
+
+    {turnstileKey && <div class="cf-turnstile" data-sitekey={turnstileKey} data-language="fr"></div>}
+
+    <button type="submit">Envoyer</button>
+
+    <p class="status" role="status" aria-live="polite"></p>
+  </form>
+
+  <p class="fallback">
+    Le formulaire ne fonctionne pas ? Écrivez-nous directement à
+    <a href={`mailto:${site.email}`}>{site.email}</a> ou appelez le
+    <a href={`tel:${site.phoneHref}`}>{site.phone}</a>.
+  </p>
+</section>
+
+{turnstileKey && <script is:inline async src="https://challenges.cloudflare.com/turnstile/v0/api.js"></script>}
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('#contact');
+  const status = form?.querySelector<HTMLParagraphElement>('.status');
+  const button = form?.querySelector<HTMLButtonElement>('button[type=submit]');
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity() || !status || !button) return;
+
+    button.disabled = true;
+    status.textContent = 'Envoi en cours…';
+    status.className = 'status';
+
+    try {
+      const response = await fetch('/api/contact/', {
+        method: 'POST',
+        headers: { Accept: 'application/json' },
+        body: new FormData(form),
+      });
+      const payload = await response.json().catch(() => ({}));
+
+      if (response.ok) {
+        form.reset();
+        status.textContent = payload.message ?? 'Merci pour votre message. Il a été envoyé.';
+        status.className = 'status ok';
+      } else {
+        status.textContent =
+          payload.message ?? 'Une erreur s’est produite lors de l’envoi de votre message. Veuillez essayer à nouveau plus tard.';
+        status.className = 'status error';
+      }
+    } catch {
+      status.textContent = 'Une erreur s’est produite lors de l’envoi de votre message. Veuillez essayer à nouveau plus tard.';
+      status.className = 'status error';
+    } finally {
+      button.disabled = false;
+      // @ts-expect-error widget injecté par le script Turnstile
+      window.turnstile?.reset?.();
+    }
+  });
+</script>
+
+<style>
+  .contact-form { max-width: 680px; margin-block: 2.5rem 1rem; }
+  .field { margin-bottom: 1.35rem; }
+  label { display: block; margin-bottom: .4rem; color: var(--color-heading); font-size: 14px; }
+  label span { color: var(--color-primary); }
+  input, textarea {
+    width: 100%; font: inherit; font-size: 15px; color: var(--color-heading);
+    padding: .7rem .9rem; background: var(--color-surface);
+    border: 1px solid var(--color-border); border-radius: 2px;
+  }
+  input:focus, textarea:focus {
+    outline: none; border-color: var(--color-primary); background: #fff;
+    box-shadow: 0 0 0 3px rgb(43 160 163 / 15%);
+  }
+  textarea { resize: vertical; min-height: 160px; }
+
+  .hp { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+  button {
+    font: inherit; font-size: 15px; cursor: pointer;
+    background: var(--color-primary); color: #fff;
+    border: 0; border-radius: 2px; padding: .8rem 2.4rem;
+    transition: background .2s ease;
+  }
+  button:hover:not(:disabled) { background: var(--color-primary-dark); }
+  button:disabled { opacity: .6; cursor: progress; }
+
+  .status { margin: 1rem 0 0; font-size: 14px; min-height: 1.4em; }
+  .status.ok { color: #2e7d32; }
+  .status.error { color: #c0392b; }
+
+  .cf-turnstile { margin-bottom: 1.25rem; }
+  .fallback { font-size: 14px; color: #7a7d82; margin-top: 1.75rem; }
+</style>

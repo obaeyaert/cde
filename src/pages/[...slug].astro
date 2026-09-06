@@ -1,0 +1,122 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../layouts/Base.astro';
+import Hero from '../components/Hero.astro';
+import { nav } from '../data/site';
+
+export async function getStaticPaths() {
+  const pages = await getCollection('pages');
+  return pages.map((page) => ({
+    params: { slug: page.data.slug === 'index' ? undefined : page.data.slug },
+    props: { page },
+  }));
+}
+
+const { page } = Astro.props;
+const { Content } = await render(page);
+const d = page.data;
+
+/* Fil d'ariane pour les données structurées uniquement : le thème d'origine n'en affiche pas. */
+const segments = d.slug === 'index' ? [] : d.slug.split('/');
+const breadcrumbs = [{ name: 'Accueil', url: '/' }];
+if (segments.length > 1) {
+  const parent = nav.find((item) => item.children?.some((c) => c.href === `/${d.slug}/`));
+  if (parent) breadcrumbs.push({ name: parent.label, url: parent.href });
+}
+if (segments.length > 0) breadcrumbs.push({ name: d.title, url: `/${d.slug}/` });
+---
+
+<Base
+  metaTitle={d.metaTitle}
+  description={d.description}
+  canonical={d.canonical}
+  ogImage={d.ogImage}
+  breadcrumbs={breadcrumbs}
+>
+  {d.slug === 'index' && (
+    <Hero
+      image="/media/2015/02/slideshow-accueil.jpg"
+      title="C.D.E."
+      subtitle="Du concept à la réalisation"
+    />
+  )}
+  {d.slug === 'mentions-legales' && (
+    <Hero
+      image="/media/2015/02/slide-blog.jpg"
+      title="MENTIONS LEGALES"
+      subtitle="CDE"
+      align="left"
+      height="400px"
+      titleSize="50px"
+      subtitleSize="22px"
+      titleTag="h1"
+    />
+  )}
+
+  <div class="page-content">
+    <Content />
+  </div>
+</Base>
+
+<script>
+  /* Formulaire de contact : envoi en fetch, retour affiché sous le bouton. */
+  const form = document.querySelector<HTMLFormElement>('#contact');
+  if (form) {
+    const status = form.querySelector<HTMLParagraphElement>('.status')!;
+    const button = form.querySelector<HTMLButtonElement>('button[type=submit]')!;
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      if (!form.reportValidity()) return;
+      button.disabled = true;
+      status.textContent = 'Envoi en cours…';
+      status.className = 'status';
+      try {
+        const response = await fetch('/api/contact/', { method: 'POST', headers: { Accept: 'application/json' }, body: new FormData(form) });
+        const payload = await response.json().catch(() => ({}));
+        if (response.ok) form.reset();
+        status.textContent = payload.message ?? (response.ok ? 'Merci pour votre message. Il a été envoyé.' : 'Une erreur s’est produite lors de l’envoi de votre message. Veuillez essayer à nouveau plus tard.');
+        status.className = response.ok ? 'status ok' : 'status error';
+      } catch {
+        status.textContent = 'Une erreur s’est produite lors de l’envoi de votre message. Veuillez essayer à nouveau plus tard.';
+        status.className = 'status error';
+      } finally {
+        button.disabled = false;
+      }
+    });
+  }
+
+  /* Carrousels des cartes Réalisations : reprise du flexslider d'Avada (fondu, points). */
+  for (const slider of document.querySelectorAll<HTMLElement>('[data-slider]')) {
+    const slides = [...slider.querySelectorAll<HTMLElement>('.awb-slide')];
+    if (slides.length < 2) continue;
+
+    const nav = document.createElement('div');
+    nav.className = 'awb-slider-nav';
+    const dots = slides.map((_, i) => {
+      const b = document.createElement('button');
+      b.type = 'button';
+      b.setAttribute('aria-label', `Photo ${i + 1} sur ${slides.length}`);
+      b.addEventListener('click', () => show(i, true));
+      nav.append(b);
+      return b;
+    });
+    slider.append(nav);
+
+    let current = 0;
+    let timer: number | undefined;
+    const show = (i: number, manual = false) => {
+      current = (i + slides.length) % slides.length;
+      slides.forEach((s, k) => s.toggleAttribute('data-active', k === current));
+      dots.forEach((b, k) => b.toggleAttribute('aria-current', k === current));
+      if (manual) restart();
+    };
+    const restart = () => {
+      window.clearInterval(timer);
+      timer = window.setInterval(() => show(current + 1), 5000);
+    };
+    show(0);
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) restart();
+    slider.addEventListener('mouseenter', () => window.clearInterval(timer));
+    slider.addEventListener('mouseleave', restart);
+  }
+</script>

@@ -1,0 +1,58 @@
+---
+import { site } from '../data/site';
+const year = new Date().getFullYear();
+
+/* Pied de page Avada relevé sur l'original : une colonne de 570 px (titre de widget en
+   Montserrat, coordonnées, puis le texte de présentation), et une barre de copyright
+   avec téléphone et mail à droite. */
+---
+
+<div class="site-footer">
+  <div class="container widgets">
+    <div class="widget">
+      <h2 class="widget-title">{site.legalName}</h2>
+      <p class="address">{site.address.street}, {site.address.postalCode} {site.address.city.toUpperCase()}</p>
+      <p>Téléphone : <a href={`tel:${site.phoneHref}`}>{site.phone}</a></p>
+      <p>Web : <a href="/contact/">Contactez-nous</a></p>
+    </div>
+    <div class="widget">
+      <p>{site.tagline}</p>
+    </div>
+  </div>
+
+  <div class="copyright">
+    <div class="container copy-row">
+      <span>
+        CDE © Copyright {site.since} - {year} | Réalisé par <a href="https://www.w4w.io" target="_blank" rel="noopener noreferrer">W4W</a> |
+        <a href="/mentions-legales/">Mentions légales</a>
+      </span>
+      <span class="contact-inline">
+        <a href={`tel:${site.phoneHref}`}><span class="icon icon-phone" aria-hidden="true"></span> {site.phone}</a>
+        <a class="mail" href={`mailto:${site.email}`}><span class="icon icon-envelope" aria-hidden="true"></span> Nous envoyer un mail</a>
+      </span>
+    </div>
+  </div>
+</div>
+
+<style>
+  .site-footer { background: var(--color-footer-bg); color: var(--color-text); margin-top: 45px; }
+  .widgets { padding: 48px 20px 40px; }
+  @media (min-width: 1210px) { .widgets { padding-inline: 0; } }
+  .widget { max-width: 570px; }
+  .widget + .widget { margin-top: 34px; }
+  .widget-title {
+    font-family: var(--font-widget); font-size: 18px; font-weight: 400; line-height: 27px;
+    text-transform: uppercase; color: #fff; margin: 0 0 28px;
+  }
+  .widget p { margin: 0; font-size: 15px; line-height: var(--body-lh); }
+  .site-footer a { color: var(--color-footer-link); }
+  .site-footer a:hover { color: #fff; }
+
+  .copyright { background: var(--color-copyright-bg); font-size: 12px; line-height: 30px; }
+  .copy-row { display: flex; flex-wrap: wrap; gap: 6px 24px; justify-content: space-between; padding: 6px 20px 15px; }
+  @media (min-width: 1210px) { .copy-row { padding-inline: 0; } }
+  .contact-inline { display: flex; gap: 36px; color: #fff; }
+  .contact-inline a { color: #fff; }
+  .contact-inline .mail { text-transform: uppercase; }
+  .icon { width: 1em; margin-right: 2px; }
+</style>

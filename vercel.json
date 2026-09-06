@@ -1,0 +1,244 @@
+{
+  "redirects": [
+    {
+      "source": "/nos-clients/",
+      "destination": "/nos-clients/les-antilles/",
+      "permanent": true
+    },
+    {
+      "source": "/author/admin_comptoir/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/equipement-hotel-caraibes/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-caraibes/",
+      "permanent": true
+    },
+    {
+      "source": "/equipement-hotel-france/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-france/",
+      "permanent": true
+    },
+    {
+      "source": "/equipement-hotel-ocean-indien/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-ocean-indien/",
+      "permanent": true
+    },
+    {
+      "source": "/equipement-hotel-afrique/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-afrique/",
+      "permanent": true
+    },
+    {
+      "source": "/equipement-hotel-polynesie-francaise/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-polynesie-francaise/",
+      "permanent": true
+    },
+    {
+      "source": "/zones-de-livraisons/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-ocean-indien/",
+      "permanent": true
+    },
+    {
+      "source": "/zones-de-livraison/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-ocean-indien/",
+      "permanent": true
+    },
+    {
+      "source": "/linge-hotel/",
+      "destination": "/materiel-hotelier/linge-hotel/",
+      "permanent": true
+    },
+    {
+      "source": "/produit-d-accueil-hotel/",
+      "destination": "/materiel-hotelier/produit-d-accueil-hotel/",
+      "permanent": true
+    },
+    {
+      "source": "/art-de-la-table/",
+      "destination": "/materiel-hotelier/art-de-la-table/",
+      "permanent": true
+    },
+    {
+      "source": "/mobilier-interieur-hotel/",
+      "destination": "/materiel-hotelier/mobilier-interieur-hotel/",
+      "permanent": true
+    },
+    {
+      "source": "/mobilier-exterieur-hotellerie/",
+      "destination": "/materiel-hotelier/mobilier-exterieur-hotellerie/",
+      "permanent": true
+    },
+    {
+      "source": "/accessoire-de-salle-de-bain-hotel/",
+      "destination": "/materiel-hotelier/accessoire-de-salle-de-bain-hotel/",
+      "permanent": true
+    },
+    {
+      "source": "/tissu-d-ameublement-hotel/",
+      "destination": "/materiel-hotelier/tissu-d-ameublement-hotel/",
+      "permanent": true
+    },
+    {
+      "source": "/literie-hotel/",
+      "destination": "/materiel-hotelier/literie-hotel/",
+      "permanent": true
+    },
+    {
+      "source": "/zones-de-livraisons/equipement-hotel-caraibes/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-caraibes/",
+      "permanent": true
+    },
+    {
+      "source": "/zones-de-livraisons/equipement-hotel-france/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-france/",
+      "permanent": true
+    },
+    {
+      "source": "/zones-de-livraisons/equipement-hotel-ocean-indien/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-ocean-indien/",
+      "permanent": true
+    },
+    {
+      "source": "/zones-de-livraisons/equipement-hotel-afrique/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-afrique/",
+      "permanent": true
+    },
+    {
+      "source": "/zones-de-livraisons/equipement-hotel-polynesie-francaise/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-polynesie-francaise/",
+      "permanent": true
+    },
+    {
+      "source": "/amenagement-et-equipement/dans-les-caraibes/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-caraibes/",
+      "permanent": true
+    },
+    {
+      "source": "/amenagement-et-equipement/en-afrique/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-afrique/",
+      "permanent": true
+    },
+    {
+      "source": "/amenagement-et-equipement/dans-l-ocean-indien/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-ocean-indien/",
+      "permanent": true
+    },
+    {
+      "source": "/amenagement-et-equipement/en-polynesie-francaise/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-polynesie-francaise/",
+      "permanent": true
+    },
+    {
+      "source": "/amenagement-et-equipement/en-france/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-france/",
+      "permanent": true
+    },
+    {
+      "source": "/materiel-hotelier/",
+      "destination": "/materiel-hotelier/linge-hotel/",
+      "permanent": true
+    },
+    {
+      "source": "/amenagement-et-equipement/",
+      "destination": "/amenagement-et-equipement/equipement-hotel-ocean-indien/",
+      "permanent": true
+    },
+    {
+      "source": "/element_category/columns/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/element_category/elements/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/element_category/sections/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/faq-items/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/mobilier-interieur/",
+      "destination": "/materiel-hotelier/mobilier-interieur-hotel/",
+      "permanent": true
+    },
+    {
+      "source": "/mobilier-interieur-hotellerie/",
+      "destination": "/materiel-hotelier/mobilier-interieur-hotel/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-admin",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/wp-login.php",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/feed/",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/author/:slug*",
+      "destination": "/",
+      "permanent": true
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "SAMEORIGIN"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=63072000; includeSubDomains; preload"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ]
+    },
+    {
+      "source": "/fonts/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    },
+    {
+      "source": "/media/(.*)",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=31536000, immutable"
+        }
+      ]
+    }
+  ]
+}

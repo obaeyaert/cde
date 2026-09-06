@@ -1,0 +1,49 @@
+{
+  "name": "cdegroupe",
+  "type": "module",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "astro dev",
+    "dev:stop": "astro dev stop",
+    "dev:status": "astro dev status",
+    "dev:logs": "astro dev logs",
+    "dev:restart": "astro dev stop; astro dev",
+    "dev:mail": "node scripts/dev-mail.mjs",
+    "build": "astro build",
+    "preview": "astro preview",
+    "check": "astro check",
+    "optimize:images": "node scripts/optimize-images.mjs",
+    "verify:links": "node _source/check-links.mjs",
+    "verify:parity": "node _source/parity.mjs",
+    "verify:contact": "node _source/test-contact.mjs",
+    "verify": "npm run build && npm run verify:links && npm run verify:parity && npm run verify:content && npm run verify:seo",
+    "verify:seo": "node _source/seo-audit.mjs",
+    "verify:content": "node _source/content-diff.mjs",
+    "content:build": "cd _source && node tohtml.mjs && node build-content.mjs",
+    "verify:visual": "node _source/shots.mjs && node _source/compare.mjs"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4",
+    "@astrojs/vercel": "^11.0.10",
+    "astro": "^7.3.1",
+    "nodemailer": "^10.0.0",
+    "sharp": "^0.35.4",
+    "zod": "^4.5.4"
+  },
+  "devDependencies": {
+    "@astrojs/check": "^0.9.10",
+    "@types/nodemailer": "^8.0.1",
+    "cheerio": "^1.2.0",
+    "mailparser": "^3.9.20",
+    "playwright-core": "^1.63.0",
+    "smtp-server": "^3.19.7",
+    "typescript": "^6.0.3"
+  },
+  "allowScripts": {
+    "esbuild@0.28.2": true
+  },
+  "engines": {
+    "node": ">=20 <25"
+  }
+}

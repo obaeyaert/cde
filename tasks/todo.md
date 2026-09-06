@@ -49,19 +49,22 @@ Rejouer : `npm run verify`, `npm run verify:visual` (+ `npm run verify:contact` 
 
 ## ⬜ Phase 6 — Déploiement et bascule
 
-- [ ] Pousser le dépôt sur Forgejo (ou GitHub selon ce que Vercel doit lire).
-- [ ] Créer le projet Vercel, preset Astro, brancher le dépôt.
+- [x] Dépôt poussé sur GitHub : https://github.com/obaeyaert/cde (`main` vide + branche
+      `feat/migration-wordpress-to-astro`). PR à ouvrir/merger à la main.
+- [x] Préversion anonyme testée le 06/09 (pages, 301, 404, en-têtes, cache, API) :
+      `npx vercel deploy --temporary --yes`.
+- [ ] `npx vercel login` puis `npx vercel link` (ou import du dépôt GitHub depuis vercel.com :
+      chaque push sur la branche donnera une préversion, le merge dans `main` une production).
 - [ ] **Régénérer le mot de passe SMTP OVH** de `contact@cdegroupe.com` — l'ancien est en
       clair dans `wp_options` et a été exposé en console le 05/09. Le nouveau ne va que dans
-      les variables d'environnement Vercel.
-- [ ] Renseigner `SMTP_USER` / `SMTP_PASS` dans Vercel (et Turnstile si on l'active).
-- [ ] Recette sur l'URL de preview : les 21 pages, le rendu mobile, **un envoi réel de
-      formulaire reçu dans la boîte**, quelques redirections.
+      les variables d'environnement Vercel (scopes Preview et Production).
+- [ ] Recette sur la préversion : 21 pages + 404, mobile, quelques 301, **un envoi réel de
+      formulaire reçu dans la boîte**.
 - [ ] **Abaisser le TTL DNS à 300 s au moins 24 h avant la bascule.**
-- [ ] Ajouter `cdegroupe.com` et `www.cdegroupe.com` dans Vercel, laisser émettre le certificat.
-- [ ] Vérifier que Vercel redirige bien l'apex vers `www` (comportement actuel à préserver).
-- [ ] Basculer les enregistrements DNS. **Ne pas éteindre le Lightsail** : le rollback
-      consiste à revenir sur l'IP de l'instance Lightsail.
+- [ ] Ajouter `cdegroupe.com` et `www.cdegroupe.com` dans Vercel, laisser émettre le certificat ;
+      configurer la redirection apex → `www` (comportement actuel).
+- [ ] Merger la PR → production Vercel. Basculer les enregistrements DNS. **Ne pas éteindre le
+      Lightsail** : le rollback consiste à revenir sur l'IP de l'instance.
 - [ ] Contrôler la propagation, le HTTPS, puis remonter le TTL.
 - [ ] Search Console : soumettre le sitemap, surveiller couverture et 404 pendant 2 semaines.
 

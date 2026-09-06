@@ -12,3 +12,4 @@ _source/*
 !_source/*.mjs
 !_source/urls.txt
 !_source/README.md
+.vercel

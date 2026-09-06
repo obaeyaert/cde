@@ -185,10 +185,43 @@ Le contenu rédactionnel reste celui du client. `npm run verify:seo` signale don
 
 ## Déploiement
 
-Projet Vercel branché sur ce dépôt, preset Astro, sortie `.vercel/output/`. `vercel.json`
-porte les redirections, les en-têtes de sécurité (HSTS, `X-Content-Type-Options`,
-`Referrer-Policy`, `X-Frame-Options`, `Permissions-Policy`) et le cache immuable sur
-`/media` et `/fonts`.
+Vercel, preset Astro (détecté), sortie Build Output API dans `.vercel/output/` : pages
+statiques + une fonction `nodejs24.x` (`maxDuration: 15`) pour `/api/contact/`. `vercel.json`
+porte les 39 redirections **301**, les en-têtes de sécurité (HSTS, `X-Content-Type-Options`,
+`Referrer-Policy`, `X-Frame-Options`, `Permissions-Policy`) et le cache immuable sur `/media`
+et `/fonts`. `.vercelignore` empêche les 700 Mo de `_source/` de partir avec un déploiement CLI.
+
+La CLI est une dépendance de dev : `npx vercel …`.
+
+```sh
+npx vercel login                 # une fois, interactif (navigateur)
+npx vercel link                  # rattache le dossier au projet Vercel (crée .vercel/, ignoré)
+npm run deploy:preview           # URL de préversion, noindex automatique
+npm run deploy:prod              # production — après recette et bascule DNS uniquement
+```
+
+Sans compte : `npx vercel deploy --temporary --yes` crée une préversion anonyme valable une
+heure, réclamable ensuite dans un compte via le lien affiché.
+
+### Variables d'environnement
+
+À renseigner dans Vercel (Settings → Environment Variables), jamais dans le dépôt :
+
+| Variable | Scope | Note |
+|---|---|---|
+| `SMTP_USER`, `SMTP_PASS` | Preview + Production | boîte OVH `contact@cdegroupe.com`, **mot de passe régénéré** |
+| `SMTP_HOST`, `SMTP_PORT` | facultatif | défaut `ssl0.ovh.net:465` |
+| `PUBLIC_TURNSTILE_SITE_KEY`, `TURNSTILE_SECRET_KEY` | facultatif | sans elles, seul le honeypot protège |
+
+Sans `SMTP_*`, la fonction répond 500 avec le message visiteur — c'est l'état d'une
+préversion fraîchement déployée, pas un bug.
+
+### Recette sur la préversion
+
+- les 21 pages et la 404, desktop et mobile ;
+- quelques redirections (`/nos-clients/`, `/linge-hotel/`, `/wp-admin`) → 301 ;
+- **un envoi réel du formulaire, reçu dans la boîte** `contact@cdegroupe.com` ;
+- `curl -I` : HSTS, `X-Robots-Tag: noindex` (préversion), cache des médias.
 
 **La bascule DNS et l'extinction du Lightsail restent des opérations manuelles.**
 Voir `tasks/todo.md`.

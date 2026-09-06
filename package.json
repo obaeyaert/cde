@@ -21,7 +21,9 @@
     "verify:seo": "node _source/seo-audit.mjs",
     "verify:content": "node _source/content-diff.mjs",
     "content:build": "cd _source && node tohtml.mjs && node build-content.mjs",
-    "verify:visual": "node _source/shots.mjs && node _source/compare.mjs"
+    "verify:visual": "node _source/shots.mjs && node _source/compare.mjs",
+    "deploy:preview": "vercel deploy",
+    "deploy:prod": "vercel deploy --prod"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",
@@ -38,7 +40,8 @@
     "mailparser": "^3.9.20",
     "playwright-core": "^1.63.0",
     "smtp-server": "^3.19.7",
-    "typescript": "^6.0.3"
+    "typescript": "^6.0.3",
+    "vercel": "^59.11.7"
   },
   "allowScripts": {
     "esbuild@0.28.2": true

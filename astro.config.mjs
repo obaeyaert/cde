@@ -10,7 +10,7 @@ export default defineConfig({
   server: { port: 4321 },
   vite: { server: { strictPort: true } },
   devToolbar: { enabled: false },
-  adapter: vercel({ imageService: false }),
+  adapter: vercel({ imageService: false, maxDuration: 15 }),
   trailingSlash: 'always',
   build: { format: 'directory' },
   integrations: [

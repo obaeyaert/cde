@@ -3,197 +3,197 @@
     {
       "source": "/nos-clients/",
       "destination": "/nos-clients/les-antilles/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/author/admin_comptoir/",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/equipement-hotel-caraibes/",
       "destination": "/amenagement-et-equipement/equipement-hotel-caraibes/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/equipement-hotel-france/",
       "destination": "/amenagement-et-equipement/equipement-hotel-france/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/equipement-hotel-ocean-indien/",
       "destination": "/amenagement-et-equipement/equipement-hotel-ocean-indien/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/equipement-hotel-afrique/",
       "destination": "/amenagement-et-equipement/equipement-hotel-afrique/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/equipement-hotel-polynesie-francaise/",
       "destination": "/amenagement-et-equipement/equipement-hotel-polynesie-francaise/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/zones-de-livraisons/",
       "destination": "/amenagement-et-equipement/equipement-hotel-ocean-indien/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/zones-de-livraison/",
       "destination": "/amenagement-et-equipement/equipement-hotel-ocean-indien/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/linge-hotel/",
       "destination": "/materiel-hotelier/linge-hotel/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/produit-d-accueil-hotel/",
       "destination": "/materiel-hotelier/produit-d-accueil-hotel/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/art-de-la-table/",
       "destination": "/materiel-hotelier/art-de-la-table/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/mobilier-interieur-hotel/",
       "destination": "/materiel-hotelier/mobilier-interieur-hotel/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/mobilier-exterieur-hotellerie/",
       "destination": "/materiel-hotelier/mobilier-exterieur-hotellerie/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/accessoire-de-salle-de-bain-hotel/",
       "destination": "/materiel-hotelier/accessoire-de-salle-de-bain-hotel/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/tissu-d-ameublement-hotel/",
       "destination": "/materiel-hotelier/tissu-d-ameublement-hotel/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/literie-hotel/",
       "destination": "/materiel-hotelier/literie-hotel/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/zones-de-livraisons/equipement-hotel-caraibes/",
       "destination": "/amenagement-et-equipement/equipement-hotel-caraibes/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/zones-de-livraisons/equipement-hotel-france/",
       "destination": "/amenagement-et-equipement/equipement-hotel-france/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/zones-de-livraisons/equipement-hotel-ocean-indien/",
       "destination": "/amenagement-et-equipement/equipement-hotel-ocean-indien/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/zones-de-livraisons/equipement-hotel-afrique/",
       "destination": "/amenagement-et-equipement/equipement-hotel-afrique/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/zones-de-livraisons/equipement-hotel-polynesie-francaise/",
       "destination": "/amenagement-et-equipement/equipement-hotel-polynesie-francaise/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/amenagement-et-equipement/dans-les-caraibes/",
       "destination": "/amenagement-et-equipement/equipement-hotel-caraibes/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/amenagement-et-equipement/en-afrique/",
       "destination": "/amenagement-et-equipement/equipement-hotel-afrique/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/amenagement-et-equipement/dans-l-ocean-indien/",
       "destination": "/amenagement-et-equipement/equipement-hotel-ocean-indien/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/amenagement-et-equipement/en-polynesie-francaise/",
       "destination": "/amenagement-et-equipement/equipement-hotel-polynesie-francaise/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/amenagement-et-equipement/en-france/",
       "destination": "/amenagement-et-equipement/equipement-hotel-france/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/materiel-hotelier/",
       "destination": "/materiel-hotelier/linge-hotel/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/amenagement-et-equipement/",
       "destination": "/amenagement-et-equipement/equipement-hotel-ocean-indien/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/element_category/columns/",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/element_category/elements/",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/element_category/sections/",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/faq-items/",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/mobilier-interieur/",
       "destination": "/materiel-hotelier/mobilier-interieur-hotel/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/mobilier-interieur-hotellerie/",
       "destination": "/materiel-hotelier/mobilier-interieur-hotel/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/wp-admin",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/wp-login.php",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/feed/",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     },
     {
       "source": "/author/:slug*",
       "destination": "/",
-      "permanent": true
+      "statusCode": 301
     }
   ],
   "headers": [

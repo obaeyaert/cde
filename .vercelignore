@@ -1,0 +1,9 @@
+# Le déploiement CLI téléverse le dossier : rien de tout ceci ne doit partir chez Vercel.
+_source/
+node_modules/
+.astro/
+dist/
+.vercel/
+.env
+.env.*
+tasks/

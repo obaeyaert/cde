@@ -44,7 +44,8 @@ const raw = [
   ['/author/:slug*', '/'],
 ];
 const cfg = {
-  redirects: raw.map(([source, destination]) => ({ source, destination, permanent: true })),
+  // statusCode explicite : "permanent: true" donne un 308 chez Vercel, l'original repond 301
+  redirects: raw.map(([source, destination]) => ({ source, destination, statusCode: 301 })),
   headers: [
     { source: '/(.*)', headers: [
       { key: 'X-Content-Type-Options', value: 'nosniff' },

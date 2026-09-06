@@ -82,40 +82,50 @@ Aucun mail ne part vers l'extérieur dans ces trois modes.
 | `npm run verify:parity` | métadonnées identiques à l'ancien site |
 | `npm run verify:content` | **aucun mot du contenu perdu** face au WordPress |
 | `npm run verify:seo` | métadonnées, titres, images, données structurées, maillage |
+| `npm run verify:visual` | captures WP et Astro côte à côte + score de différence pixel par page |
 | `npm run verify:contact` | formulaire de bout en bout |
+| `npm run content:build` | rejoue la conversion WordPress → contenu (tant que la source est en ligne) |
 
 ## Architecture
 
 ```
 src/
-  content/pages/      les 21 pages en Markdown + frontmatter (titre, meta, canonical)
+  content/pages/      les 21 pages : frontmatter (titre, meta, canonical) + corps HTML
+                      qui préserve la mise en page Avada (sections, lignes, colonnes)
   content.config.ts   schéma Zod de la collection
   pages/
-    [...slug].astro   rend toutes les pages depuis la collection
-    marques-partenaires/  page à part : grille des 68 logos partenaires
+    [...slug].astro   rend toutes les pages ; bandeau sur l'accueil et les mentions légales ;
+                      scripts du formulaire et des carrousels
+    404.astro
     api/contact.ts    endpoint du formulaire (Vercel Function, runtime Node)
-  components/         Header, Footer, Hero, ContactForm
+  components/         Header (collant, comme l'original), Footer, Hero
   layouts/Base.astro  <head>, SEO, JSON-LD (Organization, WebSite, WebPage, BreadcrumbList)
+  styles/global.css   charte relevée dans le navigateur (getComputedStyle) + mise en page .awb-*
   data/site.ts        coordonnées et menu
-  generated/          produits par les scripts — ne pas éditer à la main
+  generated/          manifeste des images — ne pas éditer à la main
 scripts/
-  optimize-images.mjs images : redimensionnement, WebP, manifeste des dimensions
-  rehype-picture.mjs  transforme les <img> Markdown en <picture> responsive
-_source/              scripts de migration + données brutes (voir _source/README.md)
+  optimize-images.mjs images : redimensionnement, variantes WebP, manifeste des dimensions
+  dev-mail.mjs        boîte SMTP locale pour tester le formulaire
+_source/              conversion WordPress → Astro et vérifications (voir _source/README.md)
 ```
 
 ### Modifier le contenu
 
-Un fichier Markdown par page dans `src/content/pages/`. Le frontmatter porte le SEO
-(`metaTitle`, `description`, `canonical`) ; `heading` est le H1 affiché. Le `slug` détermine
-l'URL — **le changer casse le référencement**, il faut alors ajouter une redirection dans
-`_source/gen-vercel.mjs` puis relancer `node _source/gen-vercel.mjs`.
+Un fichier par page dans `src/content/pages/`. Le frontmatter porte le SEO (`metaTitle`,
+`description`, `canonical`, `ogImage`). Le corps est du **HTML** : c'est le prix de la fidélité
+au page-builder — un texte se corrige directement dans le `<p>` concerné. Les conteneurs
+`.awb-section` / `.awb-row` / `.awb-col` portent la mise en page en variables CSS (`--w`,
+`--mr`, `--pt`…) reprises telles quelles de l'original.
+
+Le `slug` détermine l'URL — **le changer casse le référencement**, il faut alors ajouter une
+redirection dans `_source/gen-vercel.mjs` puis relancer `node _source/gen-vercel.mjs`.
 
 ### Images
 
 Déposer l'original dans `public/media/<année>/<mois>/`, puis `npm run optimize:images`.
-Le script produit les variantes WebP (480/800/1600) et les dimensions ; le plugin rehype
-pose `srcset`, `sizes`, `width` et `height` automatiquement. Aucune balise à écrire à la main.
+Le script produit les variantes WebP (480/800/1600) et le manifeste des dimensions. Dans le
+contenu, écrire un `<picture>` comme ceux déjà présents (le convertisseur les génère depuis
+le manifeste : `srcset`, `sizes`, `width`, `height`).
 
 ### Formulaire de contact
 
@@ -153,6 +163,14 @@ neutralisation des CRLF pour empêcher l'injection d'en-têtes.
 - Les `alt` étaient des noms de fichiers (`Karibea-Beach-Resort-Gosier-bar`) : rendus
   lisibles mécaniquement, sans rien inventer.
 - Hiérarchie des titres continue (un H5 isolé créait un saut H3 → H5).
+
+### Fidélité visuelle
+
+Mesurée, pas estimée : `npm run verify:visual` capture les 21 pages des deux côtés en
+1440 px et calcule un score de différence pixel. Résultat au 06/09/2026 : **hauteurs à ±1,1 %**
+sur toutes les pages, 2 à 3 % de pixels différents sur les pages texte, 6 à 9 % sur les pages
+photo (recompression WebP, carrousels). Les valeurs de la charte (tailles, interlignages,
+marges, largeurs de colonnes, en-tête collant) viennent de `getComputedStyle` sur l'original.
 
 ### Ce qui n'a volontairement pas été touché
 

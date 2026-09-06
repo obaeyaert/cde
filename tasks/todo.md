@@ -1,6 +1,6 @@
 # Migration cdegroupe.com — WordPress/Lightsail → Astro/Vercel
 
-> État au 2026-09-05. Phases 1 à 5 **terminées et vérifiées**.
+> État au 2026-09-06. Phases 1 à 5 **terminées et vérifiées** (repasse de fidélité visuelle faite).
 > Restent la bascule DNS et le décommissionnement : opérations manuelles.
 
 ## Contexte
@@ -9,7 +9,7 @@ Site vitrine **CDE Groupe** — équipement hôtelier. WordPress 7.0.4 + Avada s
 Lightsail nano 512 Mo. L'OOM killer tue `mysqld` (panne du 27/08/2026, site down jusqu'au
 redémarrage manuel du 05/09). Problème structurel : il se reproduira.
 
-**Décisions actées** : contenu en Markdown versionné (pas de CMS), reproduction fidèle du
+**Décisions actées** : contenu versionné dans le dépôt (pas de CMS), reproduction fidèle du
 design, formulaire via Vercel Function Node → SMTP OVH conservé.
 
 **Accès serveur** (lecture seule tant que la bascule n'est pas faite) :
@@ -39,10 +39,11 @@ ssh -i <clé Lightsail> bitnami@<IP de l'instance>   # coordonnées hors dépôt
 | Parité avec l'ancien site (21 pages) | **0 écart** — title, description, canonical, H1, volume de texte |
 | Liens internes et ressources | **0 lien mort**, 0 redirection morte |
 | Formulaire de bout en bout | **11/11** — validation, honeypot, 2 mails, Reply-To, injection d'en-tête |
-| Poids d'une page type | 2,2 Mo → **122 Ko** |
+| Fidélité visuelle (06/09) | hauteurs à **±1,1 %** sur 21 pages ; 2–3 % de pixels différents (texte), 6–9 % (photos) |
+| Poids d'une page type | 2,2 Mo → **~125 Ko** |
 | Médias | 676 Mo → **30 Mo** |
 
-Rejouer : `npm run verify` (+ `npm run verify:contact` avec `npm run dev` en cours).
+Rejouer : `npm run verify`, `npm run verify:visual` (+ `npm run verify:contact` avec `npm run dev` en cours).
 
 ---
 

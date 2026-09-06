@@ -6,112 +6,51 @@ Ce territoire d'outre-mer abrite plus d'une centaine d'îles dans le Pacifique s
 BORA BORA"
 slug: "nos-clients/polynesie-francaise"
 canonical: "https://www.cdegroupe.com/nos-clients/polynesie-francaise/"
-heading: "LA POLYNÉSIE FRANÇAISE"
 ogImage: "/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-chambre-1.png"
 wpId: 1090
 ---
 
-Ce territoire d’outre-mer abrite plus d’une centaine d’îles dans le Pacifique sud. Des Marquises aux Gambiers ce TOM est réputé pour ses plages paradisiaques et ses immenses cascades.
-
-## BORA **BORA**
-
-### _Île Sous-le-Vent de l’archipel de la Société_
-
--   ![InterContinental Bora Bora Resort & Thalasso Spa - chambre 1](/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-chambre-1.png)
-    
--   ![InterContinental Bora Bora Resort & Thalasso Spa - chambre 2](/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-chambre-2.png)
-    
--   ![InterContinental Bora Bora Resort & Thalasso Spa - restaurant 1](/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-restaurant-1.png)
-    
--   ![InterContinental Bora Bora Resort & Thalasso Spa - restaurant 2](/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-restaurant-2.png)
-    
-
-#### [InterContinental Bora Bora Resort & Thalasso Spa](https://thalasso.intercontinental.com/fr "InterContinental Bora Bora Resort & Thalasso Spa")
-
--   Les espaces équipés par C.D.E.
--   Piscine
--   Restaurant
--   Chambre
-
--   ![InterContinental Bora Bora Le Moana Resort - plage 1](/media/2019/05/InterContinental-Bora-Bora-Le-Moana-Resort-plage-1.png)
-    
--   ![InterContinental Bora Bora Le Moana Resort - plage 2](/media/2019/05/InterContinental-Bora-Bora-Le-Moana-Resort-plage-2.png)
-    
-
-#### [InterContinental Bora Bora Le Moana Resort](https://www.ihg.com/intercontinental/hotels/fr/fr/bora-bora/bobpf/hoteldetail?cm_mmc=GoogleMaps-_-IC-_-PF-_-BOBPF "InterContinental Bora Bora Le Moana Resort")
-
--   Les espaces équipés par C.D.E.
--   Plage
-
--   ![The St. Regis Bora Bora Resort - plage](/media/2019/05/The-St.-Regis-Bora-Bora-Resort-plage.png)
-    
--   ![The St. Regis Bora Bora Resort - terrasse](/media/2019/05/The-St.-Regis-Bora-Bora-Resort-terrasse.png)
-    
-
-#### [The St. Regis Bora Bora Resort](https://www.marriott.com/hotels/travel/bobxr-the-st-regis-bora-bora-resort/ "The St. Regis Bora Bora Resort")
-
--   Les espaces équipés par C.D.E.
--   Plage
--   Terrasse
-
--   ![Bora Bora Pearl Beach Resort & Spa - plage](/media/2019/05/Bora-Bora-Pearl-Beach-Resort-Spa-plage.png)
-    
--   ![Bora Bora Pearl Beach Resort & Spa - restaurant](/media/2019/05/Bora-Bora-Pearl-Beach-Resort-Spa-restaurant.jpg)
-    
-
-#### [Bora Bora Pearl Beach Resort & Spa](https://www.boraborapearlbeachresort.com/ "Bora Bora Pearl Beach Resort & Spa")
-
--   Les espaces équipés par C.D.E.
--   Plage
--   Restaurant
-
-## **MOOREA**
-
-### _Chef-lieu de la commune de Mo’orea-Mai’ao_
-
--   ![InterContinental Resort And Spa Moorea - piscine](/media/2019/05/InterContinental-Resort-And-Spa-Moorea-piscine.jpg)
-    
--   ![InterContinental Resort And Spa Moorea - plage](/media/2019/05/InterContinental-Resort-And-Spa-Moorea-plage.png)
-    
--   ![InterContinental Resort And Spa Moorea - terrasse](/media/2019/05/InterContinental-Resort-And-Spa-Moorea-terrasse.png)
-    
-
-#### [InterContinental Resort And Spa Moorea](https://www.ihg.com/intercontinental/hotels/fr/fr/moorea/mozpf/hoteldetail?cm_mmc=GoogleMaps-_-IC-_-PF-_-MOZPF "InterContinental Resort And Spa Moorea")
-
--   Les espaces équipés par C.D.E.
--   Piscine
--   Plage
--   Restaurant
--   Terrasse
-
-## **TAHITI**
-
-### _Île de la Polynésie française_
-
--   ![InterContinental Resort Tahiti - piscine](/media/2019/05/InterContinental-Resort-Tahiti-piscine.png)
-    
--   ![](/media/2019/05/InterContinental-Resort-Tahiti-restaurant-1.png)
-    
--   ![InterContinental Resort Tahiti - restaurant 2](/media/2019/05/InterContinental-Resort-Tahiti-restaurant-2.png)
-    
-
-#### [InterContinental Resort Tahiti](https://www.ihg.com/intercontinental/hotels/fr/fr/faa-a/pptpf/hoteldetail?cm_mmc=GoogleMaps-_-IC-_-PF-_-PPTPF "InterContinental Resort Tahiti")
-
--   Les espaces équipés par C.D.E.
--   Piscine
--   Restaurant
-
--   ![](/media/2024/03/Tahiti-Yacht-Charter-4.png)
-    
--   ![](/media/2024/03/Tahiti-Yacht-Charter-3.png)
-    
--   ![](/media/2024/03/Tahiti-Yacht-Charter-2.png)
-    
--   ![](/media/2024/03/Tahiti-Yacht-Charter-1.png)
-    
-
-#### [Tahiti Yacht Charter](https://www.tahitiyachtcharter.com/ "Tahiti Yacht Charter")
-
--   Les espaces équipés par C.D.E.
--   Linge de lit
--   Linge de SDB
+<section class="awb-section has-bg-image equal-heights" style="--pt:130px;--pb:120px;--bg-pos:right center;--bg-img:url(/media/2019/05/slideshow-polynesie.webp)"><div class="awb-row"><div class="awb-col is-first" style="--w:48%;--mr:4%"><div class="awb-text"><h1 class="as-h2"><span style="color:#ffffff;text-shadow:1px 1px #333">LA POLYNÉSIE FRANÇAISE</span></h1>
+<p><span style="color:#ffffff;text-shadow:1px 1px #333">Ce territoire d’outre-mer abrite plus d’une centaine d’îles dans le Pacifique sud. Des Marquises aux Gambiers ce TOM est réputé pour ses plages paradisiaques et ses immenses cascades.</span></p></div><div class="awb-space" style="--mt:20px"></div></div><div class="awb-col is-last" style="--w:48%"></div></div></section>
+<section class="awb-section equal-heights" style="--pt:50px;--pb:50px;--bg-pos:left top"><div class="awb-row"><div class="awb-col has-shadow is-last is-first" style="--w:100%"><div class="awb-text"><h2 style="text-align:center;margin-bottom:-15px"><span style="color:#333">BORA <strong>BORA</strong></span></h2></div><div class="awb-text"><h3 style="color:#333333;font-size:13px;text-align:center;margin-bottom:25px"><em>Île Sous-le-Vent de l’archipel de la Société</em></h3></div></div><div class="awb-col has-shadow is-first" style="--w:48%;--mr:4%;--mb:25px;--bg:#f8f8f8"><div class="awb-slider" data-slider><div class="awb-slide" data-active><picture><source srcset="/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-chambre-1-480.webp 480w, /media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-chambre-1.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-chambre-1.png" alt="InterContinental Bora Bora Resort &amp; Thalasso Spa - chambre 1" width="800" height="450" loading="lazy" decoding="async"></picture></div><div class="awb-slide"><picture><source srcset="/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-chambre-2-480.webp 480w, /media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-chambre-2.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-chambre-2.png" alt="InterContinental Bora Bora Resort &amp; Thalasso Spa - chambre 2" width="800" height="450" loading="lazy" decoding="async"></picture></div><div class="awb-slide"><picture><source srcset="/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-restaurant-1-480.webp 480w, /media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-restaurant-1.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-restaurant-1.png" alt="InterContinental Bora Bora Resort &amp; Thalasso Spa - restaurant 1" width="800" height="450" loading="lazy" decoding="async"></picture></div><div class="awb-slide"><picture><source srcset="/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-restaurant-2-480.webp 480w, /media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-restaurant-2.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-restaurant-2.png" alt="InterContinental Bora Bora Resort &amp; Thalasso Spa - restaurant 2" width="800" height="450" loading="lazy" decoding="async"></picture></div></div><div class="awb-text"><h4><a href="https://thalasso.intercontinental.com/fr" target="_blank" rel="noopener noreferrer" title="InterContinental Bora Bora Resort &amp; Thalasso Spa">InterContinental Bora Bora Resort &amp; Thalasso Spa</a></h4>
+<ul>
+<li class="list-title">Les espaces équipés par C.D.E.</li>
+<li><span class="icon icon-swimming-pool" aria-hidden="true"></span> Piscine</li>
+<li><span class="icon icon-utensils" aria-hidden="true"></span> Restaurant</li>
+<li><span class="icon icon-bed" aria-hidden="true"></span> Chambre</li>
+</ul></div></div><div class="awb-col has-shadow is-last" style="--w:48%;--mb:25px;--bg:#f8f8f8"><div class="awb-slider" data-slider><div class="awb-slide" data-active><picture><source srcset="/media/2019/05/InterContinental-Bora-Bora-Le-Moana-Resort-plage-1-480.webp 480w, /media/2019/05/InterContinental-Bora-Bora-Le-Moana-Resort-plage-1.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/InterContinental-Bora-Bora-Le-Moana-Resort-plage-1.png" alt="InterContinental Bora Bora Le Moana Resort - plage 1" width="800" height="450" loading="lazy" decoding="async"></picture></div><div class="awb-slide"><picture><source srcset="/media/2019/05/InterContinental-Bora-Bora-Le-Moana-Resort-plage-2-480.webp 480w, /media/2019/05/InterContinental-Bora-Bora-Le-Moana-Resort-plage-2.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/InterContinental-Bora-Bora-Le-Moana-Resort-plage-2.png" alt="InterContinental Bora Bora Le Moana Resort - plage 2" width="800" height="450" loading="lazy" decoding="async"></picture></div></div><div class="awb-text"><h4><a href="https://www.ihg.com/intercontinental/hotels/fr/fr/bora-bora/bobpf/hoteldetail?cm_mmc=GoogleMaps-_-IC-_-PF-_-BOBPF" target="_blank" rel="noopener noreferrer" title="InterContinental Bora Bora Le Moana Resort">InterContinental Bora Bora Le Moana Resort</a></h4>
+<ul>
+<li class="list-title">Les espaces équipés par C.D.E.</li>
+<li><span class="icon icon-water" aria-hidden="true"></span> Plage</li>
+</ul></div></div><div class="awb-col has-shadow is-first" style="--w:48%;--mr:4%;--mb:25px;--bg:#f8f8f8"><div class="awb-slider" data-slider><div class="awb-slide" data-active><picture><source srcset="/media/2019/05/The-St.-Regis-Bora-Bora-Resort-plage-480.webp 480w, /media/2019/05/The-St.-Regis-Bora-Bora-Resort-plage.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/The-St.-Regis-Bora-Bora-Resort-plage.png" alt="The St. Regis Bora Bora Resort - plage" width="800" height="450" loading="lazy" decoding="async"></picture></div><div class="awb-slide"><picture><source srcset="/media/2019/05/The-St.-Regis-Bora-Bora-Resort-terrasse-480.webp 480w, /media/2019/05/The-St.-Regis-Bora-Bora-Resort-terrasse.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/The-St.-Regis-Bora-Bora-Resort-terrasse.png" alt="The St. Regis Bora Bora Resort - terrasse" width="800" height="450" loading="lazy" decoding="async"></picture></div></div><div class="awb-text"><h4><a href="https://www.marriott.com/hotels/travel/bobxr-the-st-regis-bora-bora-resort/" target="_blank" rel="noopener noreferrer" title="The St. Regis Bora Bora Resort">The St. Regis Bora Bora Resort</a></h4>
+<ul>
+<li class="list-title">Les espaces équipés par C.D.E.</li>
+<li><span class="icon icon-water" aria-hidden="true"></span> Plage</li>
+<li><span class="icon icon-flower-daffodil" aria-hidden="true"></span> Terrasse</li>
+</ul></div></div><div class="awb-col has-shadow is-last" style="--w:48%;--mb:25px;--bg:#f8f8f8"><div class="awb-slider" data-slider><div class="awb-slide" data-active><picture><source srcset="/media/2019/05/Bora-Bora-Pearl-Beach-Resort-Spa-plage-480.webp 480w, /media/2019/05/Bora-Bora-Pearl-Beach-Resort-Spa-plage.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/Bora-Bora-Pearl-Beach-Resort-Spa-plage.png" alt="Bora Bora Pearl Beach Resort &amp; Spa - plage" width="800" height="450" loading="lazy" decoding="async"></picture></div><div class="awb-slide"><picture><source srcset="/media/2019/05/Bora-Bora-Pearl-Beach-Resort-Spa-restaurant-480.webp 480w, /media/2019/05/Bora-Bora-Pearl-Beach-Resort-Spa-restaurant.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/Bora-Bora-Pearl-Beach-Resort-Spa-restaurant.jpg" alt="Bora Bora Pearl Beach Resort &amp; Spa - restaurant" width="800" height="450" loading="lazy" decoding="async"></picture></div></div><div class="awb-text"><h4><a href="https://www.boraborapearlbeachresort.com/" target="_blank" rel="noopener noreferrer" title="Bora Bora Pearl Beach Resort &amp; Spa">Bora Bora Pearl Beach Resort &amp; Spa</a></h4>
+<ul>
+<li class="list-title">Les espaces équipés par C.D.E.</li>
+<li><span class="icon icon-water" aria-hidden="true"></span> Plage</li>
+<li><span class="icon icon-utensils" aria-hidden="true"></span> Restaurant</li>
+</ul></div></div></div></section>
+<section class="awb-section" style=""><div class="awb-row"><div class="awb-col has-shadow is-last is-first" style="--w:100%"><hr class="awb-sep is-double" style="--bt:1px;--bb:1px;--c:#e0dede"></div></div></section>
+<section class="awb-section equal-heights" style="--pt:50px;--pb:50px;--bg-pos:left top"><div class="awb-row"><div class="awb-col has-shadow is-last is-first" style="--w:100%"><div class="awb-text"><h2 style="text-align:center;margin-bottom:-15px"><span style="color:#333"><strong>MOOREA</strong></span></h2></div><div class="awb-text"><h3 style="color:#333333;font-size:13px;text-align:center;margin-bottom:25px"><em>Chef-lieu de la commune de Mo’orea-Mai’ao</em></h3></div></div><div class="awb-col has-shadow is-first" style="--w:48%;--mr:4%;--mb:25px;--bg:#f8f8f8"><div class="awb-slider" data-slider><div class="awb-slide" data-active><picture><source srcset="/media/2019/05/InterContinental-Resort-And-Spa-Moorea-piscine-480.webp 480w, /media/2019/05/InterContinental-Resort-And-Spa-Moorea-piscine.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/InterContinental-Resort-And-Spa-Moorea-piscine.jpg" alt="InterContinental Resort And Spa Moorea - piscine" width="800" height="450" loading="lazy" decoding="async"></picture></div><div class="awb-slide"><picture><source srcset="/media/2019/05/InterContinental-Resort-And-Spa-Moorea-plage-480.webp 480w, /media/2019/05/InterContinental-Resort-And-Spa-Moorea-plage.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/InterContinental-Resort-And-Spa-Moorea-plage.png" alt="InterContinental Resort And Spa Moorea - plage" width="800" height="450" loading="lazy" decoding="async"></picture></div><div class="awb-slide"><picture><source srcset="/media/2019/05/InterContinental-Resort-And-Spa-Moorea-terrasse-480.webp 480w, /media/2019/05/InterContinental-Resort-And-Spa-Moorea-terrasse.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/InterContinental-Resort-And-Spa-Moorea-terrasse.png" alt="InterContinental Resort And Spa Moorea - terrasse" width="800" height="450" loading="lazy" decoding="async"></picture></div></div><div class="awb-text"><h4><a href="https://www.ihg.com/intercontinental/hotels/fr/fr/moorea/mozpf/hoteldetail?cm_mmc=GoogleMaps-_-IC-_-PF-_-MOZPF" target="_blank" rel="noopener noreferrer" title="InterContinental Resort And Spa Moorea">InterContinental Resort And Spa Moorea</a></h4>
+<ul>
+<li class="list-title">Les espaces équipés par C.D.E.</li>
+<li><span class="icon icon-swimming-pool" aria-hidden="true"></span> Piscine</li>
+<li><span class="icon icon-water" aria-hidden="true"></span> Plage</li>
+<li><span class="icon icon-utensils" aria-hidden="true"></span> Restaurant</li>
+<li><span class="icon icon-flower-daffodil" aria-hidden="true"></span> Terrasse</li>
+</ul></div></div></div></section>
+<section class="awb-section" style=""><div class="awb-row"><div class="awb-col has-shadow is-last is-first" style="--w:100%"><hr class="awb-sep is-double" style="--bt:1px;--bb:1px;--c:#e0dede"></div></div></section>
+<section class="awb-section equal-heights" style="--pt:50px;--pb:50px;--bg-pos:left top"><div class="awb-row"><div class="awb-col has-shadow is-last is-first" style="--w:100%"><div class="awb-text"><h2 style="text-align:center;margin-bottom:-15px"><span style="color:#333"><strong>TAHITI</strong></span></h2></div><div class="awb-text"><h3 style="color:#333333;font-size:13px;text-align:center;margin-bottom:25px"><em>Île de la Polynésie française</em></h3></div></div><div class="awb-col has-shadow is-first" style="--w:48%;--mr:4%;--mb:25px;--bg:#f8f8f8"><div class="awb-slider" data-slider><div class="awb-slide" data-active><picture><source srcset="/media/2019/05/InterContinental-Resort-Tahiti-piscine-480.webp 480w, /media/2019/05/InterContinental-Resort-Tahiti-piscine.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/InterContinental-Resort-Tahiti-piscine.png" alt="InterContinental Resort Tahiti - piscine" width="800" height="450" loading="lazy" decoding="async"></picture></div><div class="awb-slide"><picture><source srcset="/media/2019/05/InterContinental-Resort-Tahiti-restaurant-1-480.webp 480w, /media/2019/05/InterContinental-Resort-Tahiti-restaurant-1.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/InterContinental-Resort-Tahiti-restaurant-1.png" alt="" width="800" height="450" loading="lazy" decoding="async"></picture></div><div class="awb-slide"><picture><source srcset="/media/2019/05/InterContinental-Resort-Tahiti-restaurant-2-480.webp 480w, /media/2019/05/InterContinental-Resort-Tahiti-restaurant-2.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2019/05/InterContinental-Resort-Tahiti-restaurant-2.png" alt="InterContinental Resort Tahiti - restaurant 2" width="800" height="450" loading="lazy" decoding="async"></picture></div></div><div class="awb-text"><h4><a href="https://www.ihg.com/intercontinental/hotels/fr/fr/faa-a/pptpf/hoteldetail?cm_mmc=GoogleMaps-_-IC-_-PF-_-PPTPF" target="_blank" rel="noopener noreferrer" title="InterContinental Resort Tahiti">InterContinental Resort Tahiti</a></h4>
+<ul>
+<li class="list-title">Les espaces équipés par C.D.E.</li>
+<li><span class="icon icon-swimming-pool" aria-hidden="true"></span> Piscine</li>
+<li><span class="icon icon-utensils" aria-hidden="true"></span> Restaurant</li>
+</ul></div></div><div class="awb-col has-shadow is-last" style="--w:48%;--mb:25px;--bg:#f8f8f8"><div class="awb-slider" data-slider><div class="awb-slide" data-active><picture><source srcset="/media/2024/03/Tahiti-Yacht-Charter-4-480.webp 480w, /media/2024/03/Tahiti-Yacht-Charter-4.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2024/03/Tahiti-Yacht-Charter-4.png" alt="" width="800" height="450" loading="lazy" decoding="async"></picture></div><div class="awb-slide"><picture><source srcset="/media/2024/03/Tahiti-Yacht-Charter-3-480.webp 480w, /media/2024/03/Tahiti-Yacht-Charter-3.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2024/03/Tahiti-Yacht-Charter-3.png" alt="" width="800" height="450" loading="lazy" decoding="async"></picture></div><div class="awb-slide"><picture><source srcset="/media/2024/03/Tahiti-Yacht-Charter-2-480.webp 480w, /media/2024/03/Tahiti-Yacht-Charter-2.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2024/03/Tahiti-Yacht-Charter-2.png" alt="" width="800" height="450" loading="lazy" decoding="async"></picture></div><div class="awb-slide"><picture><source srcset="/media/2024/03/Tahiti-Yacht-Charter-1-480.webp 480w, /media/2024/03/Tahiti-Yacht-Charter-1.webp 800w" sizes="(max-width: 700px) 100vw, 560px" type="image/webp"><img src="/media/2024/03/Tahiti-Yacht-Charter-1.png" alt="" width="800" height="450" loading="lazy" decoding="async"></picture></div></div><div class="awb-text"><h4><a href="https://www.tahitiyachtcharter.com/" target="_blank" rel="noopener noreferrer" title="Tahiti Yacht Charter">Tahiti Yacht Charter</a></h4>
+<ul>
+<li class="list-title">Les espaces équipés par C.D.E.</li>
+<li><span class="icon icon-bed" aria-hidden="true"></span> Linge de lit</li>
+<li><span class="icon icon-sink" aria-hidden="true"></span> Linge de SDB</li>
+</ul></div></div></div></section>

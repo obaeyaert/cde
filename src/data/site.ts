@@ -15,7 +15,10 @@ export const site = {
   tagline:
     "CDE Groupe est le spécialiste de l’équipement hôtelier en France métropolitaine et dans les DomTom. " +
     "Art de la table, produits d’hygiène, produits d’accueil, tissus d’ameublement, literie, mobilier " +
-    "d’extérieur, accessoires de salle de bain.",
+    "d’extérieur, accessoires de cuisine… Nous fournissons et livrons les hôtels et restaurants de 1 étoile " +
+    "jusqu’au Palace. Notre équipe reste à l’écoute de vos besoins et exigences en termes de logistique et de " +
+    "qualité. Pour cela nous vous apportons des réponses personnalisées et une offre adaptée à votre clientèle " +
+    "et au standing de votre établissement hôtelier.",
   since: 2018,
 } as const;
 

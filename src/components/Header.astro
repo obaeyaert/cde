@@ -1,5 +1,9 @@
 ---
 import { nav, site } from '../data/site';
+
+/* En-tête « fusion-header-v1 » d'Avada : logo 237×76 à gauche, menu à droite sur
+   96 px de haut, surlignage blanc au-dessus de la rubrique courante, chevron sur les
+   entrées à sous-menu. Aucune autre information (le téléphone est dans le pied de page). */
 const { pathname } = Astro.url;
 const isActive = (href: string) => pathname === href;
 const inBranch = (item: (typeof nav)[number]) =>
@@ -9,7 +13,7 @@ const inBranch = (item: (typeof nav)[number]) =>
 <header class="site-header">
   <div class="container bar">
     <a href="/" class="logo" aria-label={`${site.name} — accueil`}>
-      <img src={site.logo} alt={site.name} width="180" height="52" fetchpriority="high" />
+      <img src={site.logo} alt={site.name} width="237" height="76" fetchpriority="high" />
     </a>
 
     <input type="checkbox" id="nav-toggle" class="nav-toggle" hidden />
@@ -20,8 +24,11 @@ const inBranch = (item: (typeof nav)[number]) =>
     <nav class="main-nav" aria-label="Navigation principale">
       <ul class="level-1">
         {nav.map((item) => (
-          <li class={item.children ? 'has-children' : ''}>
-            <a href={item.href} aria-current={inBranch(item) ? 'page' : undefined}>{item.label}</a>
+          <li class:list={[{ 'has-children': !!item.children, 'is-current': inBranch(item) }]}>
+            <a href={item.href} aria-current={inBranch(item) ? 'page' : undefined}>
+              {item.label}
+              {item.children && <span class="chevron" aria-hidden="true"></span>}
+            </a>
             {item.children && (
               <ul class="level-2">
                 {item.children.map((child) => (
@@ -35,71 +42,69 @@ const inBranch = (item: (typeof nav)[number]) =>
         ))}
       </ul>
     </nav>
-
-    <a class="header-phone" href={`tel:${site.phoneHref}`}>{site.phone}</a>
   </div>
 </header>
 
 <style>
-  .site-header {
-    background: var(--color-header-bg);
-    position: sticky; top: 0; z-index: 100;
-    box-shadow: 0 1px 0 rgb(255 255 255 / 8%);
-  }
-  .bar { display: flex; align-items: center; gap: 1.5rem; min-height: var(--header-h); }
+  /* Comme l'original : l'en-tête reste fixé en haut au défilement, le menu passe à 14 px. */
+  .site-header { background: var(--color-header-bg); position: sticky; top: 0; z-index: 100; }
+  .site-header.is-sticky .level-1 > li > a { font-size: 14px; }
+  .bar { display: flex; align-items: center; justify-content: space-between; min-height: var(--header-h); padding-inline: 20px; }
+  @media (min-width: 1210px) { .bar { padding-inline: 0; } }
   .logo { flex: 0 0 auto; }
-  .logo img { width: 180px; height: auto; }
+  .logo img { width: 237px; height: 76px; }
 
-  .main-nav { margin-left: auto; }
-  .level-1 { display: flex; gap: 1.75rem; list-style: none; margin: 0; padding: 0; }
+  .level-1 { display: flex; list-style: none; margin: 0; padding: 0; }
   .level-1 > li { position: relative; }
   .level-1 > li > a {
-    color: #fff; font-size: 16px; display: block; padding: 1.6rem 0;
-    border-bottom: 2px solid transparent;
+    position: relative; display: flex; align-items: center; gap: 8px;
+    height: 96px; padding: 0 23px; color: #fff; font-size: 16px; line-height: 16px;
+    border-top: 3px solid transparent;
   }
-  .level-1 > li > a:hover,
-  .level-1 > li > a[aria-current] { color: var(--color-primary); border-bottom-color: var(--color-primary); text-decoration: none; }
+  .level-1 > li:last-child > a { padding-right: 0; }
+  .level-1 > li > a:hover, .level-1 > li.is-current > a { color: #fff; border-top-color: #fff; }
+
+  .chevron {
+    width: 6px; height: 6px; margin-top: -3px;
+    border-right: 1.5px solid currentColor; border-bottom: 1.5px solid currentColor;
+    transform: rotate(45deg);
+  }
 
   .level-2 {
-    position: absolute; top: 100%; left: -1rem; min-width: 265px;
-    background: var(--color-header-bg); list-style: none; margin: 0; padding: .5rem 0;
+    position: absolute; top: 100%; left: 0; min-width: 265px; z-index: 10;
+    list-style: none; margin: 0; padding: 0; background: var(--color-header-bg);
     opacity: 0; visibility: hidden; transform: translateY(6px);
-    transition: opacity .18s ease, transform .18s ease, visibility .18s;
-    box-shadow: 0 12px 28px rgb(0 0 0 / 28%);
+    transition: opacity .2s ease, transform .2s ease, visibility .2s;
+    box-shadow: 0 10px 24px rgb(0 0 0 / 25%);
   }
-  .has-children:hover > .level-2,
-  .has-children:focus-within > .level-2 { opacity: 1; visibility: visible; transform: none; }
+  .has-children:hover > .level-2, .has-children:focus-within > .level-2 { opacity: 1; visibility: visible; transform: none; }
   .level-2 a {
-    color: #d6d8dc; display: block; padding: .6rem 1rem; font-size: 15px;
-    border-left: 2px solid transparent;
+    display: block; padding: 12px 20px; color: #fff; font-size: 14px; line-height: 20px;
+    border-bottom: 1px solid rgb(255 255 255 / 8%);
   }
-  .level-2 a:hover, .level-2 a[aria-current] {
-    color: #fff; background: rgb(255 255 255 / 6%); border-left-color: var(--color-primary); text-decoration: none;
-  }
-
-  .header-phone { color: #fff; font-size: 15px; white-space: nowrap; }
-  .header-phone:hover { color: var(--color-primary); text-decoration: none; }
+  .level-2 a:hover, .level-2 a[aria-current] { background: #2b2e35; color: var(--color-primary); }
 
   .nav-toggle, .burger { display: none; }
 
   @media (max-width: 1100px) {
-    .bar { flex-wrap: wrap; }
-    .burger {
-      display: flex; flex-direction: column; gap: 5px; margin-left: auto;
-      cursor: pointer; padding: .6rem;
-    }
+    :root { --header-h: 96px; }
+    .bar { flex-wrap: wrap; min-height: 96px; }
+    .logo img { width: 180px; height: auto; }
+    .burger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; }
     .burger span { display: block; width: 26px; height: 2px; background: #fff; }
-    .header-phone { order: 3; }
-    .main-nav {
-      flex-basis: 100%; margin-left: 0;
-      max-height: 0; overflow: hidden; transition: max-height .28s ease;
-    }
+    .main-nav { flex-basis: 100%; max-height: 0; overflow: hidden; transition: max-height .28s ease; }
     .nav-toggle:checked ~ .main-nav { max-height: 85vh; overflow-y: auto; }
-    .level-1 { flex-direction: column; gap: 0; padding-bottom: 1rem; }
-    .level-1 > li > a { padding: .85rem 0; border-bottom: 1px solid rgb(255 255 255 / 10%); }
-    .level-2 {
-      position: static; opacity: 1; visibility: visible; transform: none;
-      box-shadow: none; padding: 0 0 .5rem 1rem; min-width: 0;
-    }
+    .level-1 { flex-direction: column; padding-bottom: 12px; }
+    .level-1 > li > a { height: auto; padding: 14px 0; border-top: 0; border-bottom: 1px solid rgb(255 255 255 / 10%); }
+    .level-1 > li.is-current > a { color: var(--color-primary); }
+    .chevron { display: none; }
+    .level-2 { position: static; opacity: 1; visibility: visible; transform: none; box-shadow: none; padding-left: 16px; min-width: 0; }
   }
 </style>
+
+<script>
+  const header = document.querySelector('.site-header');
+  const update = () => header?.classList.toggle('is-sticky', window.scrollY > 0);
+  update();
+  window.addEventListener('scroll', update, { passive: true });
+</script>

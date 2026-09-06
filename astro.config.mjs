@@ -1,7 +1,6 @@
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
 import vercel from '@astrojs/vercel';
-import rehypePicture from './scripts/rehype-picture.mjs';
 
 export default defineConfig({
   site: 'https://www.cdegroupe.com',
@@ -10,12 +9,10 @@ export default defineConfig({
   // et on teste sans le savoir un serveur laissé ouvert par une session précédente.
   server: { port: 4321 },
   vite: { server: { strictPort: true } },
+  devToolbar: { enabled: false },
   adapter: vercel({ imageService: false }),
   trailingSlash: 'always',
   build: { format: 'directory' },
-  markdown: {
-    rehypePlugins: [rehypePicture],
-  },
   integrations: [
     sitemap({
       // Les 3 anciennes pages d'index restent des 301 : elles ne doivent pas figurer au sitemap

@@ -2,6 +2,57 @@
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/).
 
+## [1.1.0] — 2026-09-06
+
+Repasse de fidélité : le site était loin d'être identique. La conversion Markdown à plat
+avait aplati toute la mise en page du page-builder.
+
+### Modifié
+
+- **Conversion refaite** (`_source/tohtml.mjs`) : le HTML Avada devient du HTML sémantique
+  qui conserve sections, lignes, colonnes et leurs largeurs, fonds, séparateurs, carrousels et
+  témoignage. La home passe de 12 998 px à 5 575 px de haut (original : 5 636), la page
+  Les Antilles de 31 398 px à 7 557 px (original : 7 549).
+- Charte reprise des **styles calculés** de l'original (`getComputedStyle`), non plus des
+  variables de thème : interlignage 34 px, H1 40/30 px inline, H3 22 px, H4 18 px, séparateur
+  170 × 3 px, ombre d'image `3px 3px 7px`, colonne de pied de page 570 px, titre de widget en
+  Montserrat, en-tête 138 px avec logo 237 px, surlignage blanc de la rubrique active,
+  chevrons, en-tête collant au défilement.
+- Bandeaux de tête : accueil `100vh − 111px` (mesuré 789 px), mentions légales 400 px avec le
+  slider « About » retrouvé en base, titre en `<h1>` comme sur l'original.
+- Page marques : la grille sur mesure (cartes, logos grisés) est remplacée par la conversion
+  générique — rangées de 6 logos en couleur, comme l'original.
+- Formulaire de contact injecté **à sa position d'origine** (colonne gauche, 65 %), champs de
+  40 px gris sans bordure, bouton « ENVOYER » 45 px.
+- Fil d'ariane visible retiré : le thème d'origine n'en affiche pas (il reste en JSON-LD).
+- Téléphone retiré de l'en-tête (absent de l'original).
+
+### Corrigé
+
+- **Police** : Google Fonts servait les sous-ensembles dans un ordre que j'avais mal étiqueté —
+  le fichier « latin » était le latin-ext, le navigateur retombait sur Arial. Mesuré à
+  514 px pour la même phrase des deux côtés désormais.
+- Deux `width:` inline par colonne Avada : le second (`calc()`, gouttières déduites) fait foi.
+- Bordures de colonne inline (filets des titres de section) honorées.
+- Séparateurs à deux filets : 8 px de haut comme l'original.
+- Séparateurs et blocs de texte cachés derrière une classe `fusion-clearfix` retrouvés.
+- Ligne enveloppée dans `fusion-fullwidth-center-content` (bandeau marques) retrouvée ; la
+  section est centrée verticalement sur `100vh − en-tête`.
+- Marges du thème rétablies : `.67em` autour du H1, `1em` sous le H2, 20 px sous chaque
+  paragraphe, `margin-bottom:-15px` inline sous les H2 de section.
+- Libellé « Craster » en double sous le logo DeAgostini.
+
+### Ajouté
+
+- `npm run verify:visual` : captures WP/Astro côte à côte et score de différence pixel.
+- `_source/probe-vert.mjs` : positions verticales élément par élément, des deux côtés.
+- `npm run content:build` : rejoue la conversion.
+
+### Supprimé
+
+- Pipeline Markdown (`tomd.mjs`, plugin rehype, `@astrojs/markdown-remark`, `turndown`).
+- Page `marques-partenaires` sur mesure et `brands.json`.
+
 ## [1.0.0] — 2026-09-05
 
 Reconstruction complète du site sur Astro, à partir du WordPress + Avada hébergé sur

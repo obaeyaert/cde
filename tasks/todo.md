@@ -57,11 +57,14 @@ Rejouer : `npm run verify`, `npm run verify:visual` (+ `npm run verify:contact` 
       Préversion : https://cde-roan-six.vercel.app (06/09). `SMTP_HOST/PORT/USER` posés.
 - [ ] Installer l'app GitHub de Vercel sur `obaeyaert` (Settings → Git du projet), puis
       `npx vercel git connect` : chaque push sur la branche = préversion, merge dans `main` = prod.
-- [ ] **Régénérer le mot de passe SMTP OVH** de `contact@cdegroupe.com` — l'ancien est en
-      clair dans `wp_options` et a été exposé en console le 05/09. Le nouveau ne va que dans
-      les variables d'environnement Vercel (scopes Preview et Production).
-- [ ] Recette sur la préversion : 21 pages + 404, mobile, quelques 301, **un envoi réel de
-      formulaire reçu dans la boîte**.
+- [x] `SMTP_PASS` posé dans Vercel (Preview + Production) le 06/09 — **mot de passe actuel
+      conservé, décision d'Olivier** (la rotation reste recommandée : il a transité en clair
+      dans une console le 05/09). Récupéré déchiffré depuis WP Mail SMTP, jamais affiché.
+- [x] **Envoi réel testé** depuis la préversion le 06/09 : HTTP 200 en 4 s, notification +
+      accusé de réception partis, aucun avertissement dans les logs de la fonction.
+- [x] Protection d'accès des préversions désactivée (URL `*.vercel.app` consultables sans
+      compte Vercel). Alias public à jour : https://cde-roan-six.vercel.app
+- [ ] Recette visuelle sur la préversion : 21 pages + 404, mobile.
 - [ ] **Abaisser le TTL DNS à 300 s au moins 24 h avant la bascule.**
 - [ ] Ajouter `cdegroupe.com` et `www.cdegroupe.com` dans Vercel, laisser émettre le certificat ;
       configurer la redirection apex → `www` (comportement actuel).

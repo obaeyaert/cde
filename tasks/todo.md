@@ -53,8 +53,10 @@ Rejouer : `npm run verify`, `npm run verify:visual` (+ `npm run verify:contact` 
       `feat/migration-wordpress-to-astro`). PR à ouvrir/merger à la main.
 - [x] Préversion anonyme testée le 06/09 (pages, 301, 404, en-têtes, cache, API) :
       `npx vercel deploy --temporary --yes`.
-- [ ] `npx vercel login` puis `npx vercel link` (ou import du dépôt GitHub depuis vercel.com :
-      chaque push sur la branche donnera une préversion, le merge dans `main` une production).
+- [x] Projet Vercel `cde` créé et lié (`npx vercel link`), framework Astro, Node 24.
+      Préversion : https://cde-roan-six.vercel.app (06/09). `SMTP_HOST/PORT/USER` posés.
+- [ ] Installer l'app GitHub de Vercel sur `obaeyaert` (Settings → Git du projet), puis
+      `npx vercel git connect` : chaque push sur la branche = préversion, merge dans `main` = prod.
 - [ ] **Régénérer le mot de passe SMTP OVH** de `contact@cdegroupe.com` — l'ancien est en
       clair dans `wp_options` et a été exposé en console le 05/09. Le nouveau ne va que dans
       les variables d'environnement Vercel (scopes Preview et Production).

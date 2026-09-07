@@ -126,12 +126,15 @@ hr { border: 0; }
 .awb-text em { color: #333; }
 
 /* Listes à icônes des cartes (les espaces équipés) */
-.awb-text ul:has(> .list-title) { list-style: none; padding-left: 15px; display: flex; flex-wrap: wrap; }
+.awb-text ul:has(> .list-title) { list-style: none; padding-left: 15px; margin-bottom: 15px; display: flex; flex-wrap: wrap; }
 .awb-text ul:has(> .list-title) > li { width: 50%; }
 .awb-text ul:has(> .list-title) > .list-title { width: 100%; font-style: italic; font-size: 13px; color: #333; }
 
 /* Images */
-.awb-image { margin: 0 0 20px; }
+/* Mesuré : l'élément image du thème n'a aucune marge. Une image NON liée occupe 25 px de
+   plus que son visuel (boîte en ligne du thème) ; une image liée, rien. */
+.awb-image { margin: 0; }
+.awb-image:not(:has(a)) { padding-bottom: 25px; }
 .awb-image.is-center { text-align: center; }
 .awb-image.is-center picture, .awb-image.is-center img { margin-inline: auto; }
 .awb-image img { width: 100%; }

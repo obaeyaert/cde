@@ -65,6 +65,10 @@ function keepStyle(style) {
     const val = clean(v.join(':'));
     if (!KEEP_STYLE.has(key) || !val) continue;
     if (key === 'line-height' && !/px|em|^\d/.test(val)) continue;
+    // La taille passe par une variable : le CSS mobile applique la reduction du theme
+    // (loi lineaire mesuree) sans pouvoir lire un font-size inline.
+    // Variable seule : un font-size inline l'emporterait sur la regle mobile du CSS.
+    if (key === 'font-size' && /^\d+(\.\d+)?px$/.test(val)) { out.push(`--fs:${val}`); continue; }
     out.push(`${key}:${val}`);
   }
   return out.length ? out.join(';') : null;
@@ -159,7 +163,9 @@ function convertElement($, el) {
     const pad = st.match(/(?:^|;)\s*padding:\s*([^;]+)/)?.[1];
     const mb = st.match(/margin-bottom:\s*([^;]+)/)?.[1];
     const vars = [pad && `--p:${pad}`, mb && `--mb:${mb}`].filter(Boolean);
-    return `<div class="awb-text"${vars.length ? ` style="${vars.join(';')}"` : ''}>${html}</div>`;
+    // Les classes du theme enfant (hotel-speech) portent des styles : on les garde.
+    const custom = cls.split(/\s+/).filter((c) => c && !/^fusion-/.test(c));
+    return `<div class="${['awb-text', ...custom].join(' ')}"${vars.length ? ` style="${vars.join(';')}"` : ''}>${html}</div>`;
   }
 
   if (/\bfusion-image-element\b/.test(cls)) {

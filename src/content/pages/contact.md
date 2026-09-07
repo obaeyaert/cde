@@ -34,4 +34,4 @@ wpId: 15
 <span style="color:#333"> 69420 CONDRIEU</span><br>
 <span style="color:#333"> Téléphone: <a href="tel:+33474581805">+33 4 74 58 18 05</a></span><br>
 <span style="color:#333"> Email: <a href="mailto:contact@cdegroupe.com">contact@cdegroupe.com</a></span><br>
-<span style="color:#333"> Web: <a href="/">cdegroupe.com</a></span></p></div></div></div></section>
+<span style="color:#333"> Web: <a href="/mentions-legales/">cdegroupe.com</a></span></p></div></div></div></section>

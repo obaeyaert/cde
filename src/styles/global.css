@@ -57,12 +57,12 @@ body {
 
 /* Titres : valeurs du thème. Les pages portent souvent un font-size inline qui prime. */
 h1, h2, h3, h4, h5, h6 { font-family: var(--font-body); color: var(--color-heading); font-weight: 400; }
-h1 { font-size: 60px; line-height: 1.33; margin: .67em 0; }
-h2 { font-size: 48px; line-height: 1.25; margin: 0 0 1em; }
+h1 { --fs: 60px; font-size: var(--fs); line-height: 1.33; margin: .67em 0; }
+h2 { --fs: 48px; font-size: var(--fs); line-height: 1.25; margin: 0 0 1em; }
 /* Le "-15px" mesuré sous les H2 de section vient d'un h3 sous-titre collé : voir .awb-text h2 + h3 */
 .awb-text h2 + h3 { margin-top: -2px; }
-h3 { font-size: 22px; line-height: 1.9; margin: 1em 0 0; }
-h4 { font-size: 18px; line-height: 38px; margin: 0; }  /* titres des cartes Réalisations : mesuré 18px / 37.98px */
+h3 { --fs: 22px; font-size: var(--fs); line-height: 1.9; margin: 1em 0 0; }
+h4 { --fs: 18px; font-size: var(--fs); line-height: 38px; margin: 0; }  /* titres des cartes Réalisations : mesuré 18px / 37.98px */
 h1 strong, h2 strong, h3 strong, h4 strong { font-weight: 700; }
 
 p { margin: 0 0 20px; }
@@ -82,7 +82,7 @@ hr { border: 0; }
 /* ------------------------------------------------------------------ */
 
 .page-content { padding-top: 20px; }
-.page-content:has(> .awb-section.has-bg-image:first-child) { padding-top: 0; }
+.page-content:has(> .awb-section.has-bg-image:first-child), .hero + .page-content { padding-top: 0; }
 
 .awb-section {
   padding-top: var(--pt, 0); padding-bottom: var(--pb, 0);
@@ -105,14 +105,19 @@ hr { border: 0; }
 .equal-heights > .awb-row > .awb-col { display: flex; flex-direction: column; }
 
 .awb-col {
-  width: var(--w, 100%); margin-right: var(--mr, 0); margin-bottom: var(--mb, 0);
+  /* Mesuré : 20 px de marge basse par défaut sur toute colonne, 0 seulement si l'inline le dit */
+  width: var(--w, 100%); margin-right: var(--mr, 0); margin-bottom: var(--mb, 20px);
   background: var(--bg, transparent); min-width: 0;
 }
 .awb-col.has-shadow { box-shadow: none; }
 
 .awb-text { padding: var(--p, 0); margin-bottom: var(--mb, 0); display: flow-root; }
 /* H2 promu en H1 pour le SEO : garde exactement le rendu d'un H2 du thème */
-.awb-text h1.as-h2 { font-size: 48px; line-height: 1.25; margin: 0 0 1em; }
+.awb-text h1.as-h2 { --fs: 48px; font-size: var(--fs); line-height: 1.25; margin: 0 0 1em; }
+/* Tailles inline du contenu : portées par --fs (voir tohtml.mjs), posées ici pour que la
+   règle mobile puisse les réduire. */
+.awb-text [style*="--fs"] { font-size: var(--fs); }
+
 /* Marges de titres du thème : .67em autour du H1, 1em sous le H2, H3 13px/25px */
 .awb-text h1 { margin: .67em 0; }
 .awb-text h2 { margin: 0 0 1em; }
@@ -121,13 +126,18 @@ hr { border: 0; }
 .awb-text ul { padding-left: 20px; }
 .awb-text em { color: #333; }
 
-/* Listes à icônes des cartes (les espaces équipés) */
-.awb-text ul:has(> .list-title) { list-style: none; padding-left: 15px; display: flex; flex-wrap: wrap; }
-.awb-text ul:has(> .list-title) > li { width: 50%; }
-.awb-text ul:has(> .list-title) > .list-title { width: 100%; font-style: italic; font-size: 13px; color: #333; }
+/* Cartes Réalisations : règles du thème enfant (.hotel-speech), reprises telles quelles */
+.hotel-speech { padding: 0 15px; }
+.hotel-speech h4 { margin-bottom: 0; }
+.hotel-speech ul { list-style: none; padding-left: 15px; margin-top: 0; margin-bottom: 15px; }
+.hotel-speech ul li { font-style: italic; display: inline-block; width: 45%; }
+.hotel-speech ul li.list-title { font-style: italic; width: 100%; }
 
 /* Images */
-.awb-image { margin: 0 0 20px; }
+/* Mesuré : l'élément image du thème n'a aucune marge. Une image NON liée occupe 25 px de
+   plus que son visuel (boîte en ligne du thème) ; une image liée, rien. */
+.awb-image { margin: 0; }
+.awb-image:not(:has(a)) { padding-bottom: 25px; }
 .awb-image.is-center { text-align: center; }
 .awb-image.is-center picture, .awb-image.is-center img { margin-inline: auto; }
 .awb-image img { width: 100%; }
@@ -190,20 +200,23 @@ hr { border: 0; }
 .icon-envelope         { --i: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath d='M2 4h20v16H2zm2 2v1.2l8 5.3 8-5.3V6zm0 3.6V18h16V9.6l-8 5.3z'/%3E%3C/svg%3E"); }
 
 @media (max-width: 900px) {
+  /* Colonnes empilées, 20 px entre elles ; contenu sur 330 px ; les paddings de section
+     sont conservés (mesuré sur l'original en 390 px). */
+  .awb-row { padding-inline: 30px; }
   .awb-col { width: 100% !important; margin-right: 0 !important; }
-  .awb-col:not(:last-child) { margin-bottom: max(var(--mb, 0px), 20px); }
-  .awb-section { padding-top: min(var(--pt, 0px), 60px); padding-bottom: min(var(--pb, 0px), 50px); }
-  .awb-text h1 { font-size: clamp(26px, 6vw, 40px) !important; }
-  .awb-text h2 { font-size: clamp(26px, 6vw, 48px) !important; }
+  .awb-col:not(:last-child) { margin-bottom: max(var(--mb, 20px), 20px) !important; }
+  /* Typographie responsive du thème : réduction linéaire mesurée (48→35,2 ; 30→26,2 ; 18→18).
+     Jamais d'agrandissement grâce au min(). */
+  .page-content h1, .page-content h2, .page-content h3, .page-content h4,
+  .page-content .awb-text [style*="--fs"] {
+    font-size: min(var(--fs), calc(var(--fs) * 0.4967 + 11.33px));
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
-/* Les colonnes à fond (cartes Réalisations) paddent leur texte : règle du thème, pas inline. */
-.awb-col[style*="--bg"] > .awb-text { padding: 0 15px; }
-.awb-col[style*="--bg"] > .awb-text:last-child { padding-bottom: 10px; }
 
 /* Bordures de colonne déclarées inline par Avada (filets des titres de section) */
 .awb-col {

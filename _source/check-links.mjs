@@ -62,7 +62,8 @@ for (const file of walk(DIST).filter((f) => f.endsWith('.html'))) {
 // une redirection doit pointer vers une page qui existe
 for (const [source, destination] of redirectTargets) {
   if (destination.startsWith('http')) continue;
-  if (!pages.has(destination) && !redirects.has(destination)) {
+  if (destination.includes(':')) continue; // destination a motif (/media/:path*) : verifiee a l'execution, pas ici
+  if (!pages.has(destination) && !redirects.has(destination) && !onDisk(destination)) {
     danglingRedirects.push(`${source} -> ${destination}`);
   }
 }

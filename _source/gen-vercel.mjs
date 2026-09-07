@@ -1,4 +1,9 @@
 import fs from 'node:fs';
+import path from 'node:path';
+
+// Chemins ancres sur le script : le generateur ecrit toujours le vercel.json de la racine,
+// quel que soit le repertoire courant.
+const ROOT = path.resolve(path.dirname(new URL(import.meta.url).pathname), '..');
 // Les redirections relevees dans le plugin Redirection (wp_redirection_items, status=enabled)
 const raw = [
   ['/nos-clients/', '/nos-clients/les-antilles/'],
@@ -43,9 +48,60 @@ const raw = [
   ['/feed/', '/'],
   ['/author/:slug*', '/'],
 ];
+// Shortlinks WordPress /?p=<ID> : WP les redirigeait en 301 vers l'URL lisible. Sans cette
+// regle, un vieux lien /?p=1246 atterrirait sur la home.
+// La home (/?p=661) est exclue : sa cible serait "/" avec la query conservee, donc une boucle.
+const pages = JSON.parse(fs.readFileSync(path.join(ROOT, '_source/extracted/_index.json'), 'utf8')).filter((m) => !m.redirect && m.bodyId && m.url !== '/');
+const shortlinks = pages.map((m) => ({
+  source: '/',
+  has: [{ type: 'query', key: 'p', value: String(m.bodyId) }],
+  destination: m.url,
+  statusCode: 301,
+}));
+
+// Medias conserves dont le nom ressemble a une vignette (apple-icon-114x114.png) : regle
+// explicite AVANT la regle generique, sinon celle-ci les enverrait vers un original inexistant.
+const sizes = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/generated/image-sizes.json'), 'utf8'));
+const dimensionNamed = Object.keys(sizes)
+  .filter((u) => /-\d+x\d+\.[a-z]+$/i.test(u))
+  .map((u) => ({ source: u.replace(/^\/media\//, '/wp-content/uploads/'), destination: u, statusCode: 301 }));
+
+// Heritage WordPress : tout ce qui pouvait etre indexe ou mis en favori et qui n'existe plus.
+const legacy = [
+  ...dimensionNamed,
+  // medias : les anciennes URL d'images (Google Images, liens externes) suivent vers /media ;
+  // les vignettes generees par WP (-300x200) remontent vers l'original conserve
+  { source: '/wp-content/uploads/:dir*/:name-:w(\\d+)x:h(\\d+).:ext(jpe?g|png|gif|webp)', destination: '/media/:dir*/:name.:ext' },
+  { source: '/wp-content/uploads/:path*', destination: '/media/:path*' },
+  // points d'entree techniques
+  { source: '/index.php', destination: '/' },
+  { source: '/index.php/:path(.*)', destination: '/:path' },
+  { source: '/favicon.ico', destination: '/favicon-32.png' },
+  { source: '/xmlrpc.php', destination: '/' },
+  // flux, archives et contenus du theme qui n'ont jamais eu de page propre
+  { source: '/:path*/feed/', destination: '/:path*/' },
+  { source: '/page/:n(\\d+)/', destination: '/' },
+  { source: '/category/:path(.*)', destination: '/' },
+  { source: '/tag/:path(.*)', destination: '/' },
+  { source: '/slide/:path(.*)', destination: '/' },
+  { source: '/element_category/:path(.*)', destination: '/' },
+  { source: '/faq-items/:path(.*)', destination: '/' },
+  { source: '/fusion_element/:path(.*)', destination: '/' },
+  { source: '/portfolio/:path(.*)', destination: '/' },
+].map((r) => ({ ...r, statusCode: 301 }));
+
+// Slash final : l'adaptateur Astro repond 308, l'original 301. En dernier, hors API et hors
+// fichiers (dernier segment sans point).
+const trailingSlash = { source: '/:path((?!api/)(?:[^/]+/)*[^/.]+)', destination: '/:path/', statusCode: 301 };
+
 const cfg = {
   // statusCode explicite : "permanent: true" donne un 308 chez Vercel, l'original repond 301
-  redirects: raw.map(([source, destination]) => ({ source, destination, statusCode: 301 })),
+  redirects: [
+    ...raw.map(([source, destination]) => ({ source, destination, statusCode: 301 })),
+    ...shortlinks,
+    ...legacy,
+    trailingSlash,
+  ],
   headers: [
     { source: '/(.*)', headers: [
       { key: 'X-Content-Type-Options', value: 'nosniff' },
@@ -58,5 +114,5 @@ const cfg = {
     { source: '/media/(.*)', headers: [{ key: 'Cache-Control', value: 'public, max-age=31536000, immutable' }] },
   ],
 };
-fs.writeFileSync('vercel.json', JSON.stringify(cfg, null, 2) + '\n');
+fs.writeFileSync(path.join(ROOT, 'vercel.json'), JSON.stringify(cfg, null, 2) + '\n');
 console.log(cfg.redirects.length, 'redirections ecrites dans vercel.json');

@@ -67,7 +67,8 @@ function keepStyle(style) {
     if (key === 'line-height' && !/px|em|^\d/.test(val)) continue;
     // La taille passe par une variable : le CSS mobile applique la reduction du theme
     // (loi lineaire mesuree) sans pouvoir lire un font-size inline.
-    if (key === 'font-size' && /^\d+(\.\d+)?px$/.test(val)) { out.push(`--fs:${val}`); out.push('font-size:var(--fs)'); continue; }
+    // Variable seule : un font-size inline l'emporterait sur la regle mobile du CSS.
+    if (key === 'font-size' && /^\d+(\.\d+)?px$/.test(val)) { out.push(`--fs:${val}`); continue; }
     out.push(`${key}:${val}`);
   }
   return out.length ? out.join(';') : null;

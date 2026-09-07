@@ -1,7 +1,7 @@
 import { chromium } from 'playwright-core'; import fs from 'node:fs'; import path from 'node:path';
 const exe=fs.readdirSync(path.join(process.env.HOME,'.cache/ms-playwright')).filter(d=>d.startsWith('chromium-')).sort().at(-1);
 const browser=await chromium.launch({executablePath:path.join(process.env.HOME,'.cache/ms-playwright',exe,'chrome-linux64/chrome'),args:['--no-sandbox']});
-const ctx=await browser.newContext({viewport:{width:1440,height:900}});
+const ctx=await browser.newContext({viewport:{width:Number(process.env.VW||1440),height:Number(process.env.VH||900)},isMobile:Number(process.env.VW||1440)<800,hasTouch:Number(process.env.VW||1440)<800});
 const slug=process.argv[2]||'/materiel-hotelier/linge-hotel/';
 const out={};
 for (const [label,base,root] of [['wp','https://www.cdegroupe.com','#content'],['astro',(process.env.ASTRO_BASE || 'http://localhost:4321'),'.page-content']]) {

@@ -87,8 +87,9 @@ const inBranch = (item: (typeof nav)[number]) =>
   .nav-toggle, .burger { display: none; }
 
   @media (max-width: 1100px) {
-    :root { --header-h: 78px; }
-    .bar { flex-wrap: wrap; min-height: 78px; }
+    /* Mesuré : 116 px = rangée logo/burger de 78 px + 19 px de marge haut et bas */
+    :root { --header-h: 116px; }
+    .bar { flex-wrap: wrap; min-height: 116px; padding-block: 19px; }
     .logo img { width: 118.5px; height: 38px; }
     .burger { display: flex; flex-direction: column; gap: 5px; cursor: pointer; padding: 10px; }
     .burger span { display: block; width: 26px; height: 2px; background: #fff; }

@@ -113,6 +113,10 @@ hr { border: 0; }
 .awb-text { padding: var(--p, 0); margin-bottom: var(--mb, 0); display: flow-root; }
 /* H2 promu en H1 pour le SEO : garde exactement le rendu d'un H2 du thème */
 .awb-text h1.as-h2 { --fs: 48px; font-size: var(--fs); line-height: 1.25; margin: 0 0 1em; }
+/* Tailles inline du contenu : portées par --fs (voir tohtml.mjs), posées ici pour que la
+   règle mobile puisse les réduire. */
+.awb-text [style*="--fs"] { font-size: var(--fs); }
+
 /* Marges de titres du thème : .67em autour du H1, 1em sous le H2, H3 13px/25px */
 .awb-text h1 { margin: .67em 0; }
 .awb-text h2 { margin: 0 0 1em; }
@@ -197,7 +201,8 @@ hr { border: 0; }
   .awb-col:not(:last-child) { margin-bottom: max(var(--mb, 0px), 20px) !important; }
   /* Typographie responsive du thème : réduction linéaire mesurée (48→35,2 ; 30→26,2 ; 18→18).
      Jamais d'agrandissement grâce au min(). */
-  .page-content h1, .page-content h2, .page-content h3, .page-content h4 {
+  .page-content h1, .page-content h2, .page-content h3, .page-content h4,
+  .page-content .awb-text [style*="--fs"] {
     font-size: min(var(--fs), calc(var(--fs) * 0.4967 + 11.33px));
   }
 }

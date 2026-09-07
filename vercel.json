@@ -201,18 +201,6 @@
         {
           "type": "query",
           "key": "p",
-          "value": "661"
-        }
-      ],
-      "destination": "/",
-      "statusCode": 301
-    },
-    {
-      "source": "/",
-      "has": [
-        {
-          "type": "query",
-          "key": "p",
           "value": "639"
         }
       ],
@@ -463,8 +451,8 @@
       "statusCode": 301
     },
     {
-      "source": "/index.php/:path*",
-      "destination": "/:path*",
+      "source": "/index.php/:path(.*)",
+      "destination": "/:path",
       "statusCode": 301
     },
     {
@@ -488,37 +476,37 @@
       "statusCode": 301
     },
     {
-      "source": "/category/:path*",
+      "source": "/category/:path(.*)",
       "destination": "/",
       "statusCode": 301
     },
     {
-      "source": "/tag/:path*",
+      "source": "/tag/:path(.*)",
       "destination": "/",
       "statusCode": 301
     },
     {
-      "source": "/slide/:path*",
+      "source": "/slide/:path(.*)",
       "destination": "/",
       "statusCode": 301
     },
     {
-      "source": "/element_category/:path*",
+      "source": "/element_category/:path(.*)",
       "destination": "/",
       "statusCode": 301
     },
     {
-      "source": "/faq-items/:path*",
+      "source": "/faq-items/:path(.*)",
       "destination": "/",
       "statusCode": 301
     },
     {
-      "source": "/fusion_element/:path*",
+      "source": "/fusion_element/:path(.*)",
       "destination": "/",
       "statusCode": 301
     },
     {
-      "source": "/portfolio/:path*",
+      "source": "/portfolio/:path(.*)",
       "destination": "/",
       "statusCode": 301
     },

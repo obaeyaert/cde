@@ -50,7 +50,8 @@ const raw = [
 ];
 // Shortlinks WordPress /?p=<ID> : WP les redirigeait en 301 vers l'URL lisible. Sans cette
 // regle, un vieux lien /?p=1246 atterrirait sur la home.
-const pages = JSON.parse(fs.readFileSync(path.join(ROOT, '_source/extracted/_index.json'), 'utf8')).filter((m) => !m.redirect && m.bodyId);
+// La home (/?p=661) est exclue : sa cible serait "/" avec la query conservee, donc une boucle.
+const pages = JSON.parse(fs.readFileSync(path.join(ROOT, '_source/extracted/_index.json'), 'utf8')).filter((m) => !m.redirect && m.bodyId && m.url !== '/');
 const shortlinks = pages.map((m) => ({
   source: '/',
   has: [{ type: 'query', key: 'p', value: String(m.bodyId) }],
@@ -66,19 +67,19 @@ const legacy = [
   { source: '/wp-content/uploads/:path*', destination: '/media/:path*' },
   // points d'entree techniques
   { source: '/index.php', destination: '/' },
-  { source: '/index.php/:path*', destination: '/:path*' },
+  { source: '/index.php/:path(.*)', destination: '/:path' },
   { source: '/favicon.ico', destination: '/favicon-32.png' },
   { source: '/xmlrpc.php', destination: '/' },
   // flux, archives et contenus du theme qui n'ont jamais eu de page propre
   { source: '/:path*/feed/', destination: '/:path*/' },
   { source: '/page/:n(\\d+)/', destination: '/' },
-  { source: '/category/:path*', destination: '/' },
-  { source: '/tag/:path*', destination: '/' },
-  { source: '/slide/:path*', destination: '/' },
-  { source: '/element_category/:path*', destination: '/' },
-  { source: '/faq-items/:path*', destination: '/' },
-  { source: '/fusion_element/:path*', destination: '/' },
-  { source: '/portfolio/:path*', destination: '/' },
+  { source: '/category/:path(.*)', destination: '/' },
+  { source: '/tag/:path(.*)', destination: '/' },
+  { source: '/slide/:path(.*)', destination: '/' },
+  { source: '/element_category/:path(.*)', destination: '/' },
+  { source: '/faq-items/:path(.*)', destination: '/' },
+  { source: '/fusion_element/:path(.*)', destination: '/' },
+  { source: '/portfolio/:path(.*)', destination: '/' },
 ].map((r) => ({ ...r, statusCode: 301 }));
 
 // Slash final : l'adaptateur Astro repond 308, l'original 301. En dernier, hors API et hors

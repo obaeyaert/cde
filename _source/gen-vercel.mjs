@@ -59,8 +59,16 @@ const shortlinks = pages.map((m) => ({
   statusCode: 301,
 }));
 
+// Medias conserves dont le nom ressemble a une vignette (apple-icon-114x114.png) : regle
+// explicite AVANT la regle generique, sinon celle-ci les enverrait vers un original inexistant.
+const sizes = JSON.parse(fs.readFileSync(path.join(ROOT, 'src/generated/image-sizes.json'), 'utf8'));
+const dimensionNamed = Object.keys(sizes)
+  .filter((u) => /-\d+x\d+\.[a-z]+$/i.test(u))
+  .map((u) => ({ source: u.replace(/^\/media\//, '/wp-content/uploads/'), destination: u, statusCode: 301 }));
+
 // Heritage WordPress : tout ce qui pouvait etre indexe ou mis en favori et qui n'existe plus.
 const legacy = [
+  ...dimensionNamed,
   // medias : les anciennes URL d'images (Google Images, liens externes) suivent vers /media ;
   // les vignettes generees par WP (-300x200) remontent vers l'original conserve
   { source: '/wp-content/uploads/:dir*/:name-:w(\\d+)x:h(\\d+).:ext(jpe?g|png|gif|webp)', destination: '/media/:dir*/:name.:ext' },

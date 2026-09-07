@@ -436,6 +436,11 @@
       "statusCode": 301
     },
     {
+      "source": "/wp-content/uploads/2019/05/apple-icon-114x114.png",
+      "destination": "/media/2019/05/apple-icon-114x114.png",
+      "statusCode": 301
+    },
+    {
       "source": "/wp-content/uploads/:dir*/:name-:w(\\d+)x:h(\\d+).:ext(jpe?g|png|gif|webp)",
       "destination": "/media/:dir*/:name.:ext",
       "statusCode": 301

@@ -55,4 +55,10 @@ const year = new Date().getFullYear();
   .contact-inline a { color: #fff; }
   .contact-inline .mail { text-transform: uppercase; }
   .icon { width: 1em; margin-right: 2px; }
+
+  /* Mesuré en 390 px : contenu sur 330 px, 50 px entre les deux blocs */
+  @media (max-width: 900px) {
+    .widgets, .copy-row { padding-inline: 30px; }
+    .widget + .widget { margin-top: 50px; }
+  }
 </style>

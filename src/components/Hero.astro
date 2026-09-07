@@ -61,7 +61,7 @@ const heightCss = height === 'full' ? 'calc(100vh - 111px)' : height;
   .subtitle { margin: 0; color: #fff; letter-spacing: 2px; line-height: 36px; font-size: var(--ss); text-shadow: 0 2px 14px rgb(0 0 0 / 35%); }
 
   @media (max-width: 900px) {
-    .title { font-size: clamp(2.2rem, 9vw, var(--ts)); }
-    .subtitle { font-size: clamp(1rem, 4vw, var(--ss)); }
+    .title { font-size: min(var(--ts), calc(var(--ts) * 0.4967 + 11.33px)); }
+    .subtitle { font-size: min(var(--ss), calc(var(--ss) * 0.4967 + 11.33px)); }
   }
 </style>

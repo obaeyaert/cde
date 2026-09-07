@@ -65,6 +65,9 @@ function keepStyle(style) {
     const val = clean(v.join(':'));
     if (!KEEP_STYLE.has(key) || !val) continue;
     if (key === 'line-height' && !/px|em|^\d/.test(val)) continue;
+    // La taille passe par une variable : le CSS mobile applique la reduction du theme
+    // (loi lineaire mesuree) sans pouvoir lire un font-size inline.
+    if (key === 'font-size' && /^\d+(\.\d+)?px$/.test(val)) { out.push(`--fs:${val}`); out.push('font-size:var(--fs)'); continue; }
     out.push(`${key}:${val}`);
   }
   return out.length ? out.join(';') : null;

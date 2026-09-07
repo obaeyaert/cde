@@ -39,7 +39,9 @@ ssh -i <clé Lightsail> bitnami@<IP de l'instance>   # coordonnées hors dépôt
 | Parité avec l'ancien site (21 pages) | **0 écart** — title, description, canonical, H1, volume de texte |
 | Liens internes et ressources | **0 lien mort**, 0 redirection morte |
 | Formulaire de bout en bout | **11/11** — validation, honeypot, 2 mails, Reply-To, injection d'en-tête |
-| Fidélité visuelle (06/09) | hauteurs à **±1,1 %** sur 21 pages ; 2–3 % de pixels différents (texte), 6–9 % (photos) |
+| Fidélité visuelle desktop (07/09, prod Vercel vs WP) | hauteurs à **±1,7 %** sur 21 pages (marques −3,6 %) |
+| Fidélité visuelle mobile 390 px (07/09) | **±4,4 %**, contact +1 px |
+| Redirections héritage WordPress (PR #3) | 76 règles 301 : shortlinks `/?p=`, `/wp-content/uploads/*`, index.php, feeds, archives ; 0 boucle |
 | Poids d'une page type | 2,2 Mo → **~125 Ko** |
 | Médias | 676 Mo → **30 Mo** |
 
@@ -64,7 +66,10 @@ Rejouer : `npm run verify`, `npm run verify:visual` (+ `npm run verify:contact` 
       accusé de réception partis, aucun avertissement dans les logs de la fonction.
 - [x] Protection d'accès des préversions désactivée (URL `*.vercel.app` consultables sans
       compte Vercel). Alias public à jour : https://cde-roan-six.vercel.app
-- [ ] Recette visuelle sur la préversion : 21 pages + 404, mobile.
+- [x] Recette sur la préversion (07/09) : redirections, en-têtes, sitemap, canonicals, TTFB, hauteurs desktop et mobile.
+- [ ] **Merger la PR #3** (redirections héritage + fidélité mobile) : https://github.com/obaeyaert/cde/pull/3
+- [ ] **Forfait Vercel** : l'équipe est en Hobby, réservé par les CGU à un usage non commercial ; un site
+      d'entreprise relève du plan Pro (20 $/mois/membre). Décision à prendre avant la bascule DNS.
 - [ ] **Abaisser le TTL DNS à 300 s au moins 24 h avant la bascule.**
 - [ ] Ajouter `cdegroupe.com` et `www.cdegroupe.com` dans Vercel, laisser émettre le certificat ;
       configurer la redirection apex → `www` (comportement actuel).

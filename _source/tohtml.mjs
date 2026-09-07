@@ -163,7 +163,9 @@ function convertElement($, el) {
     const pad = st.match(/(?:^|;)\s*padding:\s*([^;]+)/)?.[1];
     const mb = st.match(/margin-bottom:\s*([^;]+)/)?.[1];
     const vars = [pad && `--p:${pad}`, mb && `--mb:${mb}`].filter(Boolean);
-    return `<div class="awb-text"${vars.length ? ` style="${vars.join(';')}"` : ''}>${html}</div>`;
+    // Les classes du theme enfant (hotel-speech) portent des styles : on les garde.
+    const custom = cls.split(/\s+/).filter((c) => c && !/^fusion-/.test(c));
+    return `<div class="${['awb-text', ...custom].join(' ')}"${vars.length ? ` style="${vars.join(';')}"` : ''}>${html}</div>`;
   }
 
   if (/\bfusion-image-element\b/.test(cls)) {

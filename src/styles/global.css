@@ -125,10 +125,12 @@ hr { border: 0; }
 .awb-text ul { padding-left: 20px; }
 .awb-text em { color: #333; }
 
-/* Listes à icônes des cartes (les espaces équipés) */
-.awb-text ul:has(> .list-title) { list-style: none; padding-left: 15px; margin-bottom: 15px; display: flex; flex-wrap: wrap; }
-.awb-text ul:has(> .list-title) > li { width: 50%; }
-.awb-text ul:has(> .list-title) > .list-title { width: 100%; font-style: italic; font-size: 13px; color: #333; }
+/* Cartes Réalisations : règles du thème enfant (.hotel-speech), reprises telles quelles */
+.hotel-speech { padding: 0 15px; }
+.hotel-speech h4 { margin-bottom: 0; }
+.hotel-speech ul { list-style: none; padding-left: 15px; margin-top: 0; margin-bottom: 15px; }
+.hotel-speech ul li { font-style: italic; display: inline-block; width: 45%; }
+.hotel-speech ul li.list-title { font-style: italic; width: 100%; }
 
 /* Images */
 /* Mesuré : l'élément image du thème n'a aucune marge. Une image NON liée occupe 25 px de
@@ -214,9 +216,6 @@ hr { border: 0; }
   *, *::before, *::after { animation-duration: .01ms !important; transition-duration: .01ms !important; }
 }
 
-/* Les colonnes à fond (cartes Réalisations) paddent leur texte : règle du thème, pas inline. */
-.awb-col[style*="--bg"] > .awb-text { padding: 0 15px; }
-.awb-col[style*="--bg"] > .awb-text:last-child { padding-bottom: 10px; }
 
 /* Bordures de colonne déclarées inline par Avada (filets des titres de section) */
 .awb-col {

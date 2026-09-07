@@ -27,7 +27,9 @@ const Title = titleTag;
 type ImageEntry = { width: number; height: number; webp: string; srcset: { url: string; width: number }[] };
 const entry = (sizes as Record<string, ImageEntry>)[image];
 const srcset = entry?.srcset.map((v) => `${v.url} ${v.width}w`).join(', ');
-const heightCss = height === 'full' ? 'calc(100vh - 111px)' : height;
+/* Mesuré : le slider d'origine fait 100vh, l'en-tête (138 px) se superpose à son sommet ;
+   la section suivante commence donc à 100vh tout net. */
+const heightCss = height === 'full' ? 'calc(100vh - var(--header-h))' : height;
 ---
 
 <section class={`hero align-${align}`} style={`--h:${heightCss};--ts:${titleSize};--ss:${subtitleSize}`}>

@@ -82,7 +82,7 @@ hr { border: 0; }
 /* ------------------------------------------------------------------ */
 
 .page-content { padding-top: 20px; }
-.page-content:has(> .awb-section.has-bg-image:first-child) { padding-top: 0; }
+.page-content:has(> .awb-section.has-bg-image:first-child), .hero + .page-content { padding-top: 0; }
 
 .awb-section {
   padding-top: var(--pt, 0); padding-bottom: var(--pb, 0);
@@ -105,7 +105,8 @@ hr { border: 0; }
 .equal-heights > .awb-row > .awb-col { display: flex; flex-direction: column; }
 
 .awb-col {
-  width: var(--w, 100%); margin-right: var(--mr, 0); margin-bottom: var(--mb, 0);
+  /* Mesuré : 20 px de marge basse par défaut sur toute colonne, 0 seulement si l'inline le dit */
+  width: var(--w, 100%); margin-right: var(--mr, 0); margin-bottom: var(--mb, 20px);
   background: var(--bg, transparent); min-width: 0;
 }
 .awb-col.has-shadow { box-shadow: none; }
@@ -203,7 +204,7 @@ hr { border: 0; }
      sont conservés (mesuré sur l'original en 390 px). */
   .awb-row { padding-inline: 30px; }
   .awb-col { width: 100% !important; margin-right: 0 !important; }
-  .awb-col:not(:last-child) { margin-bottom: max(var(--mb, 0px), 20px) !important; }
+  .awb-col:not(:last-child) { margin-bottom: max(var(--mb, 20px), 20px) !important; }
   /* Typographie responsive du thème : réduction linéaire mesurée (48→35,2 ; 30→26,2 ; 18→18).
      Jamais d'agrandissement grâce au min(). */
   .page-content h1, .page-content h2, .page-content h3, .page-content h4,

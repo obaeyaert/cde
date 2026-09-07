@@ -4,7 +4,7 @@ const browser=await chromium.launch({executablePath:path.join(process.env.HOME,'
 const ctx=await browser.newContext({viewport:{width:1440,height:900}});
 const slug=process.argv[2]||'/materiel-hotelier/linge-hotel/';
 const out={};
-for (const [label,base,root] of [['wp','https://www.cdegroupe.com','#content'],['astro','http://localhost:4321','.page-content']]) {
+for (const [label,base,root] of [['wp','https://www.cdegroupe.com','#content'],['astro',(process.env.ASTRO_BASE || 'http://localhost:4321'),'.page-content']]) {
   const page=await ctx.newPage(); await page.goto(base+slug,{waitUntil:'networkidle',timeout:60000});
   out[label]=await page.evaluate((root)=>{
     const r=document.querySelector(root); const items=[];

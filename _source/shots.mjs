@@ -21,12 +21,12 @@ const wanted = process.argv.slice(2);
 const targets = urls.filter((u) => wanted.length === 0 || wanted.some((w) => u.includes(w)));
 
 const browser = await chromium.launch({ executablePath, args: ['--no-sandbox'] });
-const ctx = await browser.newContext({ viewport: { width: 1440, height: 900 }, deviceScaleFactor: 1 });
+const ctx = await browser.newContext({ viewport: { width: Number(process.env.VW || 1440), height: Number(process.env.VH || 900) }, deviceScaleFactor: 1 });
 
 const name = (u) => (u === '/' ? 'home' : u.replace(/^\//, '').replace(/\/$/, '').replace(/\//g, '__'));
 
 for (const u of targets) {
-  const pairs = [['wp', 'https://www.cdegroupe.com'], ['astro', 'http://localhost:4321']]
+  const pairs = [['wp', 'https://www.cdegroupe.com'], ['astro', (process.env.ASTRO_BASE || 'http://localhost:4321')]]
     .filter(([label]) => !process.env.ONLY || process.env.ONLY === label);
   for (const [label, base] of pairs) {
     const page = await ctx.newPage();
@@ -43,7 +43,7 @@ for (const u of targets) {
       await page.waitForTimeout(800);
       // masque le badge reCAPTCHA et les cookies pour ne comparer que la page
       await page.addStyleTag({ content: '.grecaptcha-badge,#tarteaucitronRoot,#tarteaucitronAlertBig{display:none!important}' });
-      const file = path.join(OUT, `${name(u)}__${label}.png`);
+      const file = path.join(OUT, `${name(u)}__${label}${process.env.VW ? '_' + process.env.VW : ''}.png`);
       await page.screenshot({ path: file, fullPage: true });
       const h = await page.evaluate(() => document.documentElement.scrollHeight);
       console.log(`${label.padEnd(6)} ${String(h).padStart(5)}px  ${u}`);

@@ -194,6 +194,338 @@
       "source": "/author/:slug*",
       "destination": "/",
       "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "661"
+        }
+      ],
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "639"
+        }
+      ],
+      "destination": "/nos-clients/les-antilles/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1065"
+        }
+      ],
+      "destination": "/nos-clients/ocean-indien/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1090"
+        }
+      ],
+      "destination": "/nos-clients/polynesie-francaise/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1126"
+        }
+      ],
+      "destination": "/nos-clients/le-reste-du-monde/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1241"
+        }
+      ],
+      "destination": "/amenagement-et-equipement/equipement-hotel-france/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1229"
+        }
+      ],
+      "destination": "/amenagement-et-equipement/equipement-hotel-caraibes/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1232"
+        }
+      ],
+      "destination": "/amenagement-et-equipement/equipement-hotel-afrique/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1235"
+        }
+      ],
+      "destination": "/amenagement-et-equipement/equipement-hotel-ocean-indien/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1239"
+        }
+      ],
+      "destination": "/amenagement-et-equipement/equipement-hotel-polynesie-francaise/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1246"
+        }
+      ],
+      "destination": "/materiel-hotelier/linge-hotel/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1248"
+        }
+      ],
+      "destination": "/materiel-hotelier/tissu-d-ameublement-hotel/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1253"
+        }
+      ],
+      "destination": "/materiel-hotelier/literie-hotel/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1255"
+        }
+      ],
+      "destination": "/materiel-hotelier/accessoire-de-salle-de-bain-hotel/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1258"
+        }
+      ],
+      "destination": "/materiel-hotelier/produit-d-accueil-hotel/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1260"
+        }
+      ],
+      "destination": "/materiel-hotelier/mobilier-interieur-hotel/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1262"
+        }
+      ],
+      "destination": "/materiel-hotelier/mobilier-exterieur-hotellerie/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "1243"
+        }
+      ],
+      "destination": "/materiel-hotelier/art-de-la-table/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "555"
+        }
+      ],
+      "destination": "/marques-partenaires/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "15"
+        }
+      ],
+      "destination": "/contact/",
+      "statusCode": 301
+    },
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "query",
+          "key": "p",
+          "value": "721"
+        }
+      ],
+      "destination": "/mentions-legales/",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-content/uploads/:dir*/:name-:w(\\d+)x:h(\\d+).:ext(jpe?g|png|gif|webp)",
+      "destination": "/media/:dir*/:name.:ext",
+      "statusCode": 301
+    },
+    {
+      "source": "/wp-content/uploads/:path*",
+      "destination": "/media/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/index.php/:path*",
+      "destination": "/:path*",
+      "statusCode": 301
+    },
+    {
+      "source": "/favicon.ico",
+      "destination": "/favicon-32.png",
+      "statusCode": 301
+    },
+    {
+      "source": "/xmlrpc.php",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path*/feed/",
+      "destination": "/:path*/",
+      "statusCode": 301
+    },
+    {
+      "source": "/page/:n(\\d+)/",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/category/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/tag/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/slide/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/element_category/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/faq-items/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/fusion_element/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/portfolio/:path*",
+      "destination": "/",
+      "statusCode": 301
+    },
+    {
+      "source": "/:path((?!api/)(?:[^/]+/)*[^/.]+)",
+      "destination": "/:path/",
+      "statusCode": 301
     }
   ],
   "headers": [

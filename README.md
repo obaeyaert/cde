@@ -86,6 +86,7 @@ Aucun mail ne part vers l'extérieur dans ces trois modes.
 | `npm run verify:contact` | formulaire de bout en bout |
 | `npm run content:build` | rejoue la conversion WordPress → contenu (tant que la source est en ligne) |
 | `npm run verify:dns` | état de la bascule DNS : enregistrements, MX/TXT, certificat, pages, redirections |
+| `npm run watch:dns` | suit la bascule en direct, s'arrête quand elle est effective |
 
 ## Architecture
 
@@ -226,8 +227,8 @@ préversion fraîchement déployée, pas un bug.
 
 ### Bascule DNS
 
-Les domaines sont déjà attachés au projet Vercel ; seule la zone DNS chez OVH reste à changer
-(deux enregistrements, valeurs dans `tasks/todo.md`). Le TTL est à 60 s, la propagation est
+Les domaines sont déjà attachés au projet Vercel ; seule la zone DNS chez OVH reste à changer.
+**Procédure pas à pas et zones prêtes à coller : [`docs/bascule-dns.md`](docs/bascule-dns.md).** Le TTL est à 60 s, la propagation est
 donc quasi immédiate, et le rollback consiste à remettre les anciennes valeurs.
 
 `npm run verify:dns` contrôle la bascule de bout en bout : où pointent les enregistrements,

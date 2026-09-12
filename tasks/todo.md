@@ -70,55 +70,24 @@ Rejouer : `npm run verify`, `npm run verify:visual` (+ `npm run verify:contact` 
       sur le Lightsail.
 - [x] TTL DNS : **déjà à 60 s**, rien à abaisser, la propagation sera quasi immédiate.
 
-### ⬜ Bascule — à faire chez OVH (zone DNS de `cdegroupe.com`)
+### ⬜ Bascule — à faire chez OVH
 
-La zone a été relevée le 12/09. **Attention : `www` porte déjà un MX et deux TXT.** Un CNAME ne
-peut pas coexister avec d'autres enregistrements sur le même nom (RFC 1034) : OVH refusera. Deux
-voies, la première est recommandée parce qu'elle ne touche à rien d'autre.
+**Procédure détaillée : [`docs/bascule-dns.md`](../docs/bascule-dns.md)**
+(zones prêtes à coller dans `docs/dns/`, rollback compris).
 
-#### Voie A — deux enregistrements A (recommandée)
+En résumé : deux enregistrements `A` passent de `35.181.237.158` aux IP Vercel
+`216.150.1.1` et `216.150.16.1`, sur l'apex et sur `www`. Rien d'autre ne bouge — surtout pas
+la messagerie, qui vit entièrement dans cette zone. Un CNAME sur `www` est impossible :
+il y porte déjà un `MX` et deux `TXT`.
 
-| Nom | Type | Valeur actuelle | Nouvelle valeur |
-|---|---|---|---|
-| `cdegroupe.com` (apex) | A | `35.181.237.158` | `216.150.1.1` **puis ajouter** `216.150.16.1` |
-| `www` | A | `35.181.237.158` | `216.150.1.1` **puis ajouter** `216.150.16.1` |
+- [ ] `npm run watch:dns` dans un terminal, puis appliquer `docs/dns/zone-vercel.txt` chez OVH.
+- [ ] `npm run verify:dns` — 15 contrôles, dont « MX et TXT intacts ».
+- [ ] Search Console : soumettre le sitemap, demander la validation des erreurs 5xx du 06/09.
+- [ ] Certificat émis → supprimer les quatre TXT `_acme-challenge` (reliquats du Lightsail).
 
-Rien d'autre ne change. Repli si Vercel refuse ces IP : `76.76.21.21` sur les deux noms.
-
-#### Voie B — CNAME sur www (plus propre, demande du ménage)
-
-Supprimer d'abord sur `www` : l'enregistrement `A`, le `MX 1 smtp.google.com.`, et les deux TXT
-`"3|welcome"` / `"l|fr"` (reliquats de la page d'accueil OVH, sans usage). Puis créer :
-
-    www   IN CNAME   2ba8bcd097c37565.vercel-dns-017.com.
-
-Le MX sur `www` ne sert à rien — personne n'écrit à `@www.cdegroupe.com` — mais le supprimer est
-un geste de plus. L'apex reste en A dans les deux voies (un CNAME est interdit à la racine).
-
-#### À ne surtout pas toucher
-
-`MX 1 smtp.google.com` sur l'apex, le SPF, le DMARC, les deux `google-site-verification`, le DKIM
-`google._domainkey`, les DKIM OVH `ovhmo3910032-selector1/2`, les SRV `_imaps` / `_submission` /
-`_autodiscover`, et les CNAME `imap` / `pop3` / `smtp` / `mail` / `autoconfig` / `autodiscover`.
-**La messagerie n'a rien à voir avec l'hébergement du site.**
-
-#### Après la bascule
-
-- [ ] `npm run verify:dns` — 15 contrôles, dont « les MX et TXT sont intacts ».
-- [ ] Attendre l'émission du certificat par Vercel (quelques minutes après la propagation).
-- [ ] Search Console : soumettre le sitemap et **demander la validation des erreurs 5xx**
-      signalées le 06/09 (elles viennent de la panne WordPress, la bascule les règle).
-- [ ] Surveiller couverture et 404 pendant deux semaines.
-
-#### Ménage, une fois le certificat Vercel émis
-
-- [ ] Supprimer les quatre TXT `_acme-challenge` : ce sont les défis Let's Encrypt du Lightsail,
-      sans objet une fois le certificat géré par Vercel.
-- [ ] `ftp IN CNAME cdegroupe.com.` suivra l'apex vers Vercel et ne répondra plus en FTP.
-      Sans conséquence (le FTP disparaît avec le Lightsail), à supprimer au décommissionnement.
-
-**Rollback** : remettre `35.181.237.158` sur l'apex et sur `www`. Effectif en 60 s, le Lightsail
-reste allumé.
+Prévoir 1 à 3 minutes de HTTPS indisponible sur `www` : Vercel refuse de pré-émettre le
+certificat tant que le domaine ne pointe pas déjà chez lui. Rollback en 60 s avec
+`docs/dns/zone-rollback-lightsail.txt`.
 
 ### ⬜ À traiter séparément — délivrabilité du formulaire
 

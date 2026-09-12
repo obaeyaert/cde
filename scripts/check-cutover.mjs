@@ -97,7 +97,12 @@ check('SPF / vérifications TXT présents', txt.length > 0, `${txt.length} enreg
 console.log('\nHTTPS');
 const c = await cert(WWW);
 check('certificat servi sur www', !!c, c ? `${c.issuer} jusqu'au ${c.until}` : 'injoignable');
-check('certificat couvre apex et www', !!c?.alt?.includes(APEX) && !!c?.alt?.includes(WWW), c?.alt ?? '');
+/* Vercel émet un certificat par nom : on interroge chacun séparément. `includes` ne suffit
+   pas — « cdegroupe.com » est une sous-chaîne de « www.cdegroupe.com » et validerait à tort. */
+const covers = (cert, host) => (cert?.alt ?? '').split(/,\s*/).includes(`DNS:${host}`);
+check(`certificat de ${WWW}`, covers(c, WWW), c?.alt ?? 'aucun');
+const apexCert = await cert(APEX);
+check(`certificat de ${APEX}`, covers(apexCert, APEX), apexCert?.alt ?? 'aucun — HTTPS cassé sur l\'apex');
 
 console.log('\nRedirection apex vers www');
 const apexRes = await head(`https://${APEX}/`);

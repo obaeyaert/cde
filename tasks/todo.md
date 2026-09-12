@@ -72,36 +72,71 @@ Rejouer : `npm run verify`, `npm run verify:visual` (+ `npm run verify:contact` 
 
 ### ⬜ Bascule — à faire chez OVH (zone DNS de `cdegroupe.com`)
 
-Deux enregistrements à modifier, **et rien d'autre** :
+La zone a été relevée le 12/09. **Attention : `www` porte déjà un MX et deux TXT.** Un CNAME ne
+peut pas coexister avec d'autres enregistrements sur le même nom (RFC 1034) : OVH refusera. Deux
+voies, la première est recommandée parce qu'elle ne touche à rien d'autre.
 
-| Nom | Type actuel | Valeur actuelle | Nouveau type | Nouvelle valeur |
-|---|---|---|---|---|
-| `cdegroupe.com` (apex) | A | `35.181.237.158` | A | `216.150.1.1` **et** `216.150.16.1` |
-| `www` | A | `35.181.237.158` | CNAME | `2ba8bcd097c37565.vercel-dns-017.com.` |
+#### Voie A — deux enregistrements A (recommandée)
 
-Valeurs de repli si besoin : apex `76.76.21.21`, www `cname.vercel-dns.com.`
+| Nom | Type | Valeur actuelle | Nouvelle valeur |
+|---|---|---|---|
+| `cdegroupe.com` (apex) | A | `35.181.237.158` | `216.150.1.1` **puis ajouter** `216.150.16.1` |
+| `www` | A | `35.181.237.158` | `216.150.1.1` **puis ajouter** `216.150.16.1` |
 
-- [ ] **Ne toucher ni aux MX (Google Workspace), ni aux TXT (SPF, DMARC, vérifications),
-      ni au DKIM `google._domainkey`.** La messagerie ne doit pas bouger.
-- [ ] Après changement : `npm run verify:dns` (15 contrôles : DNS, MX/TXT intacts,
-      certificat, apex → www, 21 pages, 404, redirections, en-tête Vercel).
-- [ ] Vérifier que Vercel a émis le certificat (quelques minutes après la propagation).
-- [ ] Search Console : soumettre le sitemap, surveiller couverture et 404 pendant 2 semaines.
+Rien d'autre ne change. Repli si Vercel refuse ces IP : `76.76.21.21` sur les deux noms.
 
-**Rollback** : remettre les deux enregistrements A sur `35.181.237.158`. Le Lightsail reste
-allumé et fonctionnel, la propagation prend 60 s.
+#### Voie B — CNAME sur www (plus propre, demande du ménage)
+
+Supprimer d'abord sur `www` : l'enregistrement `A`, le `MX 1 smtp.google.com.`, et les deux TXT
+`"3|welcome"` / `"l|fr"` (reliquats de la page d'accueil OVH, sans usage). Puis créer :
+
+    www   IN CNAME   2ba8bcd097c37565.vercel-dns-017.com.
+
+Le MX sur `www` ne sert à rien — personne n'écrit à `@www.cdegroupe.com` — mais le supprimer est
+un geste de plus. L'apex reste en A dans les deux voies (un CNAME est interdit à la racine).
+
+#### À ne surtout pas toucher
+
+`MX 1 smtp.google.com` sur l'apex, le SPF, le DMARC, les deux `google-site-verification`, le DKIM
+`google._domainkey`, les DKIM OVH `ovhmo3910032-selector1/2`, les SRV `_imaps` / `_submission` /
+`_autodiscover`, et les CNAME `imap` / `pop3` / `smtp` / `mail` / `autoconfig` / `autodiscover`.
+**La messagerie n'a rien à voir avec l'hébergement du site.**
+
+#### Après la bascule
+
+- [ ] `npm run verify:dns` — 15 contrôles, dont « les MX et TXT sont intacts ».
+- [ ] Attendre l'émission du certificat par Vercel (quelques minutes après la propagation).
+- [ ] Search Console : soumettre le sitemap et **demander la validation des erreurs 5xx**
+      signalées le 06/09 (elles viennent de la panne WordPress, la bascule les règle).
+- [ ] Surveiller couverture et 404 pendant deux semaines.
+
+#### Ménage, une fois le certificat Vercel émis
+
+- [ ] Supprimer les quatre TXT `_acme-challenge` : ce sont les défis Let's Encrypt du Lightsail,
+      sans objet une fois le certificat géré par Vercel.
+- [ ] `ftp IN CNAME cdegroupe.com.` suivra l'apex vers Vercel et ne répondra plus en FTP.
+      Sans conséquence (le FTP disparaît avec le Lightsail), à supprimer au décommissionnement.
+
+**Rollback** : remettre `35.181.237.158` sur l'apex et sur `www`. Effectif en 60 s, le Lightsail
+reste allumé.
 
 ### ⬜ À traiter séparément — délivrabilité du formulaire
 
-Le SPF du domaine est `v=spf1 include:_spf.google.com ~all` : il n'autorise que Google.
-Or le formulaire envoie via `ssl0.ovh.net`. Les notifications partent donc en **softfail SPF**
-(DMARC est en `p=none`, elles ne sont pas rejetées mais peuvent tomber en indésirables).
+Configuration constatée : la **réception** passe par Google Workspace (`MX smtp.google.com`),
+l'**envoi** du formulaire par OVH (`SMTP_HOST=ssl0.ovh.net`, boîte `contact@cdegroupe.com`).
 
-**Le problème est antérieur à la migration** — WordPress utilisait déjà ce SMTP. À corriger :
+Le SPF est `v=spf1 include:_spf.google.com ~all` : il n'autorise que Google, donc les envois
+via OVH sont en **softfail**. DMARC est en `p=none`, rien n'est rejeté ; et le domaine a des
+clés DKIM OVH (`ovhmo3910032-selector1/2`) qui, si OVH signe les messages, suffisent à valider
+DMARC par alignement DKIM. C'est probablement pourquoi les mails passent aujourd'hui.
 
-- [ ] Vérifier si les mails du formulaire arrivent en boîte de réception ou en spam.
-- [ ] Si spam : ajouter OVH au SPF → `v=spf1 include:_spf.google.com include:mx.ovh.com ~all`
-      (un seul `include` supplémentaire, la limite de 10 lookups est loin d'être atteinte).
+**Antérieur à la migration** : WordPress utilisait déjà ce même SMTP.
+
+- [ ] Vérifier qu'un mail du formulaire arrive bien dans `contact@cdegroupe.com`, et regarder
+      l'en-tête `Authentication-Results` : si `dkim=pass`, rien à faire.
+- [ ] Si `dkim=fail` ou mail en indésirables : ajouter OVH au SPF →
+      `v=spf1 include:_spf.google.com include:mx.ovh.com ~all` (la limite de 10 lookups DNS
+      reste très loin).
 
 ## ⬜ Phase 7 — Décommissionnement
 

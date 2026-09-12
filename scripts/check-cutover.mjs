@@ -1,7 +1,8 @@
 /**
  * Contrôle de la bascule DNS vers Vercel, à lancer avant, pendant et après.
  *
- *   node scripts/check-cutover.mjs
+ *   node scripts/check-cutover.mjs            une passe, sort en échec si un contrôle casse
+ *   node scripts/check-cutover.mjs --watch    surveille la bascule en direct (Ctrl+C pour sortir)
  *
  * Vérifie, sans rien modifier :
  *  - où pointent l'apex et le www, et depuis quel serveur le site répond ;
@@ -52,6 +53,31 @@ const cert = (host) =>
     socket.on('error', () => resolve(null));
     socket.on('timeout', () => { socket.destroy(); resolve(null); });
   });
+
+/* Mode surveillance : une ligne par sondage, jusqu'à ce que tout soit vert. */
+if (process.argv.includes('--watch')) {
+  const started = Date.now();
+  for (;;) {
+    const [apex, www] = [await dig(APEX, 'A'), [...(await dig(WWW, 'CNAME')), ...(await dig(WWW, 'A'))]];
+    const onVercel = (vals) => vals.some((v) => VERCEL_A.has(v) || VERCEL_CNAME.test(v));
+    const home = await head(`https://${WWW}/`, { redirect: 'follow' });
+    const c = await cert(WWW);
+    const line = [
+      `apex ${onVercel(apex) ? 'Vercel' : apex.join(',') || '?'}`,
+      `www ${onVercel(www) ? 'Vercel' : www.join(',') || '?'}`,
+      `https ${c ? (c.issuer ?? '?') : 'KO'}`,
+      `page ${home?.status ?? '-'}`,
+      home?.xVercel ? 'servi par Vercel' : `servi par ${home?.server ?? '?'}`,
+    ].join('  |  ');
+    const mins = Math.round((Date.now() - started) / 6000) / 10;
+    console.log(`  ${new Date().toLocaleTimeString('fr-FR')}  (+${mins} min)  ${line}`);
+    if (onVercel(apex) && onVercel(www) && home?.status === 200 && home?.xVercel && c) {
+      console.log('\n  Bascule effective. Lancer `npm run verify:dns` pour le contrôle complet.\n');
+      process.exit(0);
+    }
+    await new Promise((r) => setTimeout(r, 15_000));
+  }
+}
 
 console.log('\nDNS');
 const apexA = await dig(APEX, 'A');

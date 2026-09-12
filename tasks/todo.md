@@ -110,7 +110,8 @@ DMARC par alignement DKIM. C'est probablement pourquoi les mails passent aujourd
 ## ⬜ Phase 7 — Décommissionnement
 
 - [ ] **Attendre 30 jours** de production Vercel stable.
-- [ ] Mettre `_source/uploads.tar` et le dump SQL à l'abri, **hors du dépôt et hors AWS**.
+- [ ] Mettre `_source/uploads.tar` (671 Mo) et le dump SQL à l'abri, **hors du dépôt et hors AWS** :
+      vérifié le 12/09, ils n'existent que sur le poste d'Olivier.
 - [ ] Snapshot final du Lightsail, puis suppression de l'instance.
 - [ ] Vérifier qu'aucun autre service ne pointe sur l'IP de l'instance Lightsail.
 - [ ] La boîte mail OVH reste en service : le formulaire s'en sert toujours.

@@ -1,7 +1,7 @@
 # Migration cdegroupe.com — WordPress/Lightsail → Astro/Vercel
 
-> État au 2026-09-12. Phases 1 à 5 terminées et vérifiées ; production Vercel en place.
-> Reste la bascule DNS (2 enregistrements à changer chez OVH) puis le décommissionnement.
+> **Bascule DNS faite le 12/09/2026 à 17h26.** Le site est en production sur Vercel.
+> Reste le décommissionnement du Lightsail, à partir du 12/10/2026.
 
 ## Contexte
 
@@ -70,24 +70,29 @@ Rejouer : `npm run verify`, `npm run verify:visual` (+ `npm run verify:contact` 
       sur le Lightsail.
 - [x] TTL DNS : **déjà à 60 s**, rien à abaisser, la propagation sera quasi immédiate.
 
-### ⬜ Bascule — à faire chez OVH
+### ✅ Bascule — faite le 12/09/2026
 
-**Procédure détaillée : [`docs/bascule-dns.md`](../docs/bascule-dns.md)**
-(zones prêtes à coller dans `docs/dns/`, rollback compris).
+Zone `docs/dns/zone-vercel.txt` appliquée chez OVH. Apex et `www` en A vers `216.150.1.1` et
+`216.150.16.1` ; messagerie inchangée. Le certificat a mis **3 min 40 s** à être émis, pendant
+lesquelles `www` renvoyait `ERR_CONNECTION_CLOSED` — fenêtre annoncée et sans autre conséquence.
 
-En résumé : deux enregistrements `A` passent de `35.181.237.158` aux IP Vercel
-`216.150.1.1` et `216.150.16.1`, sur l'apex et sur `www`. Rien d'autre ne bouge — surtout pas
-la messagerie, qui vit entièrement dans cette zone. Un CNAME sur `www` est impossible :
-il y porte déjà un `MX` et deux `TXT`.
+Vérifié après bascule : **16/16 contrôles** (`npm run verify:dns`), les 21 pages en 200 (TTFB
+~70 ms), apex → `www` en 301, redirections héritées, MX et TXT intacts, et **un envoi réel du
+formulaire depuis `https://www.cdegroupe.com/`** (HTTP 200 en 2,8 s).
 
-- [ ] `npm run watch:dns` dans un terminal, puis appliquer `docs/dns/zone-vercel.txt` chez OVH.
-- [ ] `npm run verify:dns` — 15 contrôles, dont « MX et TXT intacts ».
-- [ ] Search Console : soumettre le sitemap, demander la validation des erreurs 5xx du 06/09.
-- [ ] Certificat émis → supprimer les quatre TXT `_acme-challenge` (reliquats du Lightsail).
+Vercel émet **un certificat par nom**. Le contrôle initial les confondait (`includes()` :
+`cdegroupe.com` est une sous-chaîne de `www.cdegroupe.com`), ce qui a masqué l'absence de
+certificat sur l'apex pendant quelques minutes — corrigé (PR #5).
 
-Prévoir 1 à 3 minutes de HTTPS indisponible sur `www` : Vercel refuse de pré-émettre le
-certificat tant que le domaine ne pointe pas déjà chez lui. Rollback en 60 s avec
-`docs/dns/zone-rollback-lightsail.txt`.
+#### Reste à faire
+
+- [ ] **Search Console** : soumettre `https://www.cdegroupe.com/sitemap-index.xml` et demander la
+      validation des erreurs **5xx du 06/09** (panne WordPress, réglée par la bascule).
+- [ ] Vérifier qu'un message du formulaire arrive bien dans `contact@cdegroupe.com` (voir ci-dessous).
+- [ ] Supprimer les quatre TXT `_acme-challenge` : reliquats Let's Encrypt du Lightsail, désormais
+      sans objet (Vercel gère ses propres certificats).
+- [ ] `ftp IN CNAME cdegroupe.com.` pointe maintenant sur Vercel et ne répond plus en FTP.
+      Sans conséquence, à supprimer au décommissionnement.
 
 ### ⬜ À traiter séparément — délivrabilité du formulaire
 
@@ -107,9 +112,9 @@ DMARC par alignement DKIM. C'est probablement pourquoi les mails passent aujourd
       `v=spf1 include:_spf.google.com include:mx.ovh.com ~all` (la limite de 10 lookups DNS
       reste très loin).
 
-## ⬜ Phase 7 — Décommissionnement
+## ⬜ Phase 7 — Décommissionnement — **pas avant le 12/10/2026**
 
-- [ ] **Attendre 30 jours** de production Vercel stable.
+- [ ] **Attendre 30 jours** de production Vercel stable (bascule le 12/09).
 - [ ] Mettre `_source/uploads.tar` et le dump SQL à l'abri, **hors du dépôt et hors AWS**.
 - [ ] Snapshot final du Lightsail, puis suppression de l'instance.
 - [ ] Vérifier qu'aucun autre service ne pointe sur l'IP de l'instance Lightsail.

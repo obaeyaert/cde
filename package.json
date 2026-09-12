@@ -23,7 +23,8 @@
     "content:build": "cd _source && node tohtml.mjs && node build-content.mjs",
     "verify:visual": "node _source/shots.mjs && node _source/compare.mjs",
     "deploy:preview": "vercel deploy",
-    "deploy:prod": "vercel deploy --prod"
+    "deploy:prod": "vercel deploy --prod",
+    "verify:dns": "node scripts/check-cutover.mjs"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4",

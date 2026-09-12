@@ -1,0 +1,34 @@
+$TTL 60
+@    IN SOA dns17.ovh.net. tech.ovh.net. (2088938106 86400 3600 3600000 300)
+        IN NS     dns17.ovh.net.
+        IN NS     ns17.ovh.net.
+        IN MX     1 smtp.google.com.
+        IN A     216.150.1.1
+        IN A     216.150.16.1
+    600 IN TXT     "v=spf1 include:_spf.google.com ~all"
+        IN TXT     "1|www.cdegroupe.com"
+        IN TXT     "google-site-verification=XSe93CWIQdDD6eql3aStPucrLewpEY64t16LqN9RQow"
+        IN TXT     "google-site-verification=xYaieV5aTocZhuNHM_N3Mjqo3TkVKnchRPZf5wPw6gE"
+_acme-challenge        IN TXT     "DDg6zirDHS0qlHLLbJTl6oDMPJ53YNbM3pv47tEYdGQ"
+_acme-challenge        IN TXT     "Fh97FUhTVIE_mvYWlUc8mfjWZfxL2AlMsx8hLFIxYVg"
+_acme-challenge        IN TXT     "HU0ONQL2AJ6UTb7Y77InhCY2vwoeEh-NTCxtBfPuWTc"
+_acme-challenge        IN TXT     "rKGEGzul8dXys2GODHwr_WYVeM4zjVq1E-cB60mHar4"
+_autodiscover._tcp        IN SRV     0 0 443 mailconfig.ovh.net.
+_dmarc        IN TXT     "v=DMARC1; p=none; rua=mailto:dmarc@cdegroupe.com; fo=1"
+_imaps._tcp        IN SRV     0 0 993 ssl0.ovh.net.
+_submission._tcp        IN SRV     0 0 465 ssl0.ovh.net.
+autoconfig        IN CNAME     mailconfig.ovh.net.
+autodiscover        IN CNAME     mailconfig.ovh.net.
+ftp        IN CNAME     cdegroupe.com.
+google._domainkey        IN TXT     ( "v=DKIM1; k=rsa; p=MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEAl6uFB7BOlfkFY0SC+APAwexjYr+ROxWeCBWg5Sd9TCNYjtbcUOWUlps59Bm7h0h2JziKTBw4y0UCk8XT8Z+MOYO8gYFiNtN35Kl9F9Ld1xLvv4k5eJ+kZFZzYSOBIEowdeDlH8ReNeYc4y80DlCQ3y/nsaeB5qy6fB0W2IbW7LsqM97RN6MD27c2LEyc7srNf" "Rsu5YKPvKn7f68R8jnHGaDrhA0gaj6+n0hU9ry+HGSAOolARaeUn/wLzS8PHsJNDyoCyRB9yfC5zqJD1Y0OvO3KKHm+n55Hap6kj7iFhzcr8gk3zG5Hwla7377rnmbN5UnYQXehDlGcJN8xv5G8awIDAQAB" )
+imap        IN CNAME     ssl0.ovh.net.
+mail        IN CNAME     ssl0.ovh.net.
+ovhmo3910032-selector1._domainkey        IN CNAME     ovhmo3910032-selector1._domainkey.931771.pk.dkim.mail.ovh.net.
+ovhmo3910032-selector2._domainkey        IN CNAME     ovhmo3910032-selector2._domainkey.931770.pk.dkim.mail.ovh.net.
+pop3        IN CNAME     ssl0.ovh.net.
+smtp        IN CNAME     ssl0.ovh.net.
+www        IN MX     1 smtp.google.com.
+www        IN A     216.150.1.1
+www        IN A     216.150.16.1
+www        IN TXT     "3|welcome"
+www        IN TXT     "l|fr"

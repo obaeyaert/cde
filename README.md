@@ -85,6 +85,8 @@ Aucun mail ne part vers l'extérieur dans ces trois modes.
 | `npm run verify:visual` | captures WP et Astro côte à côte + score de différence pixel par page |
 | `npm run verify:contact` | formulaire de bout en bout |
 | `npm run content:build` | rejoue la conversion WordPress → contenu (tant que la source est en ligne) |
+| `npm run verify:dns` | état de la bascule DNS : enregistrements, MX/TXT, certificat, pages, redirections |
+| `npm run watch:dns` | suit la bascule en direct, s'arrête quand elle est effective |
 
 ## Architecture
 
@@ -223,5 +225,15 @@ préversion fraîchement déployée, pas un bug.
 - **un envoi réel du formulaire, reçu dans la boîte** `contact@cdegroupe.com` ;
 - `curl -I` : HSTS, `X-Robots-Tag: noindex` (préversion), cache des médias.
 
-**La bascule DNS et l'extinction du Lightsail restent des opérations manuelles.**
-Voir `tasks/todo.md`.
+### Bascule DNS
+
+Les domaines sont déjà attachés au projet Vercel ; seule la zone DNS chez OVH reste à changer.
+**Procédure pas à pas et zones prêtes à coller : [`docs/bascule-dns.md`](docs/bascule-dns.md).** Le TTL est à 60 s, la propagation est
+donc quasi immédiate, et le rollback consiste à remettre les anciennes valeurs.
+
+`npm run verify:dns` contrôle la bascule de bout en bout : où pointent les enregistrements,
+que les MX et TXT n'ont pas bougé, le certificat, la redirection apex → `www`, les 21 pages,
+la 404, un échantillon de redirections, et que la réponse vient bien de Vercel. Il fonctionne
+avant la bascule (il montre alors ce qui reste à faire) comme après.
+
+**L'extinction du Lightsail reste une opération manuelle, à ne pas faire avant 30 jours.**

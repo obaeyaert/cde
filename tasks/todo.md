@@ -1,7 +1,7 @@
 # Migration cdegroupe.com — WordPress/Lightsail → Astro/Vercel
 
-> État au 2026-09-06. Phases 1 à 5 **terminées et vérifiées** (repasse de fidélité visuelle faite).
-> Restent la bascule DNS et le décommissionnement : opérations manuelles.
+> État au 2026-09-12. Phases 1 à 5 terminées et vérifiées ; production Vercel en place.
+> Reste la bascule DNS (2 enregistrements à changer chez OVH) puis le décommissionnement.
 
 ## Contexte
 
@@ -42,6 +42,7 @@ ssh -i <clé Lightsail> bitnami@<IP de l'instance>   # coordonnées hors dépôt
 | Fidélité visuelle desktop (07/09, prod Vercel vs WP) | hauteurs à **±1,7 %** sur 21 pages (marques −3,6 %) |
 | Fidélité visuelle mobile 390 px (07/09) | **±4,4 %**, contact +1 px |
 | Redirections héritage WordPress (PR #3) | 76 règles 301 : shortlinks `/?p=`, `/wp-content/uploads/*`, index.php, feeds, archives ; 0 boucle |
+| TTFB (07/09) | 253 ms (WordPress) → **67 ms** (Vercel) |
 | Poids d'une page type | 2,2 Mo → **~125 Ko** |
 | Médias | 676 Mo → **30 Mo** |
 
@@ -51,32 +52,60 @@ Rejouer : `npm run verify`, `npm run verify:visual` (+ `npm run verify:contact` 
 
 ## ⬜ Phase 6 — Déploiement et bascule
 
-- [x] Dépôt poussé sur GitHub : https://github.com/obaeyaert/cde (`main` vide + branche
-      `feat/migration-wordpress-to-astro`). PR à ouvrir/merger à la main.
-- [x] Préversion anonyme testée le 06/09 (pages, 301, 404, en-têtes, cache, API) :
-      `npx vercel deploy --temporary --yes`.
-- [x] Projet Vercel `cde` créé et lié (`npx vercel link`), framework Astro, Node 24.
-      Préversion : https://cde-roan-six.vercel.app (06/09). `SMTP_HOST/PORT/USER` posés.
-- [ ] Installer l'app GitHub de Vercel sur `obaeyaert` (Settings → Git du projet), puis
-      `npx vercel git connect` : chaque push sur la branche = préversion, merge dans `main` = prod.
-- [x] `SMTP_PASS` posé dans Vercel (Preview + Production) le 06/09 — **mot de passe actuel
-      conservé, décision d'Olivier** (la rotation reste recommandée : il a transité en clair
-      dans une console le 05/09). Récupéré déchiffré depuis WP Mail SMTP, jamais affiché.
-- [x] **Envoi réel testé** depuis la préversion le 06/09 : HTTP 200 en 4 s, notification +
-      accusé de réception partis, aucun avertissement dans les logs de la fonction.
-- [x] Protection d'accès des préversions désactivée (URL `*.vercel.app` consultables sans
-      compte Vercel). Alias public à jour : https://cde-roan-six.vercel.app
-- [x] Recette sur la préversion (07/09) : redirections, en-têtes, sitemap, canonicals, TTFB, hauteurs desktop et mobile.
-- [ ] **Merger la PR #3** (redirections héritage + fidélité mobile) : https://github.com/obaeyaert/cde/pull/3
-- [ ] **Forfait Vercel** : l'équipe est en Hobby, réservé par les CGU à un usage non commercial ; un site
-      d'entreprise relève du plan Pro (20 $/mois/membre). Décision à prendre avant la bascule DNS.
-- [ ] **Abaisser le TTL DNS à 300 s au moins 24 h avant la bascule.**
-- [ ] Ajouter `cdegroupe.com` et `www.cdegroupe.com` dans Vercel, laisser émettre le certificat ;
-      configurer la redirection apex → `www` (comportement actuel).
-- [ ] Merger la PR → production Vercel. Basculer les enregistrements DNS. **Ne pas éteindre le
-      Lightsail** : le rollback consiste à revenir sur l'IP de l'instance.
-- [ ] Contrôler la propagation, le HTTPS, puis remonter le TTL.
-- [ ] Search Console : soumettre le sitemap, surveiller couverture et 404 pendant 2 semaines.
+### ✅ Fait
+
+- [x] Dépôt GitHub https://github.com/obaeyaert/cde, app Vercel installée, `git connect` actif :
+      push sur une branche = préversion, merge dans `main` = production.
+- [x] Projet Vercel `cde` (équipe `achille84-2184s-projects`), framework Astro, Node 24.
+      **Forfait Pro** depuis le 12/09 — l'usage commercial est désormais couvert par les CGU.
+- [x] Variables `SMTP_*` posées (Preview + Production). Mot de passe OVH actuel conservé,
+      décision d'Olivier.
+- [x] **Envoi réel testé** depuis Vercel le 06/09 : HTTP 200 en 4 s, les deux mails partis.
+- [x] Recette complète le 07/09 : redirections, en-têtes, sitemap, canonicals, TTFB,
+      fidélité visuelle desktop et mobile.
+- [x] PR #1 (migration), #2 (setup Vercel), #3 (76 redirections héritage + fidélité mobile)
+      mergées. Production = `main` c2ff74d.
+- [x] Domaines `cdegroupe.com` et `www.cdegroupe.com` ajoutés au projet Vercel le 12/09,
+      apex configuré pour rediriger vers `www` en 301. Sans effet tant que le DNS pointe
+      sur le Lightsail.
+- [x] TTL DNS : **déjà à 60 s**, rien à abaisser, la propagation sera quasi immédiate.
+
+### ⬜ Bascule — à faire chez OVH
+
+**Procédure détaillée : [`docs/bascule-dns.md`](../docs/bascule-dns.md)**
+(zones prêtes à coller dans `docs/dns/`, rollback compris).
+
+En résumé : deux enregistrements `A` passent de `35.181.237.158` aux IP Vercel
+`216.150.1.1` et `216.150.16.1`, sur l'apex et sur `www`. Rien d'autre ne bouge — surtout pas
+la messagerie, qui vit entièrement dans cette zone. Un CNAME sur `www` est impossible :
+il y porte déjà un `MX` et deux `TXT`.
+
+- [ ] `npm run watch:dns` dans un terminal, puis appliquer `docs/dns/zone-vercel.txt` chez OVH.
+- [ ] `npm run verify:dns` — 15 contrôles, dont « MX et TXT intacts ».
+- [ ] Search Console : soumettre le sitemap, demander la validation des erreurs 5xx du 06/09.
+- [ ] Certificat émis → supprimer les quatre TXT `_acme-challenge` (reliquats du Lightsail).
+
+Prévoir 1 à 3 minutes de HTTPS indisponible sur `www` : Vercel refuse de pré-émettre le
+certificat tant que le domaine ne pointe pas déjà chez lui. Rollback en 60 s avec
+`docs/dns/zone-rollback-lightsail.txt`.
+
+### ⬜ À traiter séparément — délivrabilité du formulaire
+
+Configuration constatée : la **réception** passe par Google Workspace (`MX smtp.google.com`),
+l'**envoi** du formulaire par OVH (`SMTP_HOST=ssl0.ovh.net`, boîte `contact@cdegroupe.com`).
+
+Le SPF est `v=spf1 include:_spf.google.com ~all` : il n'autorise que Google, donc les envois
+via OVH sont en **softfail**. DMARC est en `p=none`, rien n'est rejeté ; et le domaine a des
+clés DKIM OVH (`ovhmo3910032-selector1/2`) qui, si OVH signe les messages, suffisent à valider
+DMARC par alignement DKIM. C'est probablement pourquoi les mails passent aujourd'hui.
+
+**Antérieur à la migration** : WordPress utilisait déjà ce même SMTP.
+
+- [ ] Vérifier qu'un mail du formulaire arrive bien dans `contact@cdegroupe.com`, et regarder
+      l'en-tête `Authentication-Results` : si `dkim=pass`, rien à faire.
+- [ ] Si `dkim=fail` ou mail en indésirables : ajouter OVH au SPF →
+      `v=spf1 include:_spf.google.com include:mx.ovh.com ~all` (la limite de 10 lookups DNS
+      reste très loin).
 
 ## ⬜ Phase 7 — Décommissionnement
 
@@ -100,3 +129,5 @@ Rejouer : `npm run verify`, `npm run verify:visual` (+ `npm run verify:contact` 
    seules archives complètes de la source : les copier ailleurs avant la coupure.
 4. Le contenu WordPress reste extractible tant que l'instance tourne — `_source/README.md`
    documente comment rejouer toute la chaîne.
+5. **Ne pas toucher aux MX/TXT/DKIM** pendant la bascule : la messagerie de `cdegroupe.com`
+   est sur Google Workspace et n'a rien à voir avec l'hébergement du site.

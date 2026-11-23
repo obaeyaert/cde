@@ -1,10 +1,7 @@
 ---
 title: "Mentions légales"
 metaTitle: "Mentions légales - CDE Groupe"
-description: "1. Présentation du site :
-
-Conformément aux dispositions des articles 6-III et 19 de la Loi n° 2004-575 du 21 juin 2004 pour la Confiance dans l'économie numérique, dite L.C.E.N., nous portons à la connaissance des utilisateurs et visiteurs du site : www.cdegroupe.com les informations suivantes :
-Informations légales"
+description: "Mentions légales du site cdegroupe.com, édité par Comptoir Distribution Exportation (CDE), 6 rue Eugène Genet, 69420 Condrieu."
 slug: "mentions-legales"
 canonical: "https://www.cdegroupe.com/mentions-legales/"
 ogImage: "/media/2026/07/cde-logo2-white.png"
@@ -21,7 +18,7 @@ Nom de la Société :<strong> COMPTOIR DISTRIBUTION ET D’EXPORTATION (C.D.E.)<
 Adresse : <strong>6 rue Eugène Genet, Place de la Passerelle, 69420 CONDRIEU</strong><br>
 Tél  : <strong>+33 4 74 58 18 05</strong><br>
 Au Capital de :<strong> 34 030 €</strong><br>
-SIRET :  <strong>390 582 757 00048 </strong>R.C.S. :<strong> Lyon B 390 582 757</strong><br>
+SIRET :  <strong>390 582 757 00063 </strong>R.C.S. :<strong> Lyon B 390 582 757</strong><br>
 Numéro TVA intracommunautaire : <strong>FR20390582757</strong><br>
 Adresse de courrier électronique : <strong>contact@cdegroupe.com</strong></p>
 <p>Réclamation : <strong>CDE – 6 rue Eugène Genet, Place de la Passerelle, 69420 CONDRIEU /contact@cdegroupe.com</strong></p>

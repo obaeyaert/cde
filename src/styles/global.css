@@ -132,6 +132,8 @@ hr { border: 0; }
 .hotel-speech ul { list-style: none; padding-left: 15px; margin-top: 0; margin-bottom: 15px; }
 .hotel-speech ul li { font-style: italic; display: inline-block; width: 45%; }
 .hotel-speech ul li.list-title { font-style: italic; width: 100%; }
+/* Ligne « Chambres : … » détaillée : trop longue pour une demi-colonne */
+.hotel-speech ul li.is-wide { width: 100%; }
 
 /* Images */
 /* Mesuré : l'élément image du thème n'a aucune marge. Une image NON liée occupe 25 px de

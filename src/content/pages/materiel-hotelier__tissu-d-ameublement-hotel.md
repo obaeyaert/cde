@@ -1,7 +1,7 @@
 ---
 title: "Tissus d’ameublement pour les hôtels"
 metaTitle: "Tissus d’ameublement pour les hôtels - CDE Groupe"
-description: "Rideaux occultant, voilage, chemin de lit (…) CDE Groupe propose aux pros de l’hôtellerie un large choix de voilage et tissus d'ameublement non feu à prix négociés. Pierre Frey, Lelièvre, Rubelli…"
+description: "Rideaux occultants, voilages, chemins de lit : un large choix de tissus d’ameublement non feu pour l’hôtellerie, à prix négociés."
 slug: "materiel-hotelier/tissu-d-ameublement-hotel"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/tissu-d-ameublement-hotel/"
 ogImage: "/media/2020/04/CDE-Groupe_tissuameublement.jpg"

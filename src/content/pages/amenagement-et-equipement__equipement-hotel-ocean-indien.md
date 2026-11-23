@@ -1,7 +1,7 @@
 ---
 title: "Equipement hôtel océan indien"
-metaTitle: "Equipement hôtel océan indien - CDE Groupe"
-description: "CDE Groupe équipe les hôtels de l’ile de La Réunion, l’île Maurice, Mayotte, Les Maldives et Les Seychelles depuis plus de 30 ans. Livraison du matériel et des équipements, notre équipe s’occupe de tout."
+metaTitle: "Équipement hôtelier dans l’océan Indien - CDE Groupe"
+description: "Équipement hôtelier à La Réunion, Maurice et dans l’océan Indien : mobilier, literie, linge. Transport et formalités douanières inclus."
 slug: "amenagement-et-equipement/equipement-hotel-ocean-indien"
 canonical: "https://www.cdegroupe.com/amenagement-et-equipement/equipement-hotel-ocean-indien/"
 ogImage: "/media/2020/04/CDE-Groupe_oceanindien.jpg"

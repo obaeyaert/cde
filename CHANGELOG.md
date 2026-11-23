@@ -22,11 +22,17 @@ Demande client de novembre 2026 (mails des 9, 13 et 16/11) et audit de visibilit
   Artalys, Rubbermaid, Technomax, Lucide, Creactive Paris, Serralunga, Flexmob, Contral,
   Cane-line et Pottery Pots ; retrait de Hilden, Manutti et Gervasoni ; texte alternatif
   « Logo … » sur tous les logos.
+- Audit de visibilité : données structurées `Organization` enrichies (nom commercial et
+  raison sociale, date de création, TVA, horaires, zones desservies, LinkedIn) pour lever la
+  confusion avec d'autres « CDE Group » ; `llms.txt` à la racine ; titre d'accueil avec la
+  marque et les 21 descriptions ramenées à 155 caractères au plus ; textes alternatifs des
+  images de l'accueil. `verify:seo` échoue désormais au-delà de 155 caractères.
 - `npm run verify` ne compare plus au WordPress (`verify:parity`, `verify:content`) : le contenu
   évolue désormais volontairement. Les deux scripts restent disponibles.
 
 ### Corrigé
 
+- Mentions légales : SIRET du siège actuel (390 582 757 00063, depuis le 01/06/2024).
 - Marques : liens morts relevés par l'audit — Bon Bistro, SAYL, Matfer et Britop pointent vers
   leur site actuel ; Talenti, dont le site ne répond plus, n'a plus de lien. Lien Peugeot
   débarrassé de ses paramètres de campagne.

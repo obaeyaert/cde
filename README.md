@@ -176,14 +176,10 @@ marges, largeurs de colonnes, en-tête collant) viennent de `getComputedStyle` s
 
 ### Ce qui n'a volontairement pas été touché
 
-Le contenu rédactionnel reste celui du client. `npm run verify:seo` signale donc encore :
-
-- **18 meta descriptions de plus de 160 caractères** — elles seront tronquées dans les
-  résultats de recherche. Ce sont les descriptions Yoast d'origine : les raccourcir est une
-  décision éditoriale, pas technique.
-- **2 titles courts** (`Contact`, `Marques` — 20 caractères) : même raison.
-
-`npm run verify:content` garantit qu'aucun mot du contenu n'a bougé : 21/21 pages.
+À la migration, le contenu rédactionnel du client a été repris mot pour mot
+(`npm run verify:content` : 21/21 pages). Depuis novembre 2026, à la suite de l'audit de
+visibilité, les titres et meta descriptions sont réécrits : marque dans le titre d'accueil,
+descriptions de 155 caractères au plus — `npm run verify:seo` échoue au-delà.
 
 ## Déploiement
 

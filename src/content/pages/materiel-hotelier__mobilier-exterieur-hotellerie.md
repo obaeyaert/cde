@@ -1,7 +1,7 @@
 ---
 title: "Mobilier d’extérieur design pour hôtellerie"
 metaTitle: "Mobilier d’extérieur design pour hôtellerie - CDE Groupe"
-description: "Salons d’extérieurs design, terrasses, bar de la piscine ou restaurant de la plage, faites votre choix parmi les plus grandes marques du mobilier outdoor pour hôtel : Manutti, Sifas, Pedrali, Royal Botania, Kettal, Vondom, Balliu, Ezpeleta…"
+description: "Terrasses, bar de piscine, restaurant de plage : mobilier d’extérieur pour hôtels signé Sifas, Pedrali, Royal Botania, Kettal, Vondom, Balliu…"
 slug: "materiel-hotelier/mobilier-exterieur-hotellerie"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/mobilier-exterieur-hotellerie/"
 ogImage: "/media/2020/04/CDE-Groupe_mobilierexterieur.jpg"

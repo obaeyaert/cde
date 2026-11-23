@@ -1,9 +1,7 @@
 ---
 title: "Contact"
-metaTitle: "Contact - CDE Groupe"
-description: "CONTACT
-Devis, demandes d'informations, des précisions sur nos fournisseurs ou nos zones d'interventions, n'hésitez pas à nous envoyer un mail.      NOUS CONTACTER
-N'hésitez pas à faire appel à nous pour toutes demandes de renseignements, devis, catalogue"
+metaTitle: "Contact et devis - CDE Groupe"
+description: "Devis, catalogue, questions sur nos fournisseurs ou nos zones de livraison : contactez CDE Groupe à Condrieu, du lundi au vendredi de 9 h à 17 h."
 slug: "contact"
 canonical: "https://www.cdegroupe.com/contact/"
 ogImage: "/media/2026/07/cde-logo2-white.png"

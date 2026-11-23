@@ -1,9 +1,7 @@
 ---
 title: "Les Antilles"
-metaTitle: "Les Antilles - CDE Groupe"
-description: "LES ANTILLES
-Archipel de plus de 4000 kms de long, les Antilles s'étendent du Golfe du Mexique jusqu'au Vénézuela.      
-ÎLE DE LA GUADELOUPE Archipel des Petites Antilles"
+metaTitle: "Réalisations aux Antilles - CDE Groupe"
+description: "Hôtels équipés par CDE Groupe en Guadeloupe, en Martinique, à Saint-Martin et à Saint-Barthélemy : chambres, buffets, restaurants, piscines."
 slug: "nos-clients/les-antilles"
 canonical: "https://www.cdegroupe.com/nos-clients/les-antilles/"
 ogImage: "/media/2019/05/La-Créole-Beach-Hôtel-Spa-restaurant.jpg"

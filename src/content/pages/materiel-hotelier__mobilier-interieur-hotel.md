@@ -1,7 +1,7 @@
 ---
 title: "Mobilier d’intérieur pour les hôtels"
 metaTitle: "Mobilier d’intérieur pour les hôtels - CDE Groupe"
-description: "Mobilier pour les chambres d’hôtel, salons, les halls d’entrée ou lobby, faites votre choix parmi les plus grandes marques : Kartell, Vincent Sheppard, Manutti… Livraison en France métropolitaine et dans les Dom Tom."
+description: "Mobilier pour chambres, salons et halls d’hôtel : Kartell, Vincent Sheppard et les grandes marques, livré en France métropolitaine et outre-mer."
 slug: "materiel-hotelier/mobilier-interieur-hotel"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/mobilier-interieur-hotel/"
 ogImage: "/media/2020/04/CDE-Groupe_mobilierinterieur.jpg"

@@ -1,7 +1,7 @@
 ---
 title: "Literie pour les hôtels"
 metaTitle: "Literie pour les hôtels - CDE Groupe"
-description: "Découvrez toute l'offre de literie proposée par nos partenaires et destinée aux établissements hôteliers : matelas en mousse, matelas à ressorts ensachés, sommiers tapissiers, lits d’appoints ... Fabrication française."
+description: "Matelas mousse ou à ressorts ensachés, sommiers tapissiers, lits d’appoint : la literie hôtelière de nos partenaires, de fabrication française."
 slug: "materiel-hotelier/literie-hotel"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/literie-hotel/"
 ogImage: "/media/2020/04/CDE-Groupe_literie.jpg"

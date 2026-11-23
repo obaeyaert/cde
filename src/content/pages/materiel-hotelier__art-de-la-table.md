@@ -1,7 +1,7 @@
 ---
 title: "Art de la table pour restaurant et hôtel"
 metaTitle: "Art de la table pour restaurant et hôtel - CDE Groupe"
-description: "CDE Groupe équipe vos hôtels et tables de restaurant avec le meilleur de l’équipement professionnel d’arts de la table (Degrenne, Chilewich, Peugeot, Villeroy & Boch, Chef Sommelier, Arq…). Vaisselle, verrerie, couverts…"
+description: "Vaisselle, couverts, verrerie, matériel de buffet pour hôtels et restaurants : Villeroy & Boch, Degrenne, Chef Sommelier… à prix négociés."
 slug: "materiel-hotelier/art-de-la-table"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/art-de-la-table/"
 ogImage: "/media/2020/04/CDE-Groupe_artdelatable.jpg"

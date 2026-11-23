@@ -7,6 +7,10 @@ export const site = {
   phoneHref: '+33474581805',
   email: 'contact@cdegroupe.com',
   openingHours: 'Du lundi au vendredi, de 9 h à 17 h',
+  /* Données d'identité pour le JSON-LD : vérifiées au registre (SIREN 390 582 757) */
+  foundingDate: '1993-03-08',
+  vatId: 'FR20390582757',
+  linkedin: 'https://www.linkedin.com/company/comptoir-de-distribution-et-d-exportation-cde-groupe',
   address: {
     street: '6 rue Eugène Genet, Place de la Passerelle',
     postalCode: '69420',

@@ -24,11 +24,32 @@ const organization = {
   '@type': 'Organization',
   '@id': `${site.url}/#organization`,
   name: site.name,
+  /* Le nom « CDE Group » est porté par d'autres sociétés : ces champs lèvent l'ambiguïté
+     pour Google et les moteurs d'IA (audit de visibilité du 8/11/2026, point 1). */
+  alternateName: ['C.D.E.', site.legalName],
   legalName: site.legalName,
+  description:
+    "Fournisseur d'équipement hôtelier pour hôtels et restaurants : mobilier intérieur et extérieur, " +
+    "literie, linge, art de la table, produits d'accueil, tissus d'ameublement. Livraison en France " +
+    'métropolitaine, aux Antilles, dans l’océan Indien, en Polynésie française et en Afrique.',
+  foundingDate: site.foundingDate,
+  vatID: site.vatId,
   url: `${site.url}/`,
   logo: new URL(site.logo, site.url).href,
   telephone: site.phone,
   email: site.email,
+  sameAs: [site.linkedin],
+  openingHoursSpecification: {
+    '@type': 'OpeningHoursSpecification',
+    dayOfWeek: ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'],
+    opens: '09:00',
+    closes: '17:00',
+  },
+  areaServed: [
+    'France', 'Guadeloupe', 'Martinique', 'Saint-Martin', 'Saint-Barthélemy', 'Guyane',
+    'La Réunion', 'Mayotte', 'Maurice', 'Seychelles', 'Polynésie française', 'Sénégal', 'Côte d’Ivoire',
+  ],
+  knowsAbout: ['équipement hôtelier', 'mobilier hôtelier', 'literie hôtelière', 'linge hôtelier', 'art de la table', "produits d'accueil"],
   address: {
     '@type': 'PostalAddress',
     streetAddress: site.address.street,

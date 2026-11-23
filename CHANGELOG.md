@@ -2,6 +2,22 @@
 
 Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/).
 
+## [Non publié]
+
+Demande client de novembre 2026 (mails des 9, 13 et 16/11) et audit de visibilité du 8/11.
+
+### Modifié
+
+- Mentions légales : R.C.S. Lyon (au lieu de Nevers).
+- Horaires d'ouverture (du lundi au vendredi, de 9 h à 17 h) en pied de page et sur la page Contact.
+- Accueil : « huit grandes familles » de produits, grille en 4 colonnes avec Literie et Linge ajoutées.
+- `npm run verify` ne compare plus au WordPress (`verify:parity`, `verify:content`) : le contenu
+  évolue désormais volontairement. Les deux scripts restent disponibles.
+
+### Corrigé
+
+- Accueil : la vignette « Arts de la table » pointait vers la page Océan Indien.
+
 ## [1.1.0] — 2026-09-06
 
 Repasse de fidélité : le site était loin d'être identique. La conversion Markdown à plat

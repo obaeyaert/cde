@@ -79,7 +79,7 @@ comme Arawak), Restaurant, Bar, Piscine, Plage.
 
 ## Lot E — Contrôle périodique des liens (validé par la cliente)
 
-- [ ] Workflow GitHub Actions hebdomadaire : liens externes du site construit, rapport en issue si lien cassé
+- [x] Workflow GitHub Actions hebdomadaire : liens externes du site construit, rapport en issue si lien cassé
       (tolérer les 403 anti-bot des grands sites)
 
 ## Clôture

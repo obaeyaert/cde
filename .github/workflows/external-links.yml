@@ -1,0 +1,45 @@
+# Contrôle hebdomadaire des liens sortants (sites des marques partenaires…).
+# Un lien mort ouvre une issue, ou met à jour celle déjà ouverte ; tout revenu à la normale la ferme.
+name: Liens sortants
+
+on:
+  schedule:
+    - cron: '0 6 * * 1' # lundi 6 h UTC
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+
+      - name: Vérifier les liens
+        id: links
+        run: |
+          set +e
+          node scripts/check-external-links.mjs > report.md
+          echo "dead=$?" >> "$GITHUB_OUTPUT"
+          cat report.md >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Ouvrir, mettre à jour ou fermer l'issue
+        env:
+          GH_TOKEN: ${{ github.token }}
+          TITLE: Liens sortants morts sur le site
+        run: |
+          issue=$(gh issue list --state open --search "in:title \"$TITLE\"" --json number --jq '.[0].number')
+          if [ "${{ steps.links.outputs.dead }}" != "0" ]; then
+            if [ -n "$issue" ]; then
+              gh issue edit "$issue" --body-file report.md
+            else
+              gh issue create --title "$TITLE" --body-file report.md
+            fi
+          elif [ -n "$issue" ]; then
+            gh issue close "$issue" --comment "Tous les liens répondent à nouveau."
+          fi

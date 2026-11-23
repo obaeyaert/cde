@@ -6,6 +6,11 @@ Format : [Keep a Changelog](https://keepachangelog.com/fr/1.1.0/).
 
 Demande client de novembre 2026 (mails des 9, 13 et 16/11) et audit de visibilité du 8/11.
 
+### Ajouté
+
+- Contrôle hebdomadaire des liens sortants (`npm run verify:external`, GitHub Actions le lundi) :
+  une issue s'ouvre quand un lien meurt et se ferme quand tout répond à nouveau.
+
 ### Modifié
 
 - Mentions légales : R.C.S. Lyon (au lieu de Nevers).
@@ -32,6 +37,7 @@ Demande client de novembre 2026 (mails des 9, 13 et 16/11) et audit de visibilit
 
 ### Corrigé
 
+- Marques : Kartell (redirection cassée, 404 maquillée) et Scaiola (site déplacé en .it).
 - Mentions légales : SIRET du siège actuel (390 582 757 00063, depuis le 01/06/2024).
 - Marques : liens morts relevés par l'audit — Bon Bistro, SAYL, Matfer et Britop pointent vers
   leur site actuel ; Talenti, dont le site ne répond plus, n'a plus de lien. Lien Peugeot

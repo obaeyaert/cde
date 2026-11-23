@@ -31,23 +31,23 @@ ligne détaillée « Chambres : mobilier, literie, linge, accessoires de salle d
 (icône lit). Nouvelles rubriques : Buffet (icône utensils), Salle de réunion – mobilier (icône phone,
 comme Arawak), Restaurant, Bar, Piscine, Plage.
 
-- [ ] **Retirer tous les liens** vers les sites d'hôtels (h4 → texte simple) sur les 4 pages `nos-clients__*`
-- [ ] Supprimer Cap Est Lagoon (carte + images inutilisées) ; rééquilibrer la grille 2 colonnes (`is-first`/`is-last`)
-- [ ] Renommer Guanahani → « Le Guanahani Les Airelles »
-- [ ] Guadeloupe : Créole Beach, Fleur d'Épée (+ Chambres détaillées, Buffet, Salle de réunion – mobilier) ;
+- [x] **Retirer tous les liens** vers les sites d'hôtels (h4 → texte simple) sur les 4 pages `nos-clients__*`
+- [x] Supprimer Cap Est Lagoon (carte + images inutilisées) ; rééquilibrer la grille 2 colonnes (`is-first`/`is-last`)
+- [x] Renommer Guanahani → « Le Guanahani Les Airelles »
+- [x] Guadeloupe : Créole Beach, Fleur d'Épée (+ Chambres détaillées, Buffet, Salle de réunion – mobilier) ;
       Arawak (+ Chambres détaillées) ; Salako (+ Chambres détaillées, Buffet)
-- [ ] Martinique : Sainte-Luce (+ Buffet, Chambres détaillées) ; Carayou (+ Chambres détaillées)
-- [ ] Saint-Martin : Porto Cupecoy → Chambres : linge, accessoires de salle de bain, produits d'accueil
-- [ ] Réunion : Lux (Buffet ; Chambres : mobilier, literie, acc. SDB) ; Le Récif (Buffet ; Chambres : literie, acc. SDB) ;
+- [x] Martinique : Sainte-Luce (+ Buffet, Chambres détaillées) ; Carayou (+ Chambres détaillées)
+- [x] Saint-Martin : Porto Cupecoy → Chambres : linge, accessoires de salle de bain, produits d'accueil
+- [x] Réunion : Lux (Buffet ; Chambres : mobilier, literie, acc. SDB) ; Le Récif (Buffet ; Chambres : literie, acc. SDB) ;
       Tropic Appart (Chambres : literie, linge, acc. SDB, produits d'accueil) ; Papangue (Chambres : literie, linge)
-- [ ] Nouveaux hôtels (photos Drive, recadrées 800×450 + variantes WebP via `npm run optimize:images`) :
-  - [ ] Guadeloupe – Le Rayon Vert (4 photos) : Piscine ; Chambres : mobilier, linge
-  - [ ] Martinique – Le Courbaril (2) : Chambres : linge, acc. SDB, produits d'accueil
-  - [ ] Martinique – Le Simon (3) : Chambres : linge, acc. SDB, produits d'accueil
-  - [ ] Martinique – Le Bambou (3) : Plage
-  - [ ] Martinique – Karibea Valmenière (1 seule photo → image fixe, pas de slider) : Chambres : mobilier, literie, acc. SDB, produits d'accueil ; Restaurant ; Bar
-  - [ ] Martinique – Karibea Squash (3) : idem Valmenière
-- [ ] Texte alternatif sur toutes les images des pages Réalisations (« Hôtel X, Île – espace »)
+- [x] Nouveaux hôtels (photos Drive, recadrées 800×450 + variantes WebP via `npm run optimize:images`) :
+  - [x] Guadeloupe – Le Rayon Vert (4 photos) : Piscine ; Chambres : mobilier, linge
+  - [x] Martinique – Le Courbaril (2) : Chambres : linge, acc. SDB, produits d'accueil
+  - [x] Martinique – Le Simon (3) : Chambres : linge, acc. SDB, produits d'accueil
+  - [x] Martinique – Le Bambou (3) : Plage
+  - [x] Martinique – Karibea Valmenière (1 seule photo → image fixe, pas de slider) : Chambres : mobilier, literie, acc. SDB, produits d'accueil ; Restaurant ; Bar
+  - [x] Martinique – Karibea Squash (3) : idem Valmenière
+- [x] Texte alternatif sur toutes les images des pages Réalisations (« Hôtel X, Île – espace »)
 
 ## Lot C — Marques (`marques-partenaires.md`)
 

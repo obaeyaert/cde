@@ -11,6 +11,11 @@ Demande client de novembre 2026 (mails des 9, 13 et 16/11) et audit de visibilit
 - Mentions légales : R.C.S. Lyon (au lieu de Nevers).
 - Horaires d'ouverture (du lundi au vendredi, de 9 h à 17 h) en pied de page et sur la page Contact.
 - Accueil : « huit grandes familles » de produits, grille en 4 colonnes avec Literie et Linge ajoutées.
+- Réalisations : plus aucun lien vers les sites des hôtels ; Cap Est Lagoon retiré ; Guanahani
+  renommé « Le Guanahani Les Airelles » ; six hôtels ajoutés (Le Rayon Vert, Karibea Valmenière,
+  Karibea Squash, Le Courbaril, Le Simon, Le Bambou) ; équipement des chambres détaillé et
+  rubriques Buffet / Salle de réunion sur onze hôtels ; texte alternatif sur les photos qui n'en
+  avaient pas.
 - `npm run verify` ne compare plus au WordPress (`verify:parity`, `verify:content`) : le contenu
   évolue désormais volontairement. Les deux scripts restent disponibles.
 

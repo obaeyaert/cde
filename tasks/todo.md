@@ -68,12 +68,12 @@ comme Arawak), Restaurant, Bar, Piscine, Plage.
 
 ## Lot D — Audit visibilité (points 1, 3, 4)
 
-- [ ] **Point 1** — JSON-LD Organization dans `Base.astro`/`site.ts` : alternateName, legalName,
+- [x] **Point 1** — JSON-LD Organization dans `Base.astro`/`site.ts` : alternateName, legalName,
       description, foundingDate 1993-03-08, vatID, openingHoursSpecification (lun-ven 9-17), areaServed, knowsAbout.
       `sameAs` : LinkedIn CDE (connu) ; fiche Google à ajouter quand Marie-Carine l'aura (point 2, chez elle)
-- [ ] **Point 3** — `public/llms.txt` (texte de l'audit, relu : marques citées vérifiées présentes sur le site,
+- [x] **Point 3** — `public/llms.txt` (texte de l'audit, relu : marques citées vérifiées présentes sur le site,
       8 familles, pas de mention W4W)
-- [ ] **Point 4** — titre d'accueil « CDE Groupe : équipement hôtelier, France et outre-mer » ;
+- [x] **Point 4** — titre d'accueil « CDE Groupe : équipement hôtelier, France et outre-mer » ;
       descriptions ≤ 155 car. sur **les 21 pages** (6 fournies par l'audit, 15 à rédiger) ;
       ajouter un contrôle de longueur dans `verify:seo`
 

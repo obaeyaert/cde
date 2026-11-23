@@ -1,7 +1,7 @@
 ---
 title: "Les produits d’accueil pour les hôtels"
 metaTitle: "Les produits d’accueil pour les hôtels - CDE Groupe"
-description: "Une gamme complète de produits d'accueil eco label et cosmétiques pour vos clients les plus exigeants. Découvrez les collections Trussardi, Choppard, Penhaligon’s, Fragonard, Bulgari, ADA, Lalique…"
+description: "Produits d’accueil éco-labellisés et cosmétiques pour hôtels : Chopard, Lalique, Penhaligon’s, Balmain, The White Company, ADA…"
 slug: "materiel-hotelier/produit-d-accueil-hotel"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/produit-d-accueil-hotel/"
 ogImage: "/media/2020/04/CDE-Groupe_produitsdaccueil.jpg"

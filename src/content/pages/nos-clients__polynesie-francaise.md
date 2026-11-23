@@ -1,9 +1,7 @@
 ---
 title: "La Polynésie française"
-metaTitle: "La Polynésie française - CDE Groupe"
-description: "LA POLYNÉSIE FRANÇAISE
-Ce territoire d'outre-mer abrite plus d'une centaine d'îles dans le Pacifique sud. Des Marquises aux Gambiers ce TOM est réputé pour ses plages paradisiaques et ses immenses cascades.      
-BORA BORA"
+metaTitle: "Réalisations en Polynésie française - CDE Groupe"
+description: "Hôtels équipés par CDE Groupe à Bora Bora, Moorea et Tahiti : InterContinental, St. Regis, Pearl Beach… piscines, plages et restaurants."
 slug: "nos-clients/polynesie-francaise"
 canonical: "https://www.cdegroupe.com/nos-clients/polynesie-francaise/"
 ogImage: "/media/2019/05/InterContinental-Bora-Bora-Resort-Thalasso-Spa-chambre-1.png"

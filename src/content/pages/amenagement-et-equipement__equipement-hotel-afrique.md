@@ -1,7 +1,7 @@
 ---
 title: "Equipement hôtel Afrique"
-metaTitle: "Equipement hôtel Afrique - CDE Groupe"
-description: "CDE Groupe équipe les hôtels en Afrique depuis 30 ans. Livraison du matériel et des équipements au Sénégal, Cameroun, Cote d’Ivoire, Gabon, Congo Brazzaville, Togo. Prix négociés auprès des fabricants. Souplesse dans les commandes."
+metaTitle: "Équipement hôtelier en Afrique - CDE Groupe"
+description: "Équipement hôtelier en Afrique : mobilier, literie, linge, art de la table à prix négociés. CDE Groupe gère transport et formalités douanières."
 slug: "amenagement-et-equipement/equipement-hotel-afrique"
 canonical: "https://www.cdegroupe.com/amenagement-et-equipement/equipement-hotel-afrique/"
 ogImage: "/media/2020/04/CDE-Groupe_afrique.jpg"

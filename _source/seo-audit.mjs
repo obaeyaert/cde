@@ -43,7 +43,8 @@ for (const { url, file } of pages) {
 
   if (!desc) add(url, 'ERREUR', 'meta description absente');
   else {
-    if (desc.length > 160) add(url, 'avert', `description de ${desc.length} caractères (>160)`);
+    // Seuil de l'audit de visibilité (11/2026) : au-delà, Google coupe la description
+    if (desc.length > 155) add(url, 'ERREUR', `description de ${desc.length} caractères (>155, tronquée dans les SERP)`);
     if (desc.length < 70) add(url, 'avert', `description de ${desc.length} caractères (courte)`);
     descriptions.set(desc, [...(descriptions.get(desc) ?? []), url]);
   }

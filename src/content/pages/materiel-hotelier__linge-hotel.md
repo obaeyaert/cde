@@ -1,7 +1,7 @@
 ---
 title: "Linge pour les hôtels"
 metaTitle: "Linge pour les hôtels - CDE Groupe"
-description: "Linge de lit, linge de bain éponge ou nid d’abeille pour les professionnels de l’hôtellerie, CDE Groupe équipe les hôtels dans le monde depuis plus de 30 ans. Toutes les gammes et les matières à prix négociés."
+description: "Linge de lit, linge de bain éponge ou nid d’abeille pour l’hôtellerie : toutes les gammes et matières à prix négociés, livrées en France et outre-mer."
 slug: "materiel-hotelier/linge-hotel"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/linge-hotel/"
 ogImage: "/media/2020/04/CDE-Groupe_linge.jpg"

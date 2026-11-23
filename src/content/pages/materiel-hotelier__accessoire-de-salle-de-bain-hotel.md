@@ -1,7 +1,7 @@
 ---
 title: "Accessoires pour salle de bain d’hôtel"
 metaTitle: "Accessoires pour salle de bain d’hôtel - CDE Groupe"
-description: "CDE fourni depuis plus de 30 ans des accessoires de salle de bain pour les professionnels de l'hôtellerie. Sèche-cheveux, miroirs, porte-serviettes…"
+description: "Sèche-cheveux, miroirs, porte-serviettes : CDE Groupe fournit les accessoires de salle de bain des hôtels depuis plus de 30 ans, à prix négociés."
 slug: "materiel-hotelier/accessoire-de-salle-de-bain-hotel"
 canonical: "https://www.cdegroupe.com/materiel-hotelier/accessoire-de-salle-de-bain-hotel/"
 ogImage: "/media/2020/04/CDE-Groupe_accessoiressdb.jpg"

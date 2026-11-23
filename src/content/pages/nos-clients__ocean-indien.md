@@ -1,9 +1,7 @@
 ---
 title: "L'Océan Indien"
-metaTitle: "L'Océan Indien - CDE Groupe"
-description: "L'Océan Indien
-Auparavant nommé océan Oriental ou mer des Indes, l’océan Indien s’étend sur une surface de 75 000 000 km², soit près de 20 % du globe terrestre.      
-ÎLE DE"
+metaTitle: "Réalisations dans l’océan Indien - CDE Groupe"
+description: "Hôtels équipés par CDE Groupe à La Réunion : LUX* Saint Gilles, Le Récif, Papangue, Tropic Appart’Hotel… chambres, buffets, piscines."
 slug: "nos-clients/ocean-indien"
 canonical: "https://www.cdegroupe.com/nos-clients/ocean-indien/"
 ogImage: "/media/2019/05/LUX__Saint_Gilles_-_bar.jpg"

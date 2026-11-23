@@ -1,10 +1,7 @@
 ---
 title: "Marques"
-metaTitle: "Marques - CDE Groupe"
-description: "NOS MARQUES PARTENAIRES
-Retrouvez ci-dessous quelques-unes des marques partenaires avec lesquelles nous travaillons.     
-ARTS DE LA TABLE 
-Vaste choix de"
+metaTitle: "Marques partenaires - CDE Groupe"
+description: "Villeroy & Boch, Degrenne, Lalique, Kartell, Pedrali… Les marques d’équipement hôtelier que CDE Groupe distribue aux hôtels et restaurants."
 slug: "marques-partenaires"
 canonical: "https://www.cdegroupe.com/marques-partenaires/"
 ogImage: "/media/2026/07/cde-logo2-white.png"

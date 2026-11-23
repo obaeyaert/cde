@@ -1,7 +1,7 @@
 ---
 title: "Equipement hôtel caraïbes"
-metaTitle: "Equipement hôtel caraïbes - CDE Groupe"
-description: "CDE Groupe équipe les hôtels dans les Caraïbes depuis 30 ans. Livraison du matériel et de l’équipement hôtelier en Martinique, Guadeloupe, Guyane, à Saint-Barthélemy et Saint-Martin. Prix négociés auprès des fabricants. Souplesse dans les commandes."
+metaTitle: "Équipement hôtelier aux Caraïbes - CDE Groupe"
+description: "Équipement hôtelier aux Antilles : mobilier, literie, linge, art de la table. CDE Groupe gère transport et douane jusqu’à votre hôtel."
 slug: "amenagement-et-equipement/equipement-hotel-caraibes"
 canonical: "https://www.cdegroupe.com/amenagement-et-equipement/equipement-hotel-caraibes/"
 ogImage: "/media/2020/04/CDE-Groupe_caraibes.jpg"

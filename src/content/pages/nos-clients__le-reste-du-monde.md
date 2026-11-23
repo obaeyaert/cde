@@ -1,9 +1,7 @@
 ---
 title: "Le reste du monde"
-metaTitle: "Le reste du monde - CDE Groupe"
-description: "LE RESTE DU MONDE
-Bien que spécialisé dans les équipements hôteliers en tout genre dans les DOM/TOM, CDE est également implenté en Afrique et en France continentale.      
-SÉNÉGAL"
+metaTitle: "Réalisations dans le reste du monde - CDE Groupe"
+description: "Hôtels équipés par CDE Groupe au Sénégal, en Côte d’Ivoire, en Guyane et en France : chambres, restaurants, piscines et terrasses."
 slug: "nos-clients/le-reste-du-monde"
 canonical: "https://www.cdegroupe.com/nos-clients/le-reste-du-monde/"
 ogImage: "/media/2019/05/Hôtel-Lagon-2-chambre.png"

@@ -1,7 +1,7 @@
 ---
 title: "Equipement hôtel France"
-metaTitle: "Equipement hôtel France - CDE Groupe"
-description: "CDE Groupe équipe les hôtels en France métropolitaine depuis plus de 30 ans. Une gamme illimitée de produits à prix négociés auprès des fabricants. Souplesse dans les commandes (tous l’équipement de votre hôtel en une seule livraison)."
+metaTitle: "Équipement hôtelier en France - CDE Groupe"
+description: "Équipement hôtelier en France métropolitaine : mobilier, literie, linge, produits d’accueil à prix négociés. Un seul interlocuteur du devis à la livraison."
 slug: "amenagement-et-equipement/equipement-hotel-france"
 canonical: "https://www.cdegroupe.com/amenagement-et-equipement/equipement-hotel-france/"
 ogImage: "/media/2020/04/CDE-Groupe_france.jpg"

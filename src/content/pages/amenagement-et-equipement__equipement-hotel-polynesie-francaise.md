@@ -1,7 +1,7 @@
 ---
 title: "Equipement hôtel Polynésie française"
-metaTitle: "Equipement hôtel Polynésie française - CDE Groupe"
-description: "CDE Groupe équipe les hôtels de Tahiti, Bora Bora et Moorea depuis plus de 30 ans. Livraison du matériel et des équipements. Prix négociés auprès des fabricants. Souplesse dans les commandes."
+metaTitle: "Équipement hôtelier en Polynésie française - CDE Groupe"
+description: "Équipement hôtelier en Polynésie française : mobilier, literie, linge, art de la table. CDE Groupe organise l’acheminement jusqu’à Tahiti et les îles."
 slug: "amenagement-et-equipement/equipement-hotel-polynesie-francaise"
 canonical: "https://www.cdegroupe.com/amenagement-et-equipement/equipement-hotel-polynesie-francaise/"
 ogImage: "/media/2020/04/CDE-Groupe_polynesie.jpg"

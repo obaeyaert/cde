@@ -51,20 +51,20 @@ comme Arawak), Restaurant, Bar, Piscine, Plage.
 
 ## Lot C — Marques (`marques-partenaires.md`)
 
-- [ ] Supprimer la rubrique « Divers »
-- [ ] Petit matériel d'exploitation : + Garcia de Pou (garciadepou.com/fr/), Chilewich, Peugeot, Bartscher (bartscher.com/int/fr/). L2G abandonné
-- [ ] Renommer « LINGE, TISSUS D'AMEUBLEMENT & LITERIE » → « LINGE, TISSUS, LITERIE & ACCESSOIRES HÉBERGEMENT » ;
+- [x] Supprimer la rubrique « Divers »
+- [x] Petit matériel d'exploitation : + Garcia de Pou (garciadepou.com/fr/), Chilewich, Peugeot, Bartscher (bartscher.com/int/fr/). L2G abandonné
+- [x] Renommer « LINGE, TISSUS D'AMEUBLEMENT & LITERIE » → « LINGE, TISSUS, LITERIE & ACCESSOIRES HÉBERGEMENT » ;
       − Hilden ; + Deren (deren.fr), Artalys (artalys-france.fr), Caddie, Rubbermaid (vepabins.nl/fr), Technomax (technomax.it)
-- [ ] Mobilier : − Manutti, − Gervasoni ; + Serralunga, Flexmob, Contral (contral.it/fr), Caneline (cane-line.fr), Pottery Pots (potterypots.com/fr-eu/)
-- [ ] Luminaires : + Lucide (lucide.com/fr/)
-- [ ] Matériel de buffet : + APS **en premier** (aps-germany.fr)
-- [ ] Vaisselle : + Lebrun (lebrun.fr/shop-pro/)
-- [ ] Accessoires SDB : + Creactive Paris (creactive-paris.fr)
-- [ ] Bon Bistro → finediningandliving.eu/fdl_en/
-- [ ] Nettoyer les paramètres de tracking des URL fournies (`gad_source`, `gbraid`, `srsltid`…)
-- [ ] Logos Drive (`Logos/Logo <MARQUE>.*`) → format et gabarit des logos existants
-- [ ] Liens morts relevés par l'audit (britop, talentisrl, sayl, matfer in-situ) : corriger si l'URL actuelle se trouve, sinon logo sans lien
-- [ ] `alt="Logo <Marque>"` sur les 69 logos
+- [x] Mobilier : − Manutti, − Gervasoni ; + Serralunga, Flexmob, Contral (contral.it/fr), Caneline (cane-line.fr), Pottery Pots (potterypots.com/fr-eu/)
+- [x] Luminaires : + Lucide (lucide.com/fr/)
+- [x] Matériel de buffet : + APS **en premier** (aps-germany.fr)
+- [x] Vaisselle : + Lebrun (lebrun.fr/shop-pro/)
+- [x] Accessoires SDB : + Creactive Paris (creactive-paris.fr)
+- [x] Bon Bistro → finediningandliving.eu/fdl_en/
+- [x] Nettoyer les paramètres de tracking des URL fournies (`gad_source`, `gbraid`, `srsltid`…)
+- [x] Logos Drive (`Logos/Logo <MARQUE>.*`) → format et gabarit des logos existants
+- [x] Liens morts relevés par l'audit (britop, talentisrl, sayl, matfer in-situ) : corriger si l'URL actuelle se trouve, sinon logo sans lien
+- [x] `alt="Logo <Marque>"` sur les 69 logos
 
 ## Lot D — Audit visibilité (points 1, 3, 4)
 

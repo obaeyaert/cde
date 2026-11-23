@@ -16,11 +16,20 @@ Demande client de novembre 2026 (mails des 9, 13 et 16/11) et audit de visibilit
   Karibea Squash, Le Courbaril, Le Simon, Le Bambou) ; équipement des chambres détaillé et
   rubriques Buffet / Salle de réunion sur onze hôtels ; texte alternatif sur les photos qui n'en
   avaient pas.
+- Marques : rubrique « Divers » supprimée (Chilewich et Peugeot rejoignent le petit matériel
+  d'exploitation, Caddie le linge) ; rubrique « Linge, tissus, literie & accessoires
+  hébergement » ; ajout de Garcia de Pou, Bartscher, APS (en tête du buffet), Lebrun, Deren,
+  Artalys, Rubbermaid, Technomax, Lucide, Creactive Paris, Serralunga, Flexmob, Contral,
+  Cane-line et Pottery Pots ; retrait de Hilden, Manutti et Gervasoni ; texte alternatif
+  « Logo … » sur tous les logos.
 - `npm run verify` ne compare plus au WordPress (`verify:parity`, `verify:content`) : le contenu
   évolue désormais volontairement. Les deux scripts restent disponibles.
 
 ### Corrigé
 
+- Marques : liens morts relevés par l'audit — Bon Bistro, SAYL, Matfer et Britop pointent vers
+  leur site actuel ; Talenti, dont le site ne répond plus, n'a plus de lien. Lien Peugeot
+  débarrassé de ses paramètres de campagne.
 - Accueil : la vignette « Arts de la table » pointait vers la page Océan Indien.
 
 ## [1.1.0] — 2026-09-06

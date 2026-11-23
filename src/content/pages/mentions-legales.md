@@ -21,7 +21,7 @@ Nom de la Société :<strong> COMPTOIR DISTRIBUTION ET D’EXPORTATION (C.D.E.)<
 Adresse : <strong>6 rue Eugène Genet, Place de la Passerelle, 69420 CONDRIEU</strong><br>
 Tél  : <strong>+33 4 74 58 18 05</strong><br>
 Au Capital de :<strong> 34 030 €</strong><br>
-SIRET :  <strong>390 582 757 00048 </strong>R.C.S. :<strong> Nevers B 390 582 757</strong><br>
+SIRET :  <strong>390 582 757 00048 </strong>R.C.S. :<strong> Lyon B 390 582 757</strong><br>
 Numéro TVA intracommunautaire : <strong>FR20390582757</strong><br>
 Adresse de courrier électronique : <strong>contact@cdegroupe.com</strong></p>
 <p>Réclamation : <strong>CDE – 6 rue Eugène Genet, Place de la Passerelle, 69420 CONDRIEU /contact@cdegroupe.com</strong></p>

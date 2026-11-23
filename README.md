@@ -77,10 +77,10 @@ Aucun mail ne part vers l'extérieur dans ces trois modes.
 | `npm run build` | build de production (sortie `.vercel/output/`) |
 | `npm run check` | types Astro/TypeScript |
 | `npm run optimize:images` | réencode `public/media`, génère les variantes WebP et le manifeste des dimensions |
-| `npm run verify` | build + liens + parité + contenu + SEO |
+| `npm run verify` | build + liens + SEO |
 | `npm run verify:links` | aucun lien ni ressource en 404, aucune redirection morte |
-| `npm run verify:parity` | métadonnées identiques à l'ancien site |
-| `npm run verify:content` | **aucun mot du contenu perdu** face au WordPress |
+| `npm run verify:parity` | métadonnées identiques à l'ancien site — migration seulement, hors `verify` depuis les évolutions de contenu de novembre 2026 |
+| `npm run verify:content` | aucun mot du contenu perdu face au WordPress — idem, migration seulement |
 | `npm run verify:seo` | métadonnées, titres, images, données structurées, maillage |
 | `npm run verify:visual` | captures WP et Astro côte à côte + score de différence pixel par page |
 | `npm run verify:contact` | formulaire de bout en bout |

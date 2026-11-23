@@ -6,6 +6,7 @@ export const site = {
   phone: '+33 4 74 58 18 05',
   phoneHref: '+33474581805',
   email: 'contact@cdegroupe.com',
+  openingHours: 'Du lundi au vendredi, de 9 h à 17 h',
   address: {
     street: '6 rue Eugène Genet, Place de la Passerelle',
     postalCode: '69420',

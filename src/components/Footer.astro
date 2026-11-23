@@ -13,6 +13,7 @@ const year = new Date().getFullYear();
       <h2 class="widget-title">{site.legalName}</h2>
       <p class="address">{site.address.street}, {site.address.postalCode} {site.address.city.toUpperCase()}</p>
       <p>Téléphone : <a href={`tel:${site.phoneHref}`}>{site.phone}</a></p>
+      <p>Horaires : {site.openingHours.toLowerCase()}</p>
       <p>Web : <a href="/contact/">Contactez-nous</a></p>
     </div>
     <div class="widget">

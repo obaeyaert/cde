@@ -87,8 +87,9 @@ comme Arawak), Restaurant, Bar, Piscine, Plage.
 - [x] `npm run check` + `npm run verify` + contrôle visuel des pages modifiées (desktop + 390 px)
 - [x] CHANGELOG daté
 - [x] Brouillon Gmail pour Marie-Carine (preview, récap, réponse sur le référencement) — **à relire et envoyer par Olivier**
-- [ ] Validation de la cliente sur la preview, puis merge de la pile #9 → #13 (dans l'ordre)
-- [ ] Fiche Google de la cliente : l'ajouter au `sameAs` du JSON-LD quand elle envoie le lien
+- [x] Validation de la cliente sur la preview (mail du 24/11)
+- [ ] Merge de la pile #9 → #13, dans l'ordre (= mise en prod)
+- [x] Fiche Google de la cliente ajoutée au `sameAs` du JSON-LD et à `llms.txt` (lien reçu le 26/11)
 - [ ] Revérifier la visibilité le 8/12/2026 (date de l'audit)
 
 ---

@@ -32,6 +32,7 @@ Demande client de novembre 2026 (mails des 9, 13 et 16/11) et audit de visibilit
   confusion avec d'autres « CDE Group » ; `llms.txt` à la racine ; titre d'accueil avec la
   marque et les 21 descriptions ramenées à 155 caractères au plus ; textes alternatifs des
   images de l'accueil. `verify:seo` échoue désormais au-delà de 155 caractères.
+- Fiche d'établissement Google de CDE reliée au site (`sameAs` du JSON-LD et `llms.txt`).
 - `npm run verify` ne compare plus au WordPress (`verify:parity`, `verify:content`) : le contenu
   évolue désormais volontairement. Les deux scripts restent disponibles.
 

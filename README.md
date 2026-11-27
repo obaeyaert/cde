@@ -79,6 +79,7 @@ Aucun mail ne part vers l'extérieur dans ces trois modes.
 | `npm run optimize:images` | réencode `public/media`, génère les variantes WebP et le manifeste des dimensions |
 | `npm run verify` | build + liens + SEO |
 | `npm run verify:links` | aucun lien ni ressource en 404, aucune redirection morte |
+| `npm run verify:external` | liens sortants (sites des marques…) : morts, ou refusant les robots. Tourne aussi chaque lundi en GitHub Actions, qui ouvre une issue en cas de lien mort |
 | `npm run verify:parity` | métadonnées identiques à l'ancien site — migration seulement, hors `verify` depuis les évolutions de contenu de novembre 2026 |
 | `npm run verify:content` | aucun mot du contenu perdu face au WordPress — idem, migration seulement |
 | `npm run verify:seo` | métadonnées, titres, images, données structurées, maillage |

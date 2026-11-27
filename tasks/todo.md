@@ -79,15 +79,18 @@ comme Arawak), Restaurant, Bar, Piscine, Plage.
 
 ## Lot E — Contrôle périodique des liens (validé par la cliente)
 
-- [ ] Workflow GitHub Actions hebdomadaire : liens externes du site construit, rapport en issue si lien cassé
+- [x] Workflow GitHub Actions hebdomadaire : liens externes du site construit, rapport en issue si lien cassé
       (tolérer les 403 anti-bot des grands sites)
 
 ## Clôture
 
-- [ ] `npm run check` + `npm run verify` + contrôle visuel des pages modifiées (desktop + 390 px)
-- [ ] CHANGELOG daté
-- [ ] Mail à Marie-Carine : lien de preview, récap, réponse sur le référencement
-      (effets à 30 jours, revérification le 8/12)
+- [x] `npm run check` + `npm run verify` + contrôle visuel des pages modifiées (desktop + 390 px)
+- [x] CHANGELOG daté
+- [x] Brouillon Gmail pour Marie-Carine (preview, récap, réponse sur le référencement) — **à relire et envoyer par Olivier**
+- [x] Validation de la cliente sur la preview (mail du 24/11)
+- [ ] Merge de la pile #9 → #13, dans l'ordre (= mise en prod)
+- [x] Fiche Google de la cliente ajoutée au `sameAs` du JSON-LD et à `llms.txt` (lien reçu le 26/11)
+- [ ] Revérifier la visibilité le 8/12/2026 (date de l'audit)
 
 ---
 

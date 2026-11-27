@@ -11,6 +11,8 @@ export const site = {
   foundingDate: '1993-03-08',
   vatId: 'FR20390582757',
   linkedin: 'https://www.linkedin.com/company/comptoir-de-distribution-et-d-exportation-cde-groupe',
+  /* Fiche d'établissement Google revendiquée par la cliente (26/11/2026), forme canonique par CID */
+  googleBusiness: 'https://maps.google.com/?cid=11879518687329218514',
   address: {
     street: '6 rue Eugène Genet, Place de la Passerelle',
     postalCode: '69420',
